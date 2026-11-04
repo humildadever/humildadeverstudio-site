@@ -1,0 +1,1 @@
+A nova página jogo-privacidade.html contém a política bilingue do jogo. A página privacidade.html continua dedicada ao website. Antes de publicar o jogo, confirmar os SDK, AdMob, identificador de publicidade, consentimento, Play Games, backups e compras e atualizar a política de acordo com a implementação real.

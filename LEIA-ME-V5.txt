@@ -1,0 +1,1 @@
+Versão 5: nova história, chefes dos seis mundos, inimigos e mini-chefes, melhoria de alinhamento. O jogo continua em desenvolvimento. A versão leve não inclui trailer; adicionar assets/trailer-curioso.mp4 para ativar o vídeo.

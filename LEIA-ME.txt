@@ -1,0 +1,15 @@
+HUMILDADEVER STUDIO — WEBSITE V3 PREMIUM
+
+1. Extrai todos os ficheiros mantendo a pasta assets.
+2. Abre index.html num navegador para pré-visualização.
+3. Para publicar: cria um repositório público no GitHub, envia TODOS os ficheiros e ativa Settings > Pages > Deploy from a branch > main / root.
+4. No GitHub Pages, define o domínio personalizado humildadeverstudio.com. Configura os registos DNS na Amen.pt segundo as instruções atuais do GitHub Pages. Ativa HTTPS quando estiver disponível.
+5. Confirma que as ligações, imagens, vídeo e formulários funcionam no domínio publicado.
+
+IMPORTANTE:
+- O trailer é um ficheiro MP4 local. O ficheiro pode ser grande; usa Git LFS ou alojamento externo apenas se necessário (GitHub Pages não serve ficheiros via LFS diretamente).
+- Newsletter não automatizada: o botão abre e-mail. Para captar inscrições, configura um serviço próprio e consentimento adequado.
+- Redes sociais: não foram inventados endereços. Adiciona URLs reais quando criares as contas.
+- O press kit contém arte promocional e não garante que seja captura de jogabilidade.
+- A política de privacidade é um ponto de partida a rever antes do lançamento.
+- A versão em inglês traduz a interface; o nome oficial português do jogo permanece inalterado.

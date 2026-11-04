@@ -1,0 +1,12 @@
+HUMILDADEVER STUDIO 4.0 — Publicação
+
+1. Extrair o ZIP inteiro; abrir index.html.
+2. Publicar todos os ficheiros na raiz do repositório GitHub Pages.
+3. Configurar o domínio personalizado em Settings > Pages e os registos DNS na Amen.pt.
+4. Confirmar HTTPS, navegação móvel, imagens, trailer, idiomas e contactos no endereço publicado.
+5. Newsletter: por enquanto é um pedido por e-mail; ligar serviço com consentimento antes de recolher subscritores.
+6. Redes sociais: adicionar apenas URLs oficiais verificadas.
+7. Não existe minijogo demonstrativo.
+8. Imagens promocionais/ilustrativas não devem ser anunciadas como capturas de jogabilidade.
+9. Política de privacidade deve ser revista conforme os serviços efetivamente ativados.
+10. Imagens WebP e carregamento lazy já incluídos; o vídeo MP4 é o principal recurso pesado.

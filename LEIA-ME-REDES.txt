@@ -1,0 +1,1 @@
+Os logotipos das 15 redes são carregados da CDN Simple Icons (cdn.simpleicons.org). Requer Internet. Não são imagens genéricas. Se a CDN falhar, é mostrado um símbolo neutro, nunca um logótipo falso. As contas continuam Em breve até existirem URLs oficiais.

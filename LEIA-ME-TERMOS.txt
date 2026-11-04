@@ -1,0 +1,1 @@
+Termos do jogo adicionados em jogo-termos.html. Ligação incluída no rodapé de index.html. Verificar o texto com as funcionalidades reais antes de publicar o jogo.

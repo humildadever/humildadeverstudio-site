@@ -1,0 +1,3 @@
+Redes sociais previstas para O Curioso: YouTube, TikTok, Instagram, Facebook, Discord, Reddit, Snapchat, Pinterest, Threads, X, Bluesky, Twitch, LinkedIn, itch.io, Game Jolt.
+Todas estão identificadas como Em breve / Coming soon. Nenhum perfil ou URL foi inventado.
+Quando as contas forem criadas, substituir cada cartão pelo link oficial confirmado, com target="_blank" e rel="noopener noreferrer".
