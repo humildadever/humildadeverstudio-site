@@ -1,0 +1,9 @@
+HUMILDADEVER STUDIO V8 — IMAGENS PREMIUM
+
+Mantida a imagem principal escolhida, sem alterações à composição ou ao logótipo.
+Criadas seis imagens ilustrativas específicas dos mundos a partir da arte escolhida.
+Aplicadas melhorias de contraste, cor, nitidez e compressão WebP aos recursos de apoio.
+Melhorada a apresentação e dimensão dos cartões dos mundos, com carregamento diferido.
+Mantidos trailer, contactos e as três páginas legais.
+As imagens conceptuais não são capturas reais do jogo.
+Abrir index.html para visualizar; publicar apenas após revisão.

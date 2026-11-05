@@ -1,0 +1,9 @@
+HUMILDADEVER STUDIO V7 — CARTOON
+
+1. Extraia o ZIP.
+2. Abra index.html no navegador.
+3. Para publicar no GitHub Pages, copie o CONTEÚDO da pasta para a raiz do repositório (não a pasta inteira).
+4. Não altere os registos DNS nem o domínio.
+5. Confirme a política de privacidade e os termos antes da publicação.
+6. A imagem principal é uma composição visual; os links são zonas clicáveis sobre a imagem no computador. No telemóvel existe uma apresentação adaptada.
+7. Os ícones sociais são contactos por email, não links para perfis verificados.
