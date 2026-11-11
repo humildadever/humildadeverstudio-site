@@ -16,3 +16,15 @@ body{background:radial-gradient(ellipse at 50% 12%,#103d71 0%,#06152a 45%,#030b1
 .foot{border-top:1px solid #35baff55}
 @media(max-width:760px){.mobile{min-height:630px}.mobile h1{margin-top:75px;font-size:clamp(2rem,8vw,3.5rem)}.mobile .brand{backdrop-filter:blur(8px)}.mobile .btn{width:min(100%,350px);margin:7px auto}.content{padding:45px 18px}.cards,.shop-grid{gap:14px}.card img{height:180px}.contador-visitas{font-size:11px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* V17.1 — navegação real, loja de 15 produtos e acessibilidade */
+html{scroll-padding-top:90px}
+.v17-nav{position:sticky;top:0;z-index:950;display:flex;align-items:center;gap:20px;justify-content:space-between;padding:10px clamp(16px,3vw,45px);background:#041329f2;border-bottom:1px solid #43baff77;box-shadow:0 8px 25px #0006;backdrop-filter:blur(14px)}
+.v17-brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:900;font-size:clamp(.8rem,1.3vw,1.1rem);white-space:nowrap}.v17-brand img{object-fit:contain}.v17-brand strong{color:#ffdb46}
+.v17-links{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(9px,1.3vw,22px)}.v17-links a{text-decoration:none;font-weight:750;font-size:.9rem}.v17-links a:hover{color:#ffdb46}
+.v17-download{background:linear-gradient(#ffe66d,#ffb51a);color:#07162c;text-decoration:none;font-weight:900;border-radius:30px;padding:12px 17px;white-space:nowrap}
+.v17-nav a:focus-visible{outline:3px solid #ffdf46;outline-offset:4px}
+.shop-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.shop-item{padding:16px 10px}.shop-icon{font-size:3.3rem;min-height:95px}.shop-item h3{font-size:1.05rem}.shop-item p{font-size:.9rem}.soon{padding:9px 10px}
+@media(max-width:1050px){.v17-nav{flex-wrap:wrap;justify-content:center}.v17-links{order:3;width:100%}.shop-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.v17-nav{gap:9px;padding:9px 12px}.v17-brand img{width:36px;height:36px}.v17-download{font-size:.78rem;padding:10px}.v17-links{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:4px 0 8px;scrollbar-width:thin}.v17-links a{flex-shrink:0;font-size:.85rem}.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shop-item h3{min-height:auto}.mobile h1{margin-top:45px}}
+@media(max-width:360px){.shop-grid{grid-template-columns:1fr}.v17-brand{font-size:.7rem}}
