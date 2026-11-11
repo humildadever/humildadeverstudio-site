@@ -1,0 +1,18 @@
+/* Humildadever Studio V17 — camada visual não destrutiva */
+:root{--v17-gold:#ffd447;--v17-blue:#27c9ff;--v17-night:#06152a}
+body{background:radial-gradient(ellipse at 50% 12%,#103d71 0%,#06152a 45%,#030b1a 100%);overflow-x:hidden}
+.content{position:relative}
+.content h2{color:#fff;text-shadow:0 3px 18px #008cff65;letter-spacing:-.025em}
+.content h2::after{content:"";display:block;width:92px;height:4px;margin-top:13px;border-radius:9px;background:linear-gradient(90deg,var(--v17-gold),var(--v17-blue))}
+.cards,.shop-grid{gap:22px}
+.card,.shop-item{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover,.shop-item:hover{transform:translateY(-5px);border-color:var(--v17-gold);box-shadow:0 16px 36px #0009,0 0 24px #1bbcff35}
+.card h3{line-height:1.35}
+.btn,.social-real a{transition:transform .2s ease,filter .2s ease}
+.btn:hover,.social-real a:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn:focus-visible,.social-real a:focus-visible,.play-v16-link:focus-visible{outline:3px solid var(--v17-gold);outline-offset:4px}
+.shop-icon{border:1px solid #ffffff30}
+.soon{font-size:.9rem}
+.foot{border-top:1px solid #35baff55}
+@media(max-width:760px){.mobile{min-height:630px}.mobile h1{margin-top:75px;font-size:clamp(2rem,8vw,3.5rem)}.mobile .brand{backdrop-filter:blur(8px)}.mobile .btn{width:min(100%,350px);margin:7px auto}.content{padding:45px 18px}.cards,.shop-grid{gap:14px}.card img{height:180px}.contador-visitas{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
