@@ -40,8 +40,65 @@
 }
 </style>
 
+
+<style id="playstore-desktop-style">
+.playstore-desktop {
+    position: absolute;
+    top: 34%;
+    right: 2%;
+    width: 23%;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+.playstore-desktop .play-label {
+    background: #c90017;
+    color: white;
+    font-weight: 900;
+    font-size: clamp(12px, 1.5vw, 24px);
+    border: 3px solid #ffdd42;
+    border-radius: 16px;
+    padding: 9px 12px;
+    box-shadow: 0 5px 12px #0009;
+}
+.playstore-desktop a {
+    display: block;
+    width: 100%;
+    background: linear-gradient(#30dc68,#087f35);
+    border: 3px solid #ffe04a;
+    border-radius: 20px;
+    padding: 13px 8px;
+    color: white;
+    font-size: clamp(12px, 1.4vw, 22px);
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 6px 0 #075026,0 10px 20px #0008;
+}
+.playstore-desktop a:hover {
+    filter: brightness(1.15);
+}
+@media(max-width:760px) {
+    .playstore-desktop {
+        display: none;
+    }
+}
+</style>
 </head><body>
-<div class="art"><img alt="Página ilustrada da Humildadever Studio com O Curioso, o cão e os seis mundos do jogo" src="assets/design-cartoon.png"/><a aria-label="Início" class="hit navlink n1" href="#inicio"></a><a aria-label="O Jogo" class="hit navlink n2" href="#jogo"></a><a aria-label="Estúdio" class="hit navlink n3" href="#estudio"></a><a aria-label="Apps" class="hit navlink n4" href="#apps"></a><a aria-label="Notícias" class="hit navlink n5" href="#noticias"></a><a aria-label="Contacto" class="hit navlink n6" href="#contacto"></a><a aria-label="Ver trailer" class="hit trailer" href="#trailer"></a><a aria-label="Conhecer o jogo" class="hit game" href="#jogo"></a><a aria-label="Descobrir os mundos" class="hit worlds" href="#mundos"></a><a aria-label="Política de Privacidade" class="hit privacy" href="privacidade.html"></a><a aria-label="Termos de Uso" class="hit terms" href="jogo-termos.html"></a><a aria-label="Privacidade do jogo" class="hit gameprivacy" href="jogo-privacidade.html"></a><a aria-label="Visitar canal YouTube da Humildadever Studio" class="hit yt" href="https://youtube.com/@humildadeverstudio?si=fm0n2Tgjum-lY_BN" rel="noopener noreferrer" target="_blank"></a><a aria-label="Visitar perfil TikTok da Humildadever Studio" class="hit tt" href="https://www.tiktok.com/@humildadeverstudio" rel="noopener noreferrer" target="_blank"></a><a aria-label="Contactar sobre Instagram" class="hit ig" href="mailto:humildadeverstudio@gmail.com?subject=Instagram%20Humildadever%20Studio"></a><a aria-label="Contactar sobre Facebook" class="hit fb" href="mailto:humildadeverstudio@gmail.com?subject=Facebook%20Humildadever%20Studio"></a><a aria-label="Contactar sobre Discord" class="hit dc" href="mailto:humildadeverstudio@gmail.com?subject=Discord%20Humildadever%20Studio"></a><a aria-label="Enviar email" class="hit mail" href="mailto:humildadeverstudio@gmail.com"></a></div>
+<div class="art">
+<div class="playstore-desktop" id="playstore-desktop">
+  <div class="play-label">
+    🎉 JÁ DISPONÍVEL NA GOOGLE PLAY!
+  </div>
+  <a href="https://play.google.com/store/apps/details?id=com.humildadever.ocurioso"
+     target="_blank"
+     rel="noopener noreferrer">
+    🎮 DESCARREGAR O JOGO
+  </a>
+</div>
+<img alt="Página ilustrada da Humildadever Studio com O Curioso, o cão e os seis mundos do jogo" src="assets/design-cartoon.png"/><a aria-label="Início" class="hit navlink n1" href="#inicio"></a><a aria-label="O Jogo" class="hit navlink n2" href="#jogo"></a><a aria-label="Estúdio" class="hit navlink n3" href="#estudio"></a><a aria-label="Apps" class="hit navlink n4" href="#apps"></a><a aria-label="Notícias" class="hit navlink n5" href="#noticias"></a><a aria-label="Contacto" class="hit navlink n6" href="#contacto"></a><a aria-label="Ver trailer" class="hit trailer" href="#trailer"></a><a aria-label="Conhecer o jogo" class="hit game" href="#jogo"></a><a aria-label="Descobrir os mundos" class="hit worlds" href="#mundos"></a><a aria-label="Política de Privacidade" class="hit privacy" href="privacidade.html"></a><a aria-label="Termos de Uso" class="hit terms" href="jogo-termos.html"></a><a aria-label="Privacidade do jogo" class="hit gameprivacy" href="jogo-privacidade.html"></a><a aria-label="Visitar canal YouTube da Humildadever Studio" class="hit yt" href="https://youtube.com/@humildadeverstudio?si=fm0n2Tgjum-lY_BN" rel="noopener noreferrer" target="_blank"></a><a aria-label="Visitar perfil TikTok da Humildadever Studio" class="hit tt" href="https://www.tiktok.com/@humildadeverstudio" rel="noopener noreferrer" target="_blank"></a><a aria-label="Contactar sobre Instagram" class="hit ig" href="mailto:humildadeverstudio@gmail.com?subject=Instagram%20Humildadever%20Studio"></a><a aria-label="Contactar sobre Facebook" class="hit fb" href="mailto:humildadeverstudio@gmail.com?subject=Facebook%20Humildadever%20Studio"></a><a aria-label="Contactar sobre Discord" class="hit dc" href="mailto:humildadeverstudio@gmail.com?subject=Discord%20Humildadever%20Studio"></a><a aria-label="Enviar email" class="hit mail" href="mailto:humildadeverstudio@gmail.com"></a></div>
 <header class="mobile" id="inicio"><div class="brand"><img alt="Logótipo oficial Humildadever Studio" src="assets/logotipo-oficial.png"/><strong>HUMILDADEVER STUDIO</strong></div><h1>O Curioso e o Reino das Gargalhadas</h1><a id="google-play-principal" class="google-play-destaque" href="https://play.google.com/store/apps/details?id=com.humildadever.ocurioso" target="_blank" rel="noopener noreferrer">🎮 DESCARREGAR NA GOOGLE PLAY</a><p>Uma aventura de plataformas cheia de humor, desafios e mundos fantásticos!</p><p class="playstore-status">🎉 O Curioso e o Reino das Gargalhadas — Já disponível na Google Play!</p><a class="btn alt" href="#trailer">▶ Ver Trailer</a><a class="btn" href="#jogo">🎮 Conhecer o Jogo</a><a id="google-play-hero" href="https://play.google.com/store/apps/details?id=com.humildadever.ocurioso" target="_blank" rel="noopener noreferrer" style="display:inline-flex!important;align-items:center;justify-content:center;background:#111827!important;color:white!important;padding:14px 24px;border:3px solid #ffd700;border-radius:40px;font-weight:900;text-decoration:none;position:relative;z-index:20;margin:6px;box-shadow:0 5px 0 #8a6200;">▶ DESCARREGAR NA GOOGLE PLAY</a><a class="btn playstore-btn" href="https://play.google.com/store/apps/details?id=com.humildadever.ocurioso" rel="noopener noreferrer" target="_blank">▶ Descarregar na Google Play</a></header>
 <main><section class="content" id="jogo"><h2>Uma aventura cheia de gargalhadas</h2><p>O Rei Rabugento roubou a Grande Gargalhada. Agora, O Curioso parte numa viagem por mundos fantásticos para devolver a alegria ao reino. Descobre os cenários, os desafios e as personagens deste jogo de plataformas 2D, já disponível na Google Play.</p><a class="btn" href="#mundos">Descobrir os seis mundos</a><a class="btn" href="https://play.google.com/store/apps/details?id=com.humildadever.ocurioso" rel="noopener noreferrer" target="_blank">🎮 Jogar agora na Google Play</a></section>
 <section class="content" id="mundos"><h2>Descobre os mundos do jogo</h2><div class="cards"><article class="card"><img alt="Paisagem de fantasia" decoding="async" loading="lazy" src="assets/mundo-01.webp"/><h3>🌳 Floresta dos Tropeções</h3></article><article class="card"><img alt="Arte do universo do jogo" decoding="async" loading="lazy" src="assets/mundo-02.webp"/><h3>🏜️ Deserto das Cócegas</h3></article><article class="card"><img alt="Cenário fantástico" decoding="async" loading="lazy" src="assets/mundo-03.webp"/><h3>🏰 Castelo do Rei Rabugento</h3></article><article class="card"><img alt="Arte promocional do jogo" decoding="async" loading="lazy" src="assets/mundo-04.webp"/><h3>🌋 Vulcão Maluco</h3></article><article class="card"><img alt="Arte do jogo" decoding="async" loading="lazy" src="assets/mundo-05.webp"/><h3>☁️ Nuvens do Absurdo</h3></article><article class="card"><img alt="Personagem do jogo" decoding="async" loading="lazy" src="assets/mundo-06.webp"/><h3>✨ Fortaleza da Gargalhada</h3></article></div><p class="notice">As imagens dos mundos são ilustrações conceptuais do universo do jogo, não capturas de jogabilidade.</p></section>
