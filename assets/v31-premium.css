@@ -68,3 +68,5 @@ body.v31-light .btn.alt{background:#a4141b;color:#fff}
 .contact .btn{max-width:100%;overflow-wrap:anywhere}
 .foot a{overflow-wrap:anywhere}
 .hero{grid-template-columns:minmax(0,1fr)}
+#estudio .brand img{width:clamp(50px,12vw,90px);height:auto;flex-shrink:0}
+#estudio .brand h2{min-width:0;overflow-wrap:anywhere}
