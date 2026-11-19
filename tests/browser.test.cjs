@@ -8,7 +8,8 @@ const { chromium } = require('playwright');
 const site = path.resolve(__dirname, '..');
 const types = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css',
-  '.js': 'text/javascript', '.webp': 'image/webp', '.png': 'image/png'
+  '.js': 'text/javascript', '.webp': 'image/webp', '.png': 'image/png',
+  '.webmanifest': 'application/manifest+json'
 };
 
 test('Chromium: navegação por teclado, largura e preferências', async t => {
@@ -32,6 +33,28 @@ test('Chromium: navegação por teclado, largura e preferências', async t => {
   const origin = 'http://127.0.0.1:' + server.address().port;
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH });
   t.after(() => browser.close());
+
+  await t.test('Navegação offline após instalação do service worker', async () => {
+    const context = await browser.newContext();
+    try {
+      const page = await context.newPage();
+      await page.route('https://**/*', route => route.abort());
+      await page.goto(origin);
+      await page.waitForFunction(async () => {
+        const registration = await navigator.serviceWorker.getRegistration();
+        return Boolean(registration?.active);
+      });
+      await page.reload();
+      await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller));
+      await context.setOffline(true);
+      await page.goto(origin + '/academia.html');
+      assert.equal(await page.getByRole('heading', { name: 'Academia Humildadever' }).isVisible(), true);
+      await page.goto(origin + '/privacidade.html');
+      assert.equal(await page.getByRole('heading', { name: 'Sem ligação à internet' }).isVisible(), true);
+    } finally {
+      await context.close();
+    }
+  });
 
   for (const width of [320, 390, 768, 1366]) {
     await t.test(`${width}px`, async () => {

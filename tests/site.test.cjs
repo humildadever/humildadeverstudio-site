@@ -184,3 +184,51 @@ test('Academia: validação nativa, correção e melhor resultado local', () => 
   assert.equal(window.localStorage.getItem('hv-academia-python-basico-v1'), '3');
   window.close();
 });
+
+test('PWA: cache público, fallback offline e exclusão de ficheiros técnicos', async () => {
+  const vm = require('node:vm');
+  const scope = origin + '/preview/';
+  const listeners = new Map();
+  let cached = [];
+  const cache = {
+    addAll: async urls => { cached = urls; },
+    match: async request => {
+      const href = typeof request === 'string' ? request : request.url;
+      return cached.includes(href) ? href : undefined;
+    }
+  };
+  vm.runInNewContext(read('sw.js'), {
+    URL, Response, caches: { open: async () => cache },
+    self: { registration: { scope }, addEventListener: (event, handler) => listeners.set(event, handler) },
+    fetch: async () => { throw new Error('Offline'); }
+  });
+  let installation;
+  listeners.get('install')({ waitUntil: promise => { installation = promise; } });
+  await installation;
+  assert.ok(cached.includes(scope + 'offline.html'));
+  for (const url of cached) {
+    assert.ok(url.startsWith(scope));
+    assert.ok(existsSync(path.join(root, url.slice(scope.length))), url);
+  }
+
+  function intercept(url, mode = 'navigate', method = 'GET', headers = {}) {
+    let response;
+    listeners.get('fetch')({
+      request: { url, mode, method, headers: new Headers(headers) },
+      respondWith: promise => { response = promise; }
+    });
+    return response;
+  }
+  assert.equal(await intercept(scope + 'academia.html?ref=offline'), scope + 'academia.html');
+  assert.equal(await intercept(scope + 'privacidade.html'), scope + 'offline.html');
+  assert.equal(await intercept(scope + 'assets/portal.css', 'cors'), scope + 'assets/portal.css');
+  for (const file of ['app-ads.txt', 'CNAME', 'api/v1/me', 'press-kit.zip', 'assets/trailer-curioso.mp4']) {
+    assert.equal(intercept(scope + file), undefined, file);
+  }
+  assert.equal(intercept(scope + 'academia.html', 'navigate', 'POST'), undefined);
+  assert.equal(intercept(scope + 'assets/portal.css', 'cors', 'GET', { range: 'bytes=0-99' }), undefined);
+  assert.equal(intercept('https://hits.sh/humildadeverstudio.com.svg', 'cors'), undefined);
+
+  const manifest = JSON.parse(read('manifest.webmanifest'));
+  for (const icon of manifest.icons) assert.ok(existsSync(path.join(root, icon.src)), icon.src);
+});
