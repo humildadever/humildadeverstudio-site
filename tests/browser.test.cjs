@@ -4,6 +4,7 @@ const { readFile } = require('node:fs/promises');
 const path = require('node:path');
 const { test } = require('node:test');
 const { chromium } = require('playwright');
+const { AxeBuilder } = require('@axe-core/playwright');
 
 const site = path.resolve(__dirname, '..');
 const types = {
@@ -48,6 +49,23 @@ test('Chromium: navegação por teclado, largura e preferências', async t => {
       assert.equal(await page.getByRole('heading', { name: 'Sem ligação à internet' }).isVisible(), true);
     } finally {
       await context.close();
+    }
+  });
+
+  await t.test('Acessibilidade automática nas páginas principais', async () => {
+    const page = await browser.newPage();
+    await page.route('https://**/*', route => route.abort());
+    try {
+      for (const file of ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html', 'novidades.html']) {
+        await page.goto(origin + '/' + file);
+        const report = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+        assert.deepEqual(report.violations.map(violation => ({
+          id: violation.id,
+          targets: violation.nodes.map(node => node.target)
+        })), [], file || 'index.html');
+      }
+    } finally {
+      await page.close();
     }
   });
 
