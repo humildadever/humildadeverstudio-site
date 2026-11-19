@@ -53,19 +53,29 @@ test('Chromium: navegação por teclado, largura e preferências', async t => {
   });
 
   await t.test('Acessibilidade automática nas páginas principais', async () => {
-    const page = await browser.newPage();
-    await page.route('https://**/*', route => route.abort());
+    const context = await browser.newContext();
     try {
+      const page = await context.newPage();
+      await page.route('https://**/*', route => route.abort());
+      const findings = [];
+      const capture = async label => {
+        const report = await new AxeBuilder({ page })
+          .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+        for (const violation of report.violations) {
+          findings.push({ page: label, id: violation.id, targets: violation.nodes.map(node => node.target) });
+        }
+      };
       for (const file of ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html', 'novidades.html']) {
         await page.goto(origin + '/' + file);
-        const report = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
-        assert.deepEqual(report.violations.map(violation => ({
-          id: violation.id,
-          targets: violation.nodes.map(node => node.target)
-        })), [], file || 'index.html');
+        await capture(file || 'index.html');
+        if (!file) {
+          await page.getByRole('button', { name: 'Modo claro', exact: true }).click();
+          await capture('index.html — modo claro');
+        }
       }
+      assert.deepEqual(findings, []);
     } finally {
-      await page.close();
+      await context.close();
     }
   });
 
