@@ -1,0 +1,41 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  background: #061326;
+  color: #f2f8ff;
+  line-height: 1.6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #8ee7ff; }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #ffdb67;
+  outline-offset: 4px;
+}
+.skip { position: fixed; top: 12px; left: 12px; z-index: 2; transform: translateY(-200%); background: #061326; padding: 10px; }
+.skip:focus { transform: none; }
+.site-nav, main, .site-footer { width: min(1100px, 100%); margin: auto; padding: 20px clamp(18px, 4vw, 42px); }
+.site-nav, .site-footer, .actions { display: flex; gap: 12px 22px; flex-wrap: wrap; align-items: center; }
+.site-nav a, .site-footer a { padding-block: 6px; }
+.site-nav .studio { display: inline-flex; align-items: center; gap: 10px; margin-inline-end: auto; color: #f2f8ff; font-weight: 750; text-decoration: none; }
+.site-footer { border-top: 1px solid #365574; }
+.portal-hero { display: grid; align-items: center; grid-template-columns: 1.1fr 1fr; gap: 26px; }
+.portal-hero img, .world img, video { display: block; max-width: 100%; width: 100%; height: auto; border-radius: 16px; }
+h1 { font-size: clamp(2.15rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -.04em; margin: 8px 0 16px; color: #ffdb67; }
+h2 { line-height: 1.2; }
+main section { margin-block: 44px; }
+.action { display: inline-flex; min-height: 44px; align-items: center; padding: 7px 18px; border: 1px solid #6398bb; border-radius: 100px; font-weight: 700; text-decoration: none; }
+.action.primary { color: #10213d; background: #ffdb67; border-color: #ffdb67; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr)); gap: 16px; }
+.panel, details { background: #0e2847; border: 1px solid #365574; border-radius: 16px; padding: 16px; }
+.panel h3 { margin-top: 0; }
+details + details { margin-top: 10px; }
+.grid details { margin-top: 0; align-self: start; }
+summary { cursor: pointer; font-weight: 750; min-height: 32px; }
+.world img { margin-top: 10px; aspect-ratio: 16 / 9; object-fit: cover; }
+.small { color: #c4dbeb; }
+video { max-width: 720px; margin-block: 14px; background: #020a16; }
+[hidden] { display: none !important; }
+@media (max-width: 700px) {
+  .portal-hero { grid-template-columns: 1fr; gap: 16px; }
+}
