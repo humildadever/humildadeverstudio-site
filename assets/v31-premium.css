@@ -40,6 +40,7 @@ body.v31-reduced *,body.v31-reduced *::before,body.v31-reduced *::after{animatio
 body.v31-light .content h2{color:#12253f;text-shadow:none}
 body.v31-light .content .notice{color:#244360!important}
 body.v31-light .contact{background:#fff;border:1px solid #9cc3e3}
+.social-real a{color:#f2f8ff}
 body.v31-light .btn.alt{background:#a4141b;color:#fff}
 .contador-visitas{position:static;width:fit-content;margin:14px auto}
 
