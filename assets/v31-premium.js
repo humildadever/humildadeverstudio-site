@@ -79,3 +79,11 @@ function addPreference(label, key, active, inactive, className, systemPreference
 addPreference('Modo claro', 'hv-theme', 'light', 'dark', 'v31-light');
 addPreference('Reduzir movimento', 'hv-motion', 'reduce', 'normal', 'v31-reduced',
   matchMedia('(prefers-reduced-motion: reduce)'));
+
+const counter = document.querySelector('.contador-visitas img');
+function showCounterFailure() {
+  counter.hidden = true;
+  counter.nextElementSibling.style.display = 'inline';
+}
+counter.addEventListener('error', showCounterFailure);
+if (counter.complete && counter.naturalWidth === 0) showCounterFailure();
