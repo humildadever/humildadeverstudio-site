@@ -90,8 +90,14 @@ test('Chromium: navegação por teclado, largura e preferências', async t => {
 
         for (const file of ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html', 'novidades.html']) {
           await page.goto(origin + '/' + file);
-          const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
-          assert.equal(overflow, false, file || 'index.html');
+          const overflow = await page.evaluate(() => {
+            if (document.documentElement.scrollWidth <= innerWidth) return [];
+            const elements = [...document.querySelectorAll('body *')]
+              .filter(el => el.getBoundingClientRect().right > innerWidth)
+              .map(el => el.id || el.className || el.tagName).slice(0, 12);
+            return [document.documentElement.scrollWidth, ...elements];
+          });
+          assert.deepEqual(overflow, [], file || 'index.html');
         }
         await page.goto(origin + '/o-curioso.html');
         await page.locator('.world summary').first().click();

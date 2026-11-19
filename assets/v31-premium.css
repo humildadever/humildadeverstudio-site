@@ -63,3 +63,8 @@ body.v31-light .btn.alt{background:#a4141b;color:#fff}
   .v31-menu,.hero .btn,.v31-tools button{border:1px solid ButtonText}
   .v31-tools button[aria-pressed=true]{border:3px double Highlight}
 }
+
+/* Links longos devem caber em ecrãs estreitos e com zoom. */
+.contact .btn{max-width:100%;overflow-wrap:anywhere}
+.foot a{overflow-wrap:anywhere}
+.hero{grid-template-columns:minmax(0,1fr)}
