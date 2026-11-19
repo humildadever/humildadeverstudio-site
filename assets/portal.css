@@ -57,3 +57,7 @@ button { cursor: pointer; }
 .favorite[aria-pressed="true"] { background: #ffdb67; color: #10213d; }
 .project h2 { margin-top: 12px; }
 .project img { max-width: 100%; width: 100%; height: auto; border-radius: 10px; }
+
+pre { overflow: auto; padding: 14px; border-radius: 10px; background: #020b19; }
+fieldset { border: 1px solid #6398bb; border-radius: 10px; padding: 12px; margin-block: 10px; }
+fieldset label { display: block; min-height: 32px; }
