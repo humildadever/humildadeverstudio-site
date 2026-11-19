@@ -40,12 +40,7 @@ test('Chromium: navegação por teclado, largura e preferências', async t => {
       const page = await context.newPage();
       await page.route('https://**/*', route => route.abort());
       await page.goto(origin);
-      await page.waitForFunction(async () => {
-        const registration = await navigator.serviceWorker.getRegistration();
-        return Boolean(registration?.active);
-      });
-      await page.reload();
-      await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller));
+      await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller), null, { timeout: 10000 });
       await context.setOffline(true);
       await page.goto(origin + '/academia.html');
       assert.equal(await page.getByRole('heading', { name: 'Academia Humildadever' }).isVisible(), true);

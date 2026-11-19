@@ -2,7 +2,7 @@
 
 const base = self.registration.scope;
 const prefix = 'humildadever-site:';
-const version = prefix + '2';
+const version = prefix + '3';
 const pages = [
   'index.html', 'apps.html', 'academia.html', 'o-curioso.html',
   'o-curioso-en.html', 'novidades.html', 'offline.html'
@@ -29,7 +29,8 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys()
     .then(keys => Promise.all(keys.filter(key => key.startsWith(prefix) && key !== version)
-      .map(key => caches.delete(key)))));
+      .map(key => caches.delete(key))))
+    .then(() => self.clients.claim()));
 });
 
 async function navigation(request, fallback) {
