@@ -1,9 +1,10 @@
-# Progresso V31–V40
+# Progresso da Operação Evolução Total
 
-- Total de melhorias planeadas: 100
-- Melhorias integralmente validadas: 0/100 (0%)
-- V31: em desenvolvimento; camada de preferências de tema, movimento e foco adicionada em branch isolada
-- Testes: inspeção estática e confirmação de ficheiros; testes visuais em navegadores ainda pendentes
-- Bloqueios: V34/V36/V38 dependem de infraestrutura e configuração externas
-- Próxima tarefa: testar visualmente V31 em ecrãs móveis e desktop, corrigir eventuais regressões
-- Branch: dev/v31-evolucao-total
+- Branch: `dev/v31-evolucao-total`
+- Versão atual de trabalho: V31–V40, com entregas parciais testadas
+- Ponto de partida confirmado: `731f142`
+- Último commit funcional nesta sessão: `75fced5`
+- Progresso por versões com todos os critérios cumpridos: **0/10 (0%)**. Este indicador mede versões fechadas. As entregas implementadas e as pendências por versão estão discriminadas em [ROADMAP.md](ROADMAP.md).
+- Suíte Node: **10/10 (100%)**. Chromium passou em quatro larguras e no percurso offline. O axe passou nas seis páginas, com os dois temas verificados na página inicial. Resultados em [TESTES.md](TESTES.md).
+- Bloqueios: media e notas de versão reais do jogo, validação em dispositivos e configuração de infraestrutura para contas, newsletter, pagamentos e administração.
+- Próxima tarefa: testar em Safari/iPhone e Android físicos e medir desempenho em pré-produção.
