@@ -134,6 +134,12 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
         viewport: { width, height: 800 }, reducedMotion: 'reduce'
       });
       const errors = [];
+      await page.addInitScript(() => {
+        window.sitePolicyViolations = [];
+        document.addEventListener('securitypolicyviolation', event => {
+          window.sitePolicyViolations.push(event.effectiveDirective + ' ' + event.blockedURI);
+        });
+      });
       page.on('pageerror', error => errors.push(error.message));
       await page.route('https://**/*', route => route.abort());
       try {
@@ -177,6 +183,7 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
             return [document.documentElement.scrollWidth, ...elements];
           });
           assert.deepEqual(overflow, [], file || 'index.html');
+          assert.deepEqual(await page.evaluate(() => window.sitePolicyViolations), [], file || 'index.html');
         }
         await page.goto(origin + '/o-curioso.html');
         await page.locator('.world summary').first().click();

@@ -87,7 +87,7 @@ addPreference('Reduzir movimento', 'hv-motion', 'reduce', 'normal', 'v31-reduced
 const counter = document.querySelector('.contador-visitas img');
 function showCounterFailure() {
   counter.hidden = true;
-  counter.nextElementSibling.style.display = 'inline';
+  counter.closest('.contador-visitas').classList.add('is-unavailable');
 }
 counter.addEventListener('error', showCounterFailure);
 if (counter.complete && counter.naturalWidth === 0) showCounterFailure();

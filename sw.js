@@ -2,14 +2,14 @@
 
 const base = self.registration.scope;
 const prefix = 'humildadever-site:';
-const version = prefix + '9';
+const version = prefix + '10';
 const pages = [
   'index.html', 'apps.html', 'universe.html', 'academia.html', 'academia-sql.html', 'o-curioso.html',
   'o-curioso-en.html', 'novidades.html', 'novidades-en.html', 'offline.html'
 ];
 const assets = [
   'manifest.webmanifest', 'assets/pwa.js', 'assets/v31-premium.js',
-  'assets/v31-premium.css', 'assets/v17-premium.css',
+  'assets/home.css', 'assets/v31-premium.css', 'assets/v17-premium.css',
   'assets/portal.css', 'assets/catalogo.js', 'assets/academia.js',
   'assets/logotipo-192.webp', 'assets/hero-castle-premium.webp', 'assets/hero-castle-premium-480.webp',
   'assets/curioso-card-premium.webp',
