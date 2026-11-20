@@ -23,3 +23,9 @@
 - As medições CI usam um servidor sem compressão e um ecrã de 390 × 844. Medir carregamento real e instalação numa origem de pré-produção com os cabeçalhos e a compressão do alojamento selecionado.
 - Confirmar os cabeçalhos HTTP apropriados nessa origem, incluindo uma decisão sobre `frame-ancestors`, que a política CSP declarada em HTML não consegue aplicar.
 - Verificar a integridade do ZIP e comparar `app-ads.txt`, `CNAME`, páginas legais e o kit histórico com o ponto de partida antes de aprovar a publicação.
+
+## Pré-produção para o percurso de O Curioso
+
+A suíte de navegador serve a revisão em HTTPS numa porta efémera de loopback. O OpenSSL gera um certificado local descartável. O teste usa os perfis móveis Pixel 7 em Chromium e iPhone 13 em WebKit, confirma o carregamento da galeria e do kit ZIP e valida o URL de destino da Google Play através de uma resposta de teste. O conjunto de testes offline corre separadamente no contexto de localhost.
+
+Para os ensaios em dispositivos físicos, servir a mesma revisão numa origem de pré-produção isolada com certificado válido para ambos os dispositivos. Verificar toque, leitor de ecrã, instalação, modo offline, download e reprodução de vídeo.

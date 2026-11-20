@@ -53,3 +53,14 @@
 | Fonte de capturas e notas | Ficha oficial consultada a 20 de novembro de 2026 e imagens verificadas visualmente. A ficha regista 5 de novembro de 2026 como data da atualização. [Google Play](https://play.google.com/store/apps/details?id=com.humildadever.ocurioso) |
 
 As medições de peso são de laboratório. Continuam por verificar os tempos em rede móvel, os dispositivos físicos, os leitores de ecrã, a instalação da PWA e os cabeçalhos da futura pré-produção. O Chromium local foi bloqueado por uma restrição de sockets Unix. Os resultados de navegador acima são do GitHub Actions.
+
+## Galeria, kit de imprensa e Oficina Web
+
+Revisão funcional `3aabb06`. [GitHub Actions 44723170777](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44723170777).
+
+- Node passou 10/10 verificações. O ZIP passou no teste de integridade e a cópia servida pelo GitHub correspondeu byte a byte ao ficheiro verificado.
+- WebKit passou 9/9 verificações, incluindo o percurso HTTPS móvel e a oficina. O estado do Chromium está na execução indicada acima.
+- A ficha oficial da Google Play respondeu com HTTP 200. O MP4 promocional passou a descodificação integral com FFmpeg.
+- O conjunto de testes Playwright usa uma origem HTTPS efémera para abrir a página inicial, tocar na ligação do jogo, carregar a galeria, ler o kit ZIP e confirmar o URL de destino da Google Play. A resposta da loja é simulada neste percurso para manter o teste independente da rede.
+- A Oficina Web foi testada com o exemplo, alteração da pontuação, persistência após recarregar e exportação do HTML.
+- Continuam pendentes a reprodução do vídeo, a instalação nativa da PWA e a revisão com leitores de ecrã em Android e iPhone físicos.

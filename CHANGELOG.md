@@ -30,3 +30,10 @@
 - V37 — curso prático de SQL com três lições, exercícios, classificação de torneio e questionário com progresso independente de Python.
 - V39 — política CSP no HTML e verificação no navegador de que os percursos do site funcionam sob a política.
 - V40 — versões WebP mais leves para ecrãs estreitos, registo offline adiado até ao carregamento e CI em Chromium e WebKit.
+
+### Portal, imprensa e Oficina Web
+
+- Galeria PT/EN logo após a apresentação de O Curioso. As miniaturas carregam versões leves e abrem as capturas originais.
+- Novo kit de imprensa com ficha bilingue, logótipo e imagens da ficha da Google Play.
+- Oficina Web com três desafios, editor, pré-visualização, rascunho local e exportação de HTML.
+- Teste em pré-produção HTTPS temporária para o percurso até à Google Play, com perfis móveis dos dois motores de navegador.
