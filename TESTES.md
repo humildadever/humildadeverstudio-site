@@ -82,3 +82,7 @@ A revisão `e3879f3` passou em [Node, Chromium e WebKit](https://github.com/humi
 ## Galeria offline de O Curioso
 
 Na revisão `4067139`, [Chromium e WebKit](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44738559962) abriram a galeria offline em português e inglês. O teste confirmou a imagem reduzida de 320 px, a mensagem no respetivo idioma, a navegação com as setas e o regresso do foco à miniatura com Escape. Em pré-produção HTTPS, o teste em ecrã móvel confirmou a abertura da imagem original e a continuação para a Google Play. Os testes locais passaram 12/12.
+
+## Catálogo partilhável e galeria tátil
+
+A revisão `9dedbc0` passou 13/13 nos testes locais. Estes verificam a pesquisa por vários termos, o restauro de filtros, a rejeição de valores desconhecidos e a limpeza da pesquisa. O teste de navegação abre offline uma ligação filtrada para a Academia, confirma o endereço no campo de partilha e segue para os percursos. Em pré-produção HTTPS, o teste simula gestos horizontais, verifica a posição da captura e abre o original. Consulta os resultados de Chromium e WebKit no [GitHub Actions](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44783849610).

@@ -3,10 +3,10 @@
 - Repositório `humildadever/humildadeverstudio-site`
 - Branch `dev/v31-evolucao-total`
 - Base da sessão `3d7ff55`
-- Revisão funcional testada `4067139`
+- Revisão funcional testada `9dedbc0`
 
 1. Obter o HEAD remoto e ler [ROADMAP.md](ROADMAP.md), [PROGRESSO.md](PROGRESSO.md), [CHANGELOG.md](CHANGELOG.md), [TESTES.md](TESTES.md), [PENDENCIAS.md](PENDENCIAS.md), [ARQUITETURA.md](ARQUITETURA.md) e [DEPLOY.md](DEPLOY.md).
-2. Consultar a [execução 44738559962](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44738559962) para a galeria offline PT/EN, o percurso HTTPS móvel e a Oficina Web. Distinguir a revisão funcional validada dos commits posteriores de documentação.
+2. Consultar a [execução 44783849610](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44783849610) para o catálogo partilhável, a galeria e o percurso HTTPS móvel. Distinguir a revisão funcional validada dos commits posteriores de documentação.
 3. Validar Android e iPhone físicos numa origem de pré-produção. Procurar um clipe aprovado de jogabilidade. A galeria e o novo kit estão no portal PT/EN e a Academia já tem a Oficina Web.
 4. Resolver os blocos de comunidade, loja e administração quando os serviços estiverem configurados. Os contratos e as regras de autorização descritos no projeto orientam a integração.
 5. Preservar `app-ads.txt`, `CNAME`, os ficheiros legais e a separação entre projetos. A revisão de produção exige autorização.
@@ -24,3 +24,5 @@
 A entrada da Academia fica em `academia-cursos.html`. O percurso Web inclui feedback, progresso local e um projeto exportável com temporizador e reinício.
 
 A entrada da Academia resume a validação dos três percursos com os dados locais existentes. O card Web também permite retomar um rascunho antes de concluir o primeiro desafio.
+
+O catálogo restaura a pesquisa e os filtros a partir do URL. A Academia está disponível na categoria Educação. A galeria funciona com botões, teclado e gestos táteis.
