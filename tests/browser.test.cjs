@@ -69,6 +69,10 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       assert.match(await page.locator('#nota').textContent(), /^3\/3/);
       await page.reload();
       assert.match(await page.locator('#progresso').textContent(), /Melhor resultado 3\/3/);
+      await page.getByRole('link', { name: 'Todos os percursos' }).click();
+      assert.match(await page.locator('#progresso-cursos').textContent(), /^1 de 3 /);
+      await page.getByRole('link', { name: 'Rever SQL' }).click();
+      await page.waitForURL(origin + '/academia-sql.html#quiz');
       await page.goto(origin + '/novidades-en.html');
       await page.getByRole('link', { name: 'Português' }).click();
       assert.equal(await page.getByRole('heading', { name: 'Novidades do estúdio' }).isVisible(), true);

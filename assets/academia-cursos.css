@@ -37,3 +37,7 @@
 @media (max-width: 700px) {
   .academia-hero { grid-template-columns: minmax(0, 1fr); }
 }
+
+.curso-progresso { margin-bottom: 16px; }
+.academia-percursos .curso-progresso p { color: #d0e4f7; font-size: .9rem; margin: 0 0 4px; }
+.curso-progresso progress { display: block; width: 100%; height: .65rem; accent-color: #ffdb67; }

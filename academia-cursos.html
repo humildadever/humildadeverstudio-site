@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/portal.css">
   <link rel="stylesheet" href="assets/academia-cursos.css">
   <script src="assets/pwa.js" defer></script>
+  <script src="assets/academia-cursos.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
@@ -37,23 +38,36 @@
   </header>
   <section id="percursos">
     <h2>Escolhe o teu projeto</h2>
+    <p id="progresso-cursos" class="small" hidden></p>
     <div class="grid academia-percursos">
-      <article class="panel">
+      <article class="panel" data-curso="web">
         <p class="academia-linguagem">HTML / CSS / JavaScript</p>
         <h3>Oficina Web</h3>
         <p>Edita o código no navegador, valida três desafios e exporta um minijogo com temporizador.</p>
+        <div class="curso-progresso" hidden>
+          <p id="progresso-web"></p>
+          <progress max="3" value="0" aria-label="Progresso de Oficina Web" aria-describedby="progresso-web"></progress>
+        </div>
         <a class="action" href="academia-web.html">Abrir a Oficina Web</a>
       </article>
-      <article class="panel">
+      <article class="panel" data-curso="python">
         <p class="academia-linguagem">Python</p>
         <h3>Contador de moedas</h3>
         <p>Pratica variáveis, condições e ciclos com um contador de pontuação para um jogo.</p>
+        <div class="curso-progresso" hidden>
+          <p id="progresso-python"></p>
+          <progress max="3" value="0" aria-label="Progresso de Contador de moedas" aria-describedby="progresso-python"></progress>
+        </div>
         <a class="action" href="academia.html">Iniciar o curso de Python</a>
       </article>
-      <article class="panel">
+      <article class="panel" data-curso="sql">
         <p class="academia-linguagem">SQL</p>
         <h3>Tabela classificativa</h3>
         <p>Filtra, agrupa e ordena resultados para construir a classificação de um torneio.</p>
+        <div class="curso-progresso" hidden>
+          <p id="progresso-sql"></p>
+          <progress max="3" value="0" aria-label="Progresso de Tabela classificativa" aria-describedby="progresso-sql"></progress>
+        </div>
         <a class="action" href="academia-sql.html">Iniciar o curso de SQL</a>
       </article>
     </div>

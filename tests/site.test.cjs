@@ -183,6 +183,40 @@ test('Catálogo: pesquisa sem acentos, filtros combinados e favoritos locais', (
   window.close();
 });
 
+test('Academia: resumo e retoma a partir dos dados existentes', () => {
+  const { window } = loadInteractive('academia-cursos.html', 'assets/academia-cursos.js', {
+    storage: {
+      'hv-academia-web-progresso-v1': '["html","html","css","extra"]',
+      'hv-academia-python-basico-v1': '9',
+      'hv-academia-sql-basico-v1': '3'
+    }
+  });
+  try {
+    const { document } = window;
+    const curso = id => document.querySelector(`[data-curso="${id}"]`);
+    const link = id => curso(id).querySelector('a');
+    assert.equal(curso('web').querySelector('progress').value, 2);
+    assert.equal(curso('python').querySelector('progress').value, 0);
+    assert.equal(link('web').textContent, 'Retomar a Oficina Web');
+    assert.equal(link('web').getAttribute('href'), 'academia-web.html#desafios');
+    assert.equal(link('python').getAttribute('href'), 'academia.html');
+    assert.equal(link('sql').textContent, 'Rever SQL');
+    assert.equal(link('sql').getAttribute('href'), 'academia-sql.html#quiz');
+    assert.match(document.querySelector('#progresso-cursos').textContent, /^1 de 3 /);
+
+    window.localStorage.setItem('hv-academia-python-basico-v1', '2');
+    window.localStorage.setItem('hv-academia-web-progresso-v1', 'não é JSON');
+    window.localStorage.setItem('hv-academia-web-v1', '{"html":"<p>rascunho</p>","css":"","js":""}');
+    window.dispatchEvent(new window.Event('pageshow'));
+    assert.equal(curso('web').querySelector('progress').value, 0);
+    assert.equal(link('web').textContent, 'Retomar a Oficina Web');
+    assert.equal(link('python').textContent, 'Retomar Python');
+    assert.equal(link('python').getAttribute('href'), 'academia.html#quiz');
+  } finally {
+    window.close();
+  }
+});
+
 test('Academia: correção dos dois questionários e progresso independente', () => {
   const pythonKey = 'hv-academia-python-basico-v1';
   const sqlKey = 'hv-academia-sql-basico-v1';
