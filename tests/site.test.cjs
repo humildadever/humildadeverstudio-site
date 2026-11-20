@@ -210,6 +210,19 @@ test('Academia: correção dos dois questionários e progresso independente', ()
   }
 });
 
+test('Oficina Web: o hash CSP corresponde ao script do quadro isolado', () => {
+  const { createHash } = require('node:crypto');
+  const { Script } = require('node:vm');
+  const dom = parsePage('academia-web-preview.html');
+  const doc = dom.window.document;
+  const source = doc.querySelector('script').textContent;
+  assert.doesNotThrow(() => new Script(source));
+  const hash = createHash('sha256').update(source).digest('base64');
+  const policy = doc.querySelector('meta[http-equiv="Content-Security-Policy"]').content;
+  assert.ok(policy.includes(`script-src 'sha256-${hash}' blob:`));
+  dom.window.close();
+});
+
 test('PWA: cache público, fallback offline e exclusão de ficheiros técnicos', async () => {
   const vm = require('node:vm');
   const scope = origin + '/preview/';
