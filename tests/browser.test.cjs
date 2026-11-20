@@ -94,6 +94,12 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       assert.match(await page.locator('#progresso-cursos').textContent(), /^1 de 3 /);
       await page.getByRole('link', { name: 'Rever SQL' }).click();
       await page.waitForURL(origin + '/academia-sql.html#quiz');
+      await page.goto(origin + '/apps.html?q=academia+sql&categoria=educacao&plataforma=web');
+      assert.equal(await page.locator('[data-project]:not([hidden])').count(), 1);
+      await page.getByText('Partilhar filtros do catálogo', { exact: true }).click();
+      assert.match(await page.getByLabel('Ligação do catálogo').inputValue(), /q=academia\+sql/);
+      await page.getByRole('link', { name: 'Escolher um percurso' }).click();
+      await page.waitForURL(origin + '/academia-cursos.html');
       await page.goto(origin + '/novidades-en.html');
       await page.getByRole('link', { name: 'Português' }).click();
       assert.equal(await page.getByRole('heading', { name: 'Novidades do estúdio' }).isVisible(), true);
@@ -137,6 +143,20 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       await firstImage.scrollIntoViewIfNeeded();
       await page.waitForFunction(() => document.querySelector('#capturas img').naturalWidth > 0);
       await firstImage.tap();
+      const viewer = page.locator('dialog[open] .galeria-imagem');
+      async function swipe(start, end) {
+        await viewer.evaluate((element, [initial, final]) => {
+          for (const [type, field, x] of [['touchstart', 'touches', initial], ['touchend', 'changedTouches', final]]) {
+            const event = new Event(type, { bubbles: true });
+            Object.defineProperty(event, field, { value: [{ identifier: 1, clientX: x, clientY: 50 }] });
+            element.dispatchEvent(event);
+          }
+        }, [start, end]);
+      }
+      await swipe(130, 50);
+      await page.getByRole('dialog', { name: 'Nível 33', exact: true }).waitFor();
+      assert.equal(await page.locator('dialog[open] .galeria-posicao').textContent(), '2 / 5');
+      await swipe(50, 130);
       const dialog = page.getByRole('dialog', { name: 'Nível 1', exact: true });
       const original = dialog.getByRole('link', { name: 'Abrir imagem original', exact: true });
       await original.waitFor();

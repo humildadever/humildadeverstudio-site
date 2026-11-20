@@ -26,7 +26,7 @@
   <div id="filtros" class="filters" hidden>
     <label>Pesquisar <input type="search" id="pesquisa" placeholder="Nome ou descrição"></label>
     <label>Categoria
-      <select id="categoria"><option value="">Todas</option><option value="jogos">Jogos</option><option value="plataforma">Plataformas</option></select>
+      <select id="categoria"><option value="">Todas</option><option value="jogos">Jogos</option><option value="plataforma">Plataformas</option><option value="educacao">Educação</option></select>
     </label>
     <label>Plataforma
       <select id="plataforma"><option value="">Todas</option><option value="android">Android</option><option value="web">Web / PWA</option></select>
@@ -38,13 +38,22 @@
     <button type="button" id="limpar">Limpar filtros</button>
   </div>
   <p role="status" id="resultados" hidden></p>
+  <details id="partilhar-filtros" hidden>
+    <summary>Partilhar filtros do catálogo</summary>
+    <label for="ligacao-filtros">Ligação do catálogo</label>
+    <div class="actions catalogo-partilha">
+      <input id="ligacao-filtros" type="url" readonly>
+      <button id="copiar-filtros" type="button">Copiar ligação</button>
+    </div>
+    <p id="estado-partilha" role="status"></p>
+  </details>
   <div class="grid" id="projetos">
     <article class="panel project" data-project="o-curioso" data-category="jogos" data-platform="android" data-status="publicado">
       <img src="assets/curioso-card-premium.webp" width="465" height="375" alt="" loading="lazy" decoding="async">
       <h2>O Curioso e o Reino das Gargalhadas</h2>
       <p class="small">Jogo · Android · Publicado</p>
       <p>Um jogo de plataformas 2D em que O Curioso atravessa seis mundos para recuperar a Grande Gargalhada.</p>
-      <div class="actions"><a class="action primary" href="o-curioso.html">Página do jogo</a><button class="action favorite" type="button" hidden>Favorito</button></div>
+      <div class="actions"><a class="action primary" href="https://play.google.com/store/apps/details?id=com.humildadever.ocurioso">Descarregar na Google Play</a><a class="action" href="o-curioso.html">Página do jogo</a><button class="action favorite" type="button" hidden>Favorito</button></div>
     </article>
     <article class="panel project" data-project="universe" data-category="plataforma" data-platform="web" data-status="desenvolvimento">
       <h2>Humildadever 1000 Apps Universe</h2>
@@ -52,6 +61,12 @@
       <p>Projeto independente da Humildadever Studio para reunir aplicações web que podem funcionar de forma autónoma.</p>
       <p class="small">O acesso público será anunciado através das novidades do estúdio.</p>
       <div class="actions"><a class="action" href="universe.html">Página do projeto</a><button class="action favorite" type="button" hidden>Favorito</button></div>
+    </article>
+    <article class="panel project" data-project="academia" data-category="educacao" data-platform="web" data-status="publicado">
+      <h2>Academia Humildadever</h2>
+      <p class="small">Educação · Web / PWA · Disponível neste site</p>
+      <p>Aprende com a Oficina Web, o contador de moedas em Python ou a tabela classificativa em SQL.</p>
+      <div class="actions"><a class="action" href="academia-cursos.html">Escolher um percurso</a><button class="action favorite" type="button" hidden>Favorito</button></div>
     </article>
   </div>
 </main>

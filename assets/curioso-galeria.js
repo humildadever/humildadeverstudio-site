@@ -7,10 +7,12 @@ if (typeof quadro.showModal === 'function') {
   const ligacoes = [...galeria.querySelectorAll('.game-gallery figure a')];
   const titulo = quadro.querySelector('#galeria-titulo');
   const imagem = quadro.querySelector('.galeria-imagem');
+  const contador = quadro.querySelector('.galeria-posicao');
   const estado = quadro.querySelector('.galeria-estado');
   const original = quadro.querySelector('[data-galeria-original]');
   let posicao = 0;
   let origem;
+  let toque;
 
   function mostrar(indice) {
     posicao = (indice + ligacoes.length) % ligacoes.length;
@@ -20,6 +22,7 @@ if (typeof quadro.showModal === 'function') {
     let reduzida = false;
 
     titulo.textContent = link.closest('figure').querySelector('figcaption').textContent;
+    contador.textContent = `${posicao + 1} / ${ligacoes.length}`;
     ampliada.alt = miniatura.alt;
     estado.textContent = quadro.dataset.loading;
     original.href = link.href;
@@ -64,7 +67,20 @@ if (typeof quadro.showModal === 'function') {
     evento.preventDefault();
     mostrar(posicao + (evento.key === 'ArrowLeft' ? -1 : 1));
   });
+  imagem.addEventListener('touchstart', evento => {
+    toque = evento.touches.length === 1 ? evento.touches[0] : undefined;
+  }, { passive: true });
+  imagem.addEventListener('touchcancel', () => { toque = undefined; }, { passive: true });
+  imagem.addEventListener('touchend', evento => {
+    const fim = Array.from(evento.changedTouches).find(ponto => ponto.identifier === toque?.identifier);
+    if (!fim) return;
+    const dx = fim.clientX - toque.clientX;
+    const dy = fim.clientY - toque.clientY;
+    toque = undefined;
+    if (Math.abs(dx) >= 48 && Math.abs(dx) > Math.abs(dy) * 1.5) mostrar(posicao + (dx < 0 ? 1 : -1));
+  }, { passive: true });
   quadro.addEventListener('close', () => {
+    toque = undefined;
     imagem.replaceChildren();
     origem?.focus();
   });

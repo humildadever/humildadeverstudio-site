@@ -95,3 +95,21 @@ summary { min-height: 44px; display: list-item; padding-block: 9px; }
 .galeria-estado { margin-block: 8px; }
 .galeria-estado:empty { margin-block: 0; }
 .galeria-barra:last-child { margin-top: 12px; }
+
+.galeria-imagem { touch-action: pan-y pinch-zoom; }
+.galeria-posicao { margin-block: 8px 0; color: #c4dbeb; }
+.catalogo-partilha { margin-block-start: 8px; }
+.catalogo-partilha input {
+  flex: 1 1 16rem;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #6398bb;
+  border-radius: 9px;
+  background: #123757;
+  color: #f2f8ff;
+  font: inherit;
+}
+#partilhar-filtros { margin-bottom: 18px; }
+#estado-partilha:empty { margin: 0; }

@@ -2,7 +2,7 @@
 
 const base = self.registration.scope;
 const prefix = 'humildadever-site:';
-const version = prefix + '16';
+const version = prefix + '17';
 const pages = [
   'index.html', 'apps.html', 'universe.html', 'academia.html', 'academia-sql.html',
   'academia-cursos.html', 'academia-web.html', 'academia-web-preview.html', 'o-curioso.html',

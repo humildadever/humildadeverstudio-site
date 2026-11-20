@@ -174,13 +174,36 @@ test('Catálogo: pesquisa sem acentos, filtros combinados e favoritos locais', (
   assert.deepEqual(visible(), []);
   document.getElementById('limpar').click();
   assert.equal(platform.value, '');
-  assert.deepEqual(visible(), ['o-curioso', 'universe']);
+  assert.deepEqual(visible(), ['o-curioso', 'universe', 'academia']);
   document.getElementById('so-favoritos').click();
   assert.deepEqual(visible(), ['universe']);
   document.querySelector('[data-project="universe"] button').click();
   assert.deepEqual(visible(), []);
   assert.equal(window.localStorage.getItem('hv-catalog-favorites'), '[]');
   window.close();
+});
+
+test('Catálogo: ligações partilháveis e pesquisa com várias palavras', () => {
+  const { window } = loadInteractive('apps.html', 'assets/catalogo.js');
+  try {
+    const { document } = window;
+    window.history.replaceState(null, '', '?q=sql+programa&categoria=educacao&plataforma=web&estado=invalid&utm_source=teste');
+    window.dispatchEvent(new window.Event('popstate'));
+    const search = document.getElementById('pesquisa');
+    search.value = 'sql academia';
+    search.dispatchEvent(new window.Event('input', { bubbles: true }));
+    const visible = () => [...document.querySelectorAll('[data-project]:not([hidden])')].map(card => card.dataset.project);
+    assert.deepEqual(visible(), ['academia']);
+    assert.equal(document.getElementById('estado').value, '');
+    assert.match(window.location.search, /utm_source=teste/);
+    assert.equal(new URL(document.getElementById('ligacao-filtros').value).search,
+      '?q=sql+academia&categoria=educacao&plataforma=web');
+    document.getElementById('limpar').click();
+    assert.equal(window.location.search, '?utm_source=teste');
+    assert.deepEqual(visible(), ['o-curioso', 'universe', 'academia']);
+  } finally {
+    window.close();
+  }
 });
 
 test('Academia: resumo e retoma a partir dos dados existentes', () => {
