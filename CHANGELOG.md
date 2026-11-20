@@ -38,3 +38,9 @@
 - Oficina Web com três desafios, editor, pré-visualização, rascunho local e exportação de HTML.
 - Teste em pré-produção HTTPS temporária para o percurso até à Google Play, com perfis móveis dos dois motores de navegador.
 - A inicialização da oficina foi corrigida na revisão manual de Chrome. O quadro carrega o script inicial a partir do HTML, com hash CSP verificado no Node.
+
+### Academia Humildadever
+
+- Nova página de entrada para os percursos Web, Python e SQL, com ligações a partir do início e das páginas dos cursos.
+- A Oficina Web ganhou feedback para os três desafios, progresso local e um projeto final com pontuação, temporizador, reinício e exportação HTML.
+- A verificação móvel em HTTPS passou a incluir a abertura da captura original do tutorial.

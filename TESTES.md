@@ -68,3 +68,9 @@ Revisão funcional `3aabb06`. [GitHub Actions 44723170777](https://github.com/hu
 Na revisão `07e13f5`, o Node passou 11/11 verificações, incluindo a verificação do hash CSP. A revisão manual em Chrome encontrou o quadro vazio na pré-visualização e confirmou que a correção apresenta o minijogo e incrementa o contador.
 
 A [execução 44724379855](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44724379855) confirmou Node 11/11, Chromium 10/10 e WebKit 9/9 para essa revisão. Num ecrã de 390 × 844, a página inicial transferiu 189 481 bytes e o portal 166 479 bytes em recursos locais.
+
+## Academia e Oficina Web guiada
+
+A revisão `d088226` passou em Node, Chromium e WebKit na [execução 44731629574](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44731629574). Os testes abrangem a entrada da Academia offline, feedback e validação dos três desafios, conservação do progresso, exportação, fim do tempo e reinício do projeto final. A verificação móvel em HTTPS inclui abrir a imagem original na galeria e seguir o destino da Google Play em perfis emulados.
+
+A confirmação manual em Chrome validou a navegação até à Oficina e a recuperação do progresso dos três desafios. Os ensaios com dispositivos físicos e a gravação aprovada de jogabilidade continuam pendentes.
