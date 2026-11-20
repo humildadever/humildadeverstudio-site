@@ -56,6 +56,27 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       await page.goto(origin);
       await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller), null, { timeout: 10000 });
       await context.setOffline(true);
+      for (const { file, fallback, title, nextTitle } of [
+        { file: 'o-curioso.html', fallback: 'Imagem original indisponível. A mostrar a versão reduzida.',
+          title: 'Nível 1', nextTitle: 'Nível 33' },
+        { file: 'o-curioso-en.html', fallback: 'Full-size image unavailable. Showing the smaller version.',
+          title: 'Level 1', nextTitle: 'Level 33' }
+      ]) {
+        await page.goto(origin + '/' + file);
+        const link = page.locator('#capturas figure a').first();
+        await link.click();
+        const dialog = page.getByRole('dialog');
+        await dialog.getByRole('heading', { name: title, exact: true }).waitFor();
+        await dialog.getByText(fallback, { exact: true }).waitFor();
+        assert.equal(await dialog.locator('.galeria-imagem img').evaluate(img => img.naturalWidth), 320);
+        assert.equal(await dialog.locator('[data-galeria-original]').isVisible(), false);
+        await page.keyboard.press('ArrowRight');
+        await dialog.getByRole('heading', { name: nextTitle, exact: true }).waitFor();
+        await dialog.getByText(fallback, { exact: true }).waitFor();
+        await page.keyboard.press('Escape');
+        await dialog.waitFor({ state: 'hidden' });
+        await page.waitForFunction(() => document.activeElement === document.querySelector('#capturas figure a'));
+      }
       await page.goto(origin + '/academia-cursos.html');
       assert.equal(await page.locator('#percursos article').count(), 3);
       await page.getByRole('link', { name: 'Iniciar o curso de Python' }).click();
@@ -116,8 +137,15 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       await firstImage.scrollIntoViewIfNeeded();
       await page.waitForFunction(() => document.querySelector('#capturas img').naturalWidth > 0);
       await firstImage.tap();
+      const dialog = page.getByRole('dialog', { name: 'Nível 1', exact: true });
+      const original = dialog.getByRole('link', { name: 'Abrir imagem original', exact: true });
+      await original.waitFor();
+      assert.ok(await dialog.locator('.galeria-imagem img').evaluate(img => img.naturalWidth > 320));
+      await original.tap();
       await page.waitForURL(secureOrigin + '/assets/captura-curioso-2.webp');
       await page.goBack();
+      const close = page.getByRole('button', { name: 'Fechar', exact: true });
+      if (await close.isVisible()) await close.tap();
       const archive = await context.request.get(secureOrigin + '/press-kit-curioso.zip');
       assert.ok(archive.ok());
       assert.equal((await archive.body()).subarray(0, 2).toString(), 'PK');

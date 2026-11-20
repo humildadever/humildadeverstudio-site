@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="assets/portal.css">
   <link rel="manifest" href="manifest.webmanifest">
   <script src="assets/pwa.js" defer></script>
+  <script src="assets/curioso-galeria.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Skip to content</a>
@@ -46,6 +47,20 @@
       <figure class="panel"><a href="assets/captura-curioso-3.webp"><img src="assets/captura-curioso-3-320.webp" width="320" height="180" alt="O Curioso in an icy landscape with clouds and snowy platforms." loading="lazy" decoding="async"></a><figcaption>Level 140</figcaption></figure>
       <figure class="panel"><a href="assets/captura-curioso-5.webp"><img src="assets/captura-curioso-5-320.webp" width="320" height="145" alt="The main menu with Diwali decorations and game options." loading="lazy" decoding="async"></a><figcaption>Diwali menu</figcaption></figure>
     </div>
+    <dialog class="galeria-ampliada" aria-labelledby="galeria-titulo"
+      data-loading="Loading image…" data-fallback="Full-size image unavailable. Showing the smaller version." data-error="Image unavailable.">
+      <header class="galeria-barra">
+        <h3 id="galeria-titulo">Game screenshot</h3>
+        <button type="button" data-galeria-fechar autofocus>Close</button>
+      </header>
+      <div class="galeria-imagem"></div>
+      <p class="galeria-estado" role="status"></p>
+      <div class="actions galeria-barra">
+        <button type="button" data-galeria-anterior>Previous</button>
+        <button type="button" data-galeria-seguinte>Next</button>
+        <a class="action" data-galeria-original hidden>Open original image</a>
+      </div>
+    </dialog>
   </section>
   <section id="mundos">
     <h2>Explore the six worlds</h2>

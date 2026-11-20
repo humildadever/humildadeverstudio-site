@@ -295,6 +295,11 @@ test('PWA: cache público, fallback offline e exclusão de ficheiros técnicos',
   assert.equal(await intercept(scope + 'academia-sql.html'), scope + 'academia-sql.html');
   assert.equal(await intercept(scope + 'privacidade.html'), scope + 'offline.html');
   assert.equal(await intercept(scope + 'assets/portal.css', 'cors'), scope + 'assets/portal.css');
+  for (let i = 1; i <= 5; i += 1) {
+    const thumbnail = scope + `assets/captura-curioso-${i}-320.webp`;
+    assert.equal(await intercept(thumbnail, 'cors'), thumbnail);
+    assert.equal(intercept(scope + `assets/captura-curioso-${i}.webp`, 'cors'), undefined);
+  }
   for (const file of ['app-ads.txt', 'CNAME', 'api/v1/me', 'press-kit.zip', 'press-kit-curioso.zip', 'assets/trailer-curioso.mp4']) {
     assert.equal(intercept(scope + file), undefined, file);
   }
