@@ -19,7 +19,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .site-nav a, .site-footer a { padding-block: 6px; }
 .site-nav .studio { display: inline-flex; align-items: center; gap: 10px; margin-inline-end: auto; color: #f2f8ff; font-weight: 750; text-decoration: none; }
 .site-footer { border-top: 1px solid #365574; }
-.portal-hero { display: grid; align-items: center; grid-template-columns: 1.1fr 1fr; gap: 26px; }
+.portal-hero { display: grid; align-items: center; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 26px; }
 .portal-hero img, .world img, video { display: block; max-width: 100%; width: 100%; height: auto; border-radius: 16px; }
 h1 { font-size: clamp(2.15rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -.04em; margin: 8px 0 16px; color: #ffdb67; }
 h2 { line-height: 1.2; }
@@ -37,7 +37,7 @@ summary { cursor: pointer; font-weight: 750; min-height: 32px; }
 video { max-width: 720px; margin-block: 14px; background: #020a16; }
 [hidden] { display: none !important; }
 @media (max-width: 700px) {
-  .portal-hero { grid-template-columns: 1fr; gap: 16px; }
+  .portal-hero { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 }
 
 .filters { display: flex; flex-wrap: wrap; gap: 14px; align-items: end; margin-block: 24px; }
@@ -74,6 +74,6 @@ summary { min-height: 44px; display: list-item; padding-block: 9px; }
   }
 }
 
-.game-gallery figure { margin: 0; }
-.game-gallery img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.game-gallery figure { margin: 0; min-width: 0; }
+.game-gallery img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 8px; }
 .game-gallery figcaption { margin-block-start: 8px; }

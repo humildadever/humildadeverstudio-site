@@ -179,7 +179,7 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
             if (document.documentElement.scrollWidth <= innerWidth) return [];
             const elements = [...document.querySelectorAll('body *')]
               .filter(el => el.getBoundingClientRect().right > innerWidth)
-              .map(el => el.id || el.className || el.tagName).slice(0, 12);
+              .map(el => el.id || el.className || el.getAttribute('src') || el.tagName).slice(0, 12);
             return [document.documentElement.scrollWidth, ...elements];
           });
           assert.deepEqual(overflow, [], file || 'index.html');
