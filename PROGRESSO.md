@@ -1,10 +1,9 @@
 # Progresso da Operação Evolução Total
 
-- Branch: `dev/v31-evolucao-total`
-- Versão atual de trabalho: V31–V40, com entregas parciais testadas
-- Ponto de partida confirmado: `731f142`
-- Último commit funcional nesta sessão: `75fced5`
-- Progresso por versões com todos os critérios cumpridos: **0/10 (0%)**. Este indicador mede versões fechadas. As entregas implementadas e as pendências por versão estão discriminadas em [ROADMAP.md](ROADMAP.md).
-- Suíte Node: **10/10 (100%)**. Chromium passou em quatro larguras e no percurso offline. O axe passou nas seis páginas, com os dois temas verificados na página inicial. Resultados em [TESTES.md](TESTES.md).
-- Bloqueios: media e notas de versão reais do jogo, validação em dispositivos e configuração de infraestrutura para contas, newsletter, pagamentos e administração.
-- Próxima tarefa: testar em Safari/iPhone e Android físicos e medir desempenho em pré-produção.
+- Branch `dev/v31-evolucao-total`
+- Base da sessão `3d7ff55`
+- Último commit funcional validado `ba1e34a`
+- V31–V40 com entregas parciais. **0/10 (0%)** das versões cumpriram todos os critérios de encerramento. As funcionalidades verificadas e pendências estão no [roadmap](ROADMAP.md).
+- Node 10/10, Chromium 8/8, WebKit 7/7 e SQLite 5/5. Consulta os resultados em [TESTES.md](TESTES.md).
+- Próxima tarefa independente. Aprofundar o curso seguinte da Academia e preparar a atualização do kit de imprensa a partir da ficha atual. Para concluir a candidata, faltam testes em Android e iPhone reais, pré-produção HTTPS e revisão manual de acessibilidade.
+- Contas, administração, newsletter e pagamentos dependem de infraestrutura autorizada. As compras Android têm integração própria.

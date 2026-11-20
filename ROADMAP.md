@@ -1,22 +1,16 @@
-# Operação Evolução Total V31–V40
-
-Objetivo: executar as 100 melhorias do Prompt Mestre do proprietário por fases. V31: visual, acessibilidade, preferências; V32: portal O Curioso; V33: catálogo; V34: comunidade; V35: marketing; V36: loja; V37: academia; V38: administração; V39: segurança; V40: desempenho e lançamento.
-
-Critério: funcionalidade apenas concluída após implementação e verificação. Publicação requer revisão. Nunca alterar app-ads.txt ou CNAME sem validação.
-
-## Execução do Prompt Mestre V41.0
+# Operação Evolução Total V31–V50
 
 | Versão | Entregue na branch | Para concluir |
 | --- | --- | --- |
-| V31 | Página inicial responsiva, menu, foco, tema, redução de movimento e logótipo otimizado | Validação em dispositivos físicos, auditoria e correções |
-| V32 | Portal PT/EN, seis mundos, vídeo promocional, FAQ, apoio e imprensa | Capturas reais, galeria de personagens documentadas e histórico de versões do jogo |
-| V33 | Catálogo com pesquisa, filtros, favoritos locais e integração informativa do Universe | Páginas e materiais dos restantes projetos quando verificados |
-| V34 | Contrato de API para comunidade | Backend, identidade, moderação, dados e integração |
-| V35 | Novidades, diário, imprensa e metadados | Newsletter, campanhas, calendário confirmado e notícias em inglês |
-| V36 | Documentação do produto Android e dependências da loja | Configuração comercial, backend e integração Android no repositório respetivo |
-| V37 | Módulo de Python com exercícios, projeto e questionário | Restantes cursos, conquistas e certificados próprios |
-| V38 | Requisitos de autorização documentados no contrato da comunidade | Backend e painel administrativo funcional |
-| V39 | Auditoria axe, verificação das dependências e HTTPS | Auditoria manual WCAG, segurança, retenção, consentimento e cabeçalhos |
-| V40 | CI, sitemap, manifesto e cache offline delimitada | Avaliar desempenho, concluir pré-produção e testar instalação nos dispositivos-alvo |
+| V31 | Início responsivo, tema, redução de movimento, alvos táteis e foco mantido na transição entre menu móvel e desktop | Validação em dispositivos físicos e auditoria manual |
+| V32 | Portal PT/EN, seis mundos, guia, chefes, cinco imagens da ficha Google Play, notas de lançamento, apoio e kit histórico | Galeria de personagens completa, vídeo de jogabilidade verificado e atualização do kit |
+| V33 | Pesquisa, estado, categoria, plataforma, favoritos locais e páginas de O Curioso e do Universe | Expandir com projetos e materiais verificados |
+| V34 | Canais públicos com estado de contas, fórum e beta, contrato de API | Infraestrutura de identidade, dados, moderação e privacidade |
+| V35 | Notícias e diário PT/EN, imprensa, metadados sociais e alternância de idioma | Newsletter com consentimento, calendário com datas confirmadas, campanhas e mais idiomas |
+| V36 | FAQ PT/EN sobre compra Android e documentação dos IDs fornecidos | Loja web, preços, apoio a compras e integração Android em projeto separado |
+| V37 | Cursos Python e SQL com lições, exercícios, projetos, questionários e progresso independente | Restantes áreas, biblioteca, conquistas e certificados próprios |
+| V38 | Responsabilidades e controlo de acesso descritos no contrato da comunidade | Serviço e painel com permissões e auditoria no servidor |
+| V39 | Política de segurança para páginas públicas novas, testes de navegador, auditoria axe, dependências e HTTPS | Cabeçalhos no alojamento, revisão de privacidade, auditoria WCAG manual e segurança de APIs quando existirem |
+| V40 | CI Chromium e WebKit, WebP responsivo, manifesto, modo offline parcial, sitemap e medição de peso em ecrã móvel | Pré-produção HTTPS, medição em rede móvel, instalação em dispositivos e revisão da candidata |
 
-V41–V50 avançam após os critérios de encerramento de V31–V40, com prioridade definida pelos testes e necessidades reais.
+V41–V50 arrancam quando os critérios das versões anteriores estiverem cumpridos. Os testes e as necessidades observadas determinam a ordem das melhorias.

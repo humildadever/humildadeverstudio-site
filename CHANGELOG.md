@@ -19,3 +19,14 @@
 
 ## 20 de novembro de 2026
 - V31 — aumentada a área mínima de interação dos elementos `summary` dos portais para 44 px e adicionada preferência CSS `prefers-reduced-motion` para animações, transições e deslocação suave. Alteração isolada em `assets/portal.css`, sem deploy.
+
+### Continuação da Operação Evolução Total
+
+- V31 — foco preservado quando a navegação muda de formato, contraste do foco em tema claro e alvos táteis maiores no cartaz e questionários.
+- V32 — cinco imagens da ficha oficial, guia e chefes detalhados, notas de lançamento verificáveis e correção de largura da galeria para tablets.
+- V33 — filtro por plataforma e página dedicada ao Universe.
+- V34/V36 — canais de comunidade com disponibilidade explícita e FAQ PT/EN para a compra de remoção de anúncios no Android.
+- V35 — edição em inglês das notícias, com ligação de idioma, metadados sociais e sitemap atualizado.
+- V37 — curso prático de SQL com três lições, exercícios, classificação de torneio e questionário com progresso independente de Python.
+- V39 — política CSP no HTML e verificação no navegador de que os percursos do site funcionam sob a política.
+- V40 — versões WebP mais leves para ecrãs estreitos, registo offline adiado até ao carregamento e CI em Chromium e WebKit.

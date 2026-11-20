@@ -21,3 +21,14 @@ A API é uma proposta de integração. O website estático ainda não disponibil
 O servidor deriva a identidade da sessão e verifica o acesso a cada objeto. Perfis não incluem endereços de email nas respostas públicas. XP e conquistas são atribuídos pelo servidor a partir de eventos deduplicados. Favoritos locais do catálogo ficam no dispositivo até existir uma opção explícita de sincronização.
 
 Antes de ativar a API, selecionar fornecedor de identidade e armazenamento, aplicar validação de dados e limites de frequência, definir regras de retenção e moderação, configurar MFA administrativo e testar autorização entre contas. Se a sessão usar cookies, aplicar cookies seguros e proteção CSRF nas operações que alterem dados. Responder com 401 sem sessão, 403 sem permissão, 422 com dados inválidos e 429 ao atingir limites. Registar ações administrativas sem escrever credenciais, tokens ou conteúdo sensível nos logs.
+
+## Autorização da administração
+
+| Permissão | Operações | Dados |
+| --- | --- | --- |
+| Edição de conteúdo | Gerir rascunhos de notícias, catálogos e lançamentos | Conteúdo editorial e histórico de versões |
+| Moderação | Consultar denúncias, decidir e reverter ações | Fila de moderação, conteúdo denunciado e motivo da decisão |
+| Apoio | Consultar e responder a pedidos atribuídos | Pedido, estado e dados de contacto necessários à resposta |
+| Administração | Gerir funções, configurações, relatórios e restauros | Dados estritamente necessários à operação, sujeita a MFA e auditoria |
+
+O servidor deve voltar a confirmar a permissão e o âmbito do recurso em cada pedido, incluindo exportações, restauros e alterações de função. O registo de auditoria deve identificar o ator, a ação, o recurso, a data e o resultado. Definir acesso, retenção e procedimentos de recuperação na infraestrutura escolhida antes de disponibilizar o painel.

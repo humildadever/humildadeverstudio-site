@@ -15,8 +15,11 @@ Abre [http://127.0.0.1:8080/](http://127.0.0.1:8080/). Os recursos públicos sã
 ```sh
 npm ci
 npm test
-npx playwright install chromium
+npx playwright install chromium webkit
 npm run test:browser
+SITE_TEST_BROWSER=webkit npm run test:browser
 ```
+
+Na Academia, [Python](academia.html) e [SQL](academia-sql.html) têm lições e questionários independentes.
 
 O GitHub Actions executa os testes da branch de desenvolvimento. Consulta [TESTES.md](TESTES.md) para resultados, [RETOMAR.md](RETOMAR.md) para continuidade e [DEPLOY.md](DEPLOY.md) para a revisão de publicação.

@@ -1,9 +1,10 @@
 # Arquitetura
 
-Site estático existente com HTML, CSS, JavaScript e assets. V31 adiciona assets/v31-premium.css e assets/v31-premium.js ligados em index.html. Preferências de apresentação guardadas localmente sem simular autenticação. Aplicações Android e Universe mantêm repositórios independentes.
+O website é estático. A página inicial usa `assets/home.css`, a camada de apresentação `assets/v31-premium.css` e o JavaScript de navegação e preferências `assets/v31-premium.js`. As restantes páginas partilham `assets/portal.css`.
 
-## Páginas públicas
-
-`index.html` mantém os conteúdos e as âncoras históricas. `o-curioso.html` e `o-curioso-en.html` são as páginas canónicas do jogo em português e inglês. `apps.html`, `novidades.html` e `academia.html` usam `assets/portal.css`. Pesquisa, favoritos e progresso de Python decorrem no navegador com dados locais. O contrato do futuro backend está em [COMUNIDADE-API.md](COMUNIDADE-API.md).
-
-`manifest.webmanifest` e `sw.js` disponibilizam navegação offline parcial. O service worker tenta primeiro a rede e usa uma lista fixa de páginas e recursos públicos como reserva. Vídeo, ZIP de imprensa, contador externo, API, CNAME e app-ads.txt ficam fora da cache. Os dados pessoais e comerciais exigem serviços autorizados.
+- O Curioso tem páginas canónicas em português e inglês, com ilustrações conceptuais e uma galeria de imagens da ficha oficial. As capturas são WebP com carregamento diferido.
+- O catálogo usa `assets/catalogo.js` para pesquisa e filtros, com favoritos guardados no dispositivo. O Universe tem uma página informativa. O código dos projetos Android e Universe fica nos respetivos repositórios.
+- A Academia partilha `assets/academia.js` pelos cursos Python e SQL. Cada curso declara as respostas e a sua chave de progresso. A correção e os resultados ficam no navegador.
+- A política CSP é declarada por página e restringe os recursos à origem do site. A página inicial permite também imagens do contador existente em `hits.sh`. O alojamento terá de fornecer diretivas que exigem cabeçalhos HTTP, como `frame-ancestors`. A política HTML foi aplicada à página inicial, portais e página offline. As páginas legais conservam a versão em uso.
+- O service worker regista-se após o carregamento inicial. A cache versionada inclui páginas públicas e imagens responsivas selecionadas. As capturas da ficha Google Play, o vídeo, o kit, APIs e ficheiros técnicos são pedidos à rede.
+- O pipeline testa a branch em Chromium e WebKit com um servidor HTTP efémero para cada execução. A proposta de serviços de identidade, dados e administração encontra-se no [contrato de API](COMUNIDADE-API.md).

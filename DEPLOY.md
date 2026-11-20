@@ -16,3 +16,10 @@
 - Na pré-produção, servir a raiz do site em HTTPS, confirmar o âmbito do service worker, descarregar o kit de imprensa, tocar o vídeo e executar um percurso completo em Android e iPhone.
 - Antes da publicação autorizada, comparar `app-ads.txt` e `CNAME` com a revisão em produção. Depois, verificar por HTTPS que `/app-ads.txt` tem estado 200 e corresponde exatamente ao ficheiro validado.
 - Ao alterar a lista de recursos offline ou preparar uma nova revisão para publicação, atualizar a versão da cache em `sw.js` e repetir o teste offline.
+
+## Validação da candidata
+
+- Usar o commit funcional aprovado em Chromium e WebKit. Abrir a revisão em localhost ou numa origem HTTPS isolada de produção. Confirmar os percursos PT/EN, a galeria, o modo offline e o acesso aos ficheiros técnicos.
+- As medições CI usam um servidor sem compressão e um ecrã de 390 × 844. Medir carregamento real e instalação numa origem de pré-produção com os cabeçalhos e a compressão do alojamento selecionado.
+- Confirmar os cabeçalhos HTTP apropriados nessa origem, incluindo uma decisão sobre `frame-ancestors`, que a política CSP declarada em HTML não consegue aplicar.
+- Verificar a integridade do ZIP e comparar `app-ads.txt`, `CNAME`, páginas legais e o kit histórico com o ponto de partida antes de aprovar a publicação.
