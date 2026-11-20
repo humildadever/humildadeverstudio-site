@@ -73,3 +73,7 @@ summary { min-height: 44px; display: list-item; padding-block: 9px; }
     transition-duration: 0.01ms !important;
   }
 }
+
+.game-gallery figure { margin: 0; }
+.game-gallery img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.game-gallery figcaption { margin-block-start: 8px; }

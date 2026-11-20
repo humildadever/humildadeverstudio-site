@@ -83,6 +83,8 @@ test('Portal: seis mundos, idiomas, material promocional e imprensa', () => {
     assert.ok(document.querySelector(`nav a[hreflang][href="${other}"]`));
     assert.ok(document.querySelector('video[controls][preload="none"]:not([autoplay])'));
     assert.ok(document.querySelector('a[download][href="press-kit.zip"]'));
+    assert.equal(document.querySelectorAll('#capturas figure img[loading="lazy"]').length, 5);
+    assert.ok(document.querySelector('#versoes time[datetime="2026-11-05"]'));
     dom.window.close();
   }
 });
