@@ -2,7 +2,7 @@
 
 const base = self.registration.scope;
 const prefix = 'humildadever-site:';
-const version = prefix + '6';
+const version = prefix + '7';
 const pages = [
   'index.html', 'apps.html', 'academia.html', 'academia-sql.html', 'o-curioso.html',
   'o-curioso-en.html', 'novidades.html', 'novidades-en.html', 'offline.html'
@@ -11,9 +11,10 @@ const assets = [
   'manifest.webmanifest', 'assets/pwa.js', 'assets/v31-premium.js',
   'assets/v31-premium.css', 'assets/v17-premium.css',
   'assets/portal.css', 'assets/catalogo.js', 'assets/academia.js',
-  'assets/logotipo-192.webp', 'assets/hero-castle-premium.webp',
+  'assets/logotipo-192.webp', 'assets/hero-castle-premium.webp', 'assets/hero-castle-premium-480.webp',
   'assets/curioso-card-premium.webp',
-  ...Array.from({ length: 6 }, (_, index) => `assets/mundo-0${index + 1}.webp`)
+  ...Array.from({ length: 6 }, (_, index) => index + 1)
+    .flatMap(world => [`assets/mundo-0${world}.webp`, `assets/mundo-0${world}-360.webp`])
 ];
 const urls = new Set(assets.map(path => new URL(path, base).href));
 const routes = new Map(pages.map(path => [new URL(path, base).pathname, new URL(path, base).href]));

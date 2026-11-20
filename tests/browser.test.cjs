@@ -9,6 +9,9 @@ const engine = process.env.SITE_TEST_BROWSER ?? 'chromium';
 assert.ok(Object.hasOwn(engines, engine), 'Motor de navegador inválido');
 const { AxeBuilder } = require('@axe-core/playwright');
 
+const pages = ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html',
+  'academia-sql.html', 'novidades.html', 'novidades-en.html'];
+
 const site = path.resolve(__dirname, '..');
 const types = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css',
@@ -50,6 +53,18 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       await context.setOffline(true);
       await page.goto(origin + '/academia.html');
       assert.equal(await page.getByRole('heading', { name: 'Academia Humildadever' }).isVisible(), true);
+      await page.getByRole('link', { name: 'Curso de SQL' }).click();
+      assert.equal(await page.getByRole('heading', { name: 'SQL para jogos' }).isVisible(), true);
+      for (const value of ['where', 'desc', 'having']) {
+        await page.locator(`#avaliacao input[value="${value}"]`).check();
+      }
+      await page.getByRole('button', { name: 'Ver resultado' }).click();
+      assert.match(await page.locator('#nota').textContent(), /^3\/3/);
+      await page.reload();
+      assert.match(await page.locator('#progresso').textContent(), /Melhor resultado 3\/3/);
+      await page.goto(origin + '/novidades-en.html');
+      await page.getByRole('link', { name: 'Português' }).click();
+      assert.equal(await page.getByRole('heading', { name: 'Novidades do estúdio' }).isVisible(), true);
       await page.goto(origin + '/privacidade.html');
       assert.equal(await page.getByRole('heading', { name: 'Sem ligação à internet' }).isVisible(), true);
     } finally {
@@ -74,9 +89,10 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
           ].filter(entry => new URL(entry.name).origin === location.origin)
             .map(entry => [new URL(entry.name).pathname, entry.encodedBodySize]));
           const bytes = resources.reduce((total, [, size]) => total + size, 0);
+          t.diagnostic(`${pagePath}: ${bytes} bytes de recursos locais concluídos ao medir após load`);
           assert.ok(bytes > 0 && bytes <= budget, `${pagePath}: ${bytes} / ${budget} bytes`);
           assert.ok(!resources.some(([url]) => /\.(mp4|zip)$/.test(url)), pagePath);
-          t.diagnostic(`${pagePath}: ${bytes} bytes até ao evento load (recursos locais)`);
+
         }
       } finally {
         await context.close();
@@ -97,7 +113,7 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
           findings.push({ page: label, id: violation.id, targets: violation.nodes.map(node => node.target) });
         }
       };
-      for (const file of ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html', 'novidades.html']) {
+      for (const file of pages) {
         await page.goto(origin + '/' + file);
         await capture(file || 'index.html');
         if (!file) {
@@ -150,7 +166,7 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
         assert.equal(await theme.getAttribute('aria-pressed'), 'true');
         assert.equal(await page.getByRole('button', { name: 'Reduzir movimento' }).getAttribute('aria-pressed'), 'true');
 
-        for (const file of ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html', 'novidades.html']) {
+        for (const file of pages) {
           await page.goto(origin + '/' + file);
           const overflow = await page.evaluate(() => {
             if (document.documentElement.scrollWidth <= innerWidth) return [];
