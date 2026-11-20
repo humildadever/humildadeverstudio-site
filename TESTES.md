@@ -78,3 +78,7 @@ A confirmação manual em Chrome validou a navegação até à Oficina e a recup
 ## Retoma dos percursos da Academia
 
 A revisão `e3879f3` passou em [Node, Chromium e WebKit](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44732462985). O teste local cobre pontuações inválidas, desafios repetidos e rascunhos existentes. No teste offline, o aluno termina o questionário de SQL, regressa à página dos cursos, vê o progresso atualizado e usa «Rever SQL» para abrir o questionário.
+
+## Galeria offline de O Curioso
+
+Na revisão `4067139`, [Chromium e WebKit](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44738559962) abriram a galeria offline em português e inglês. O teste confirmou a imagem reduzida de 320 px, a mensagem no respetivo idioma, a navegação com as setas e o regresso do foco à miniatura com Escape. Em pré-produção HTTPS, o teste em ecrã móvel confirmou a abertura da imagem original e a continuação para a Google Play. Os testes locais passaram 12/12.

@@ -46,3 +46,5 @@
 - A verificação móvel em HTTPS passou a incluir a abertura da captura original do tutorial.
 
 - A página da Academia lê os resultados guardados dos percursos Web, Python e SQL. Cada cartão apresenta a validação ou a melhor nota do questionário, com uma ligação para iniciar, retomar ou rever.
+
+- O portal de O Curioso abre as capturas num visualizador em português e inglês. As miniaturas ficam disponíveis offline e o visualizador indica quando usa a imagem reduzida.
