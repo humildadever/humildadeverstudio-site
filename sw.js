@@ -2,10 +2,10 @@
 
 const base = self.registration.scope;
 const prefix = 'humildadever-site:';
-const version = prefix + '5';
+const version = prefix + '6';
 const pages = [
   'index.html', 'apps.html', 'academia.html', 'academia-sql.html', 'o-curioso.html',
-  'o-curioso-en.html', 'novidades.html', 'offline.html'
+  'o-curioso-en.html', 'novidades.html', 'novidades-en.html', 'offline.html'
 ];
 const assets = [
   'manifest.webmanifest', 'assets/pwa.js', 'assets/v31-premium.js',
