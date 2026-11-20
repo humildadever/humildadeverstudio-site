@@ -74,3 +74,7 @@ A [execução 44724379855](https://github.com/humildadever/humildadeverstudio-si
 A revisão `d088226` passou em Node, Chromium e WebKit na [execução 44731629574](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44731629574). Os testes abrangem a entrada da Academia offline, feedback e validação dos três desafios, conservação do progresso, exportação, fim do tempo e reinício do projeto final. A verificação móvel em HTTPS inclui abrir a imagem original na galeria e seguir o destino da Google Play em perfis emulados.
 
 A confirmação manual em Chrome validou a navegação até à Oficina e a recuperação do progresso dos três desafios. Os ensaios com dispositivos físicos e a gravação aprovada de jogabilidade continuam pendentes.
+
+## Retoma dos percursos da Academia
+
+A revisão `e3879f3` passou em [Node, Chromium e WebKit](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44732462985). O teste local cobre pontuações inválidas, desafios repetidos e rascunhos existentes. No teste offline, o aluno termina o questionário de SQL, regressa à página dos cursos, vê o progresso atualizado e usa «Rever SQL» para abrir o questionário.

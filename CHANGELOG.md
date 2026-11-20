@@ -44,3 +44,5 @@
 - Nova página de entrada para os percursos Web, Python e SQL, com ligações a partir do início e das páginas dos cursos.
 - A Oficina Web ganhou feedback para os três desafios, progresso local e um projeto final com pontuação, temporizador, reinício e exportação HTML.
 - A verificação móvel em HTTPS passou a incluir a abertura da captura original do tutorial.
+
+- A página da Academia lê os resultados guardados dos percursos Web, Python e SQL. Cada cartão apresenta a validação ou a melhor nota do questionário, com uma ligação para iniciar, retomar ou rever.
