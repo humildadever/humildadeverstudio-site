@@ -10,7 +10,7 @@ assert.ok(Object.hasOwn(engines, engine), 'Motor de navegador inválido');
 const { AxeBuilder } = require('@axe-core/playwright');
 
 const pages = ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html',
-  'academia-sql.html', 'novidades.html', 'novidades-en.html'];
+  'academia-sql.html', 'novidades.html', 'novidades-en.html', 'universe.html'];
 
 const site = path.resolve(__dirname, '..');
 const types = {

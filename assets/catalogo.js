@@ -3,6 +3,7 @@
 const filters = document.getElementById('filtros');
 const search = document.getElementById('pesquisa');
 const category = document.getElementById('categoria');
+const platform = document.getElementById('plataforma');
 const statusFilter = document.getElementById('estado');
 const favoritesOnly = document.getElementById('so-favoritos');
 const results = document.getElementById('resultados');
@@ -37,6 +38,7 @@ function updateResults() {
     button.setAttribute('aria-pressed', String(favorite));
     const matches = searchText.includes(query)
       && (!category.value || category.value === card.dataset.category)
+      && (!platform.value || platform.value === card.dataset.platform)
       && (!statusFilter.value || statusFilter.value === card.dataset.status)
       && (!favoritesOnly.checked || favorite);
     if (!matches && card.contains(document.activeElement)) favoritesOnly.focus();
@@ -66,7 +68,7 @@ for (const { id, button, card } of projects) {
 search.addEventListener('input', updateResults);
 filters.addEventListener('change', updateResults);
 document.getElementById('limpar').addEventListener('click', () => {
-  search.value = category.value = statusFilter.value = '';
+  search.value = category.value = platform.value = statusFilter.value = '';
   favoritesOnly.checked = false;
   updateResults();
   search.focus();
