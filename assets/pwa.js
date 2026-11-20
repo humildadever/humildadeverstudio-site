@@ -1,7 +1,12 @@
 'use strict';
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register(new URL('../sw.js', document.currentScript.src)).catch(error => {
-    console.warn('Modo offline indisponível.', error.message);
-  });
+  const worker = new URL('../sw.js', document.currentScript.src);
+  const register = () => {
+    navigator.serviceWorker.register(worker).catch(error => {
+      console.warn('Modo offline indisponível.', error.message);
+    });
+  };
+  if (document.readyState === 'complete') register();
+  else window.addEventListener('load', register, { once: true });
 }

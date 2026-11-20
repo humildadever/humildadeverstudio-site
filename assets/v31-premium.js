@@ -7,12 +7,13 @@ const links = document.getElementById(menu.getAttribute('aria-controls'));
 const compact = matchMedia('(max-width: 760px)');
 
 function setMenu(open) {
-  const wasFocused = links.contains(document.activeElement);
+  const focused = document.activeElement;
   const expanded = compact.matches && open;
   menu.hidden = !compact.matches;
   menu.setAttribute('aria-expanded', String(expanded));
   links.hidden = compact.matches && !expanded;
-  if (links.hidden && wasFocused) menu.focus();
+  if (links.hidden && links.contains(focused)) menu.focus();
+  if (menu.hidden && focused === menu) links.querySelector('a').focus();
 }
 
 menu.addEventListener('click', () => setMenu(links.hidden));
@@ -23,9 +24,12 @@ nav.addEventListener('keydown', event => {
   }
 });
 links.addEventListener('click', event => {
-  if (!compact.matches || !event.target.closest('a')) return;
+  const link = event.target.closest('a');
+  if (!compact.matches || !link || event.defaultPrevented ||
+      event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
   setMenu(false);
-  const target = document.getElementById(event.target.closest('a').hash.slice(1));
+  if (!link.getAttribute('href').startsWith('#')) return;
+  const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
   if (target) {
     target.tabIndex = -1;
     target.focus({ preventScroll: true });

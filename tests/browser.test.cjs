@@ -3,7 +3,10 @@ const { createServer } = require('node:http');
 const { readFile } = require('node:fs/promises');
 const path = require('node:path');
 const { test } = require('node:test');
-const { chromium } = require('playwright');
+const { chromium, webkit } = require('playwright');
+const engines = { chromium, webkit };
+const engine = process.env.SITE_TEST_BROWSER ?? 'chromium';
+assert.ok(Object.hasOwn(engines, engine), 'Motor de navegador inválido');
 const { AxeBuilder } = require('@axe-core/playwright');
 
 const site = path.resolve(__dirname, '..');
@@ -13,7 +16,7 @@ const types = {
   '.webmanifest': 'application/manifest+json'
 };
 
-test('Chromium: navegação por teclado, largura e preferências', async t => {
+test(`${engine}: navegação, acessibilidade e offline`, async t => {
   const server = createServer(async (request, response) => {
     const url = new URL(request.url, 'http://127.0.0.1');
     const file = path.resolve(site, '.' + (url.pathname === '/' ? '/index.html' : url.pathname));
@@ -32,7 +35,9 @@ test('Chromium: navegação por teclado, largura e preferências', async t => {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise(resolve => server.close(resolve)));
   const origin = 'http://127.0.0.1:' + server.address().port;
-  const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH });
+  const browser = await engines[engine].launch({
+    executablePath: engine === 'chromium' ? process.env.CHROMIUM_PATH : undefined
+  });
   t.after(() => browser.close());
 
   await t.test('Navegação offline após instalação do service worker', async () => {
@@ -51,6 +56,33 @@ test('Chromium: navegação por teclado, largura e preferências', async t => {
       await context.close();
     }
   });
+
+  if (engine === 'chromium') {
+    await t.test('Peso inicial das páginas em ecrã móvel', async () => {
+      const context = await browser.newContext({
+        viewport: { width: 390, height: 844 }, serviceWorkers: 'block'
+      });
+      try {
+        const page = await context.newPage();
+        await page.route('**/*', route => route.request().url().startsWith(origin + '/')
+          ? route.continue() : route.abort());
+        for (const [pagePath, budget] of [['/', 300_000], ['/o-curioso.html', 250_000]]) {
+          await page.goto(origin + pagePath);
+          const resources = await page.evaluate(() => [
+            ...performance.getEntriesByType('navigation'),
+            ...performance.getEntriesByType('resource')
+          ].filter(entry => new URL(entry.name).origin === location.origin)
+            .map(entry => [new URL(entry.name).pathname, entry.encodedBodySize]));
+          const bytes = resources.reduce((total, [, size]) => total + size, 0);
+          assert.ok(bytes > 0 && bytes <= budget, `${pagePath}: ${bytes} / ${budget} bytes`);
+          assert.ok(!resources.some(([url]) => /\.(mp4|zip)$/.test(url)), pagePath);
+          t.diagnostic(`${pagePath}: ${bytes} bytes até ao evento load (recursos locais)`);
+        }
+      } finally {
+        await context.close();
+      }
+    });
+  }
 
   await t.test('Acessibilidade automática nas páginas principais', async () => {
     const context = await browser.newContext();
@@ -97,9 +129,16 @@ test('Chromium: navegação por teclado, largura e preferências', async t => {
         const menu = page.getByRole('button', { name: 'Menu', exact: true });
         if (width <= 760) {
           await menu.click();
+          assert.equal(await page.locator('#menu-principal').evaluate(el => getComputedStyle(el).position), 'absolute');
           assert.equal(await menu.getAttribute('aria-expanded'), 'true');
           await page.keyboard.press('Escape');
           assert.equal(await menu.getAttribute('aria-expanded'), 'false');
+          assert.equal(await menu.evaluate(el => el === document.activeElement), true);
+          await page.setViewportSize({ width: 1051, height: 800 });
+          await page.waitForFunction(() => document.querySelector('.v31-menu').hidden);
+          assert.equal(await page.evaluate(() => document.activeElement.textContent), 'O Jogo');
+          await page.setViewportSize({ width, height: 800 });
+          await page.waitForFunction(() => !document.querySelector('.v31-menu').hidden);
           assert.equal(await menu.evaluate(el => el === document.activeElement), true);
         } else {
           assert.equal(await page.getByRole('navigation').getByRole('link', { name: 'Mundos', exact: true }).isVisible(), true);
