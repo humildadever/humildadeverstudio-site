@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cria a página de um minijogo com HTML, CSS e JavaScript num editor com pré-visualização.">
+  <title>Oficina Web | Humildadever Studio</title>
+  <link rel="canonical" href="https://humildadeverstudio.com/academia-web.html">
+  <link rel="icon" href="assets/logotipo-192.webp">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/portal.css">
+  <link rel="stylesheet" href="assets/oficina-web.css">
+  <script src="assets/pwa.js" defer></script>
+  <script src="assets/oficina-web.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<nav class="site-nav" aria-label="Navegação principal">
+  <a class="studio" href="index.html"><img src="assets/logotipo-192.webp" alt="" width="44" height="44">Humildadever Studio</a>
+  <a href="academia.html">Python</a><a href="academia-sql.html">SQL</a>
+</nav>
+<main id="conteudo" tabindex="-1">
+  <header>
+    <h1>Oficina Web</h1>
+    <p>Cria a página de um minijogo. Usa HTML para montar o ecrã, CSS para definir o aspeto e JavaScript para contar os pontos.</p>
+  </header>
+  <section aria-labelledby="desafios">
+    <h2 id="desafios">Três desafios para começar</h2>
+    <ol>
+      <li><strong>HTML.</strong> Altera o título e o texto do botão. Conserva os identificadores <code>placar</code> e <code>jogar</code>, que ligam os elementos ao JavaScript.</li>
+      <li><strong>CSS.</strong> Muda a cor do fundo e do botão. Verifica se o texto continua legível.</li>
+      <li><strong>JavaScript.</strong> Altera <code>pontos += 1</code> para <code>pontos += 5</code>, executa e confirma que dois cliques resultam em dez pontos.</li>
+    </ol>
+  </section>
+  <section id="oficina" aria-labelledby="editar" hidden>
+    <h2 id="editar">Editor do minijogo</h2>
+    <p>O rascunho fica neste navegador. Descarrega o HTML para guardar uma cópia e abri-la fora da oficina.</p>
+    <details open><summary>HTML</summary><label for="fonte-html">Código HTML</label><textarea id="fonte-html" rows="8" spellcheck="false" autocapitalize="off"></textarea></details>
+    <details><summary>CSS</summary><label for="fonte-css">Código CSS</label><textarea id="fonte-css" rows="8" spellcheck="false" autocapitalize="off"></textarea></details>
+    <details><summary>JavaScript</summary><label for="fonte-js">Código JavaScript</label><textarea id="fonte-js" rows="8" spellcheck="false" autocapitalize="off"></textarea></details>
+    <div class="actions oficina-acoes">
+      <button type="button" id="executar">Executar pré-visualização</button>
+      <button type="button" id="descarregar">Descarregar HTML</button>
+      <button type="button" id="repor">Repor exemplo</button>
+    </div>
+    <p id="estado-oficina" role="status"></p>
+    <h3 id="titulo-resultado">Pré-visualização</h3>
+    <div id="resultado-oficina" aria-labelledby="titulo-resultado"></div>
+  </section>
+  <noscript><p>Ativa JavaScript para utilizar o editor e executar o exemplo.</p></noscript>
+</main>
+<footer class="site-footer"><span>© Humildadever Studio</span><a href="privacidade.html">Privacidade</a></footer>
+</body>
+</html>

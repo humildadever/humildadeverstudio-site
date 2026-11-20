@@ -1,26 +1,30 @@
 const assert = require('node:assert/strict');
 const { createServer } = require('node:http');
-const { readFile } = require('node:fs/promises');
+const { readFile, mkdtemp, rm } = require('node:fs/promises');
+const { execFileSync } = require('node:child_process');
+const { createServer: createSecureServer } = require('node:https');
+const { tmpdir } = require('node:os');
 const path = require('node:path');
 const { test } = require('node:test');
-const { chromium, webkit } = require('playwright');
+const { chromium, webkit, devices } = require('playwright');
 const engines = { chromium, webkit };
 const engine = process.env.SITE_TEST_BROWSER ?? 'chromium';
 assert.ok(Object.hasOwn(engines, engine), 'Motor de navegador inválido');
 const { AxeBuilder } = require('@axe-core/playwright');
 
 const pages = ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html',
-  'academia-sql.html', 'novidades.html', 'novidades-en.html', 'universe.html'];
+  'academia-sql.html', 'academia-web.html', 'novidades.html', 'novidades-en.html', 'universe.html'];
 
 const site = path.resolve(__dirname, '..');
 const types = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css',
   '.js': 'text/javascript', '.webp': 'image/webp', '.png': 'image/png',
+  '.zip': 'application/zip', '.mp4': 'video/mp4',
   '.webmanifest': 'application/manifest+json'
 };
 
 test(`${engine}: navegação, acessibilidade e offline`, async t => {
-  const server = createServer(async (request, response) => {
+  const serveSite = async (request, response) => {
     const url = new URL(request.url, 'http://127.0.0.1');
     const file = path.resolve(site, '.' + (url.pathname === '/' ? '/index.html' : url.pathname));
     if (!file.startsWith(site + path.sep)) {
@@ -34,7 +38,8 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
     } catch {
       response.writeHead(404).end();
     }
-  });
+  };
+  const server = createServer(serveSite);
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise(resolve => server.close(resolve)));
   const origin = 'http://127.0.0.1:' + server.address().port;
@@ -67,6 +72,81 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       assert.equal(await page.getByRole('heading', { name: 'Novidades do estúdio' }).isVisible(), true);
       await page.goto(origin + '/privacidade.html');
       assert.equal(await page.getByRole('heading', { name: 'Sem ligação à internet' }).isVisible(), true);
+    } finally {
+      await context.close();
+    }
+  });
+
+  await t.test('Pré-produção HTTPS: início, galeria e Google Play em ecrã móvel', async t => {
+    const directory = await mkdtemp(path.join(tmpdir(), 'humildadever-tls-'));
+    t.after(() => rm(directory, { recursive: true, force: true }));
+    const keyPath = path.join(directory, 'key.pem');
+    const certPath = path.join(directory, 'cert.pem');
+    execFileSync('openssl', ['req', '-x509', '-newkey', 'rsa:2048', '-nodes', '-days', '1',
+      '-subj', '/CN=localhost', '-addext', 'subjectAltName=IP:127.0.0.1',
+      '-keyout', keyPath, '-out', certPath], { stdio: 'ignore' });
+    const secureServer = createSecureServer({
+      key: await readFile(keyPath), cert: await readFile(certPath)
+    }, serveSite);
+    await new Promise(resolve => secureServer.listen(0, '127.0.0.1', resolve));
+    t.after(() => new Promise(resolve => secureServer.close(resolve)));
+
+    const model = engine === 'chromium' ? 'Pixel 7' : 'iPhone 13';
+    const context = await browser.newContext({ ...devices[model], ignoreHTTPSErrors: true });
+    try {
+      const secureOrigin = 'https://127.0.0.1:' + secureServer.address().port;
+      const play = 'https://play.google.com/store/apps/details?id=com.humildadever.ocurioso';
+      const page = await context.newPage();
+      await page.route('**/*', route => {
+        const url = route.request().url();
+        if (url.startsWith(secureOrigin + '/')) return route.continue();
+        if (url === play) return route.fulfill({ contentType: 'text/html', body: '<h1>Ficha Google Play</h1>' });
+        return route.abort();
+      });
+      await page.goto(secureOrigin);
+      await page.getByRole('link', { name: 'Conhecer o jogo', exact: true }).tap();
+      await page.waitForURL(secureOrigin + '/o-curioso.html');
+      const firstImage = page.locator('#capturas img').first();
+      await firstImage.scrollIntoViewIfNeeded();
+      await page.waitForFunction(() => document.querySelector('#capturas img').naturalWidth > 0);
+      const archive = await context.request.get(secureOrigin + '/press-kit-curioso.zip');
+      assert.ok(archive.ok());
+      assert.equal((await archive.body()).subarray(0, 2).toString(), 'PK');
+      await page.locator('header a.action.primary').tap();
+      await page.waitForURL(play);
+      assert.equal(await page.getByRole('heading', { name: 'Ficha Google Play' }).isVisible(), true);
+    } finally {
+      await context.close();
+    }
+  });
+
+  await t.test('Oficina Web: execução isolada, edição e exportação', async () => {
+    const context = await browser.newContext({ acceptDownloads: true });
+    try {
+      const page = await context.newPage();
+      await page.goto(origin + '/academia-web.html');
+      const iframe = page.locator('#resultado-oficina iframe');
+      assert.equal(await iframe.getAttribute('sandbox'), 'allow-scripts');
+      const preview = page.frameLocator('#resultado-oficina iframe');
+      const botao = preview.getByRole('button', { name: 'Apanhar estrela' });
+      await botao.click();
+      assert.equal(await preview.locator('#placar').textContent(), '1');
+
+      await page.locator('summary').filter({ hasText: /^JavaScript$/ }).click();
+      const source = page.getByLabel('Código JavaScript');
+      await source.fill((await source.inputValue()).replace('pontos += 1', 'pontos += 5'));
+      await page.getByRole('button', { name: 'Executar pré-visualização' }).click();
+      await botao.click();
+      await botao.click();
+      assert.equal(await preview.locator('#placar').textContent(), '10');
+      await page.reload();
+      await page.locator('summary').filter({ hasText: /^JavaScript$/ }).click();
+      assert.match(await page.getByLabel('Código JavaScript').inputValue(), /pontos \+= 5/);
+      const download = page.waitForEvent('download');
+      await page.getByRole('button', { name: 'Descarregar HTML' }).click();
+      const file = await download;
+      assert.equal(file.suggestedFilename(), 'o-meu-minijogo.html');
+      assert.match(await readFile(await file.path(), 'utf8'), /pontos \+= 5/);
     } finally {
       await context.close();
     }

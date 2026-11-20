@@ -1,0 +1,28 @@
+#oficina textarea {
+  display: block;
+  width: 100%;
+  margin-top: .35rem;
+  padding: .7rem;
+  background: #071524;
+  color: #edf6ff;
+  border: 1px solid #83a3c2;
+  border-radius: .4rem;
+  font: .95rem/1.5 ui-monospace, monospace;
+  resize: vertical;
+}
+
+#oficina textarea:focus-visible {
+  outline: 3px solid #ffdb67;
+  outline-offset: 3px;
+}
+
+.oficina-acoes { margin-top: 1rem; }
+
+#resultado-oficina iframe {
+  display: block;
+  width: 100%;
+  min-height: 20rem;
+  background: #fff;
+  border: 1px solid #83a3c2;
+  border-radius: .5rem;
+}

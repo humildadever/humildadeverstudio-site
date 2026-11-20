@@ -83,6 +83,10 @@ test('Portal: seis mundos, idiomas, material promocional e imprensa', () => {
     assert.ok(document.querySelector(`nav a[hreflang][href="${other}"]`));
     assert.ok(document.querySelector('video[controls][preload="none"]:not([autoplay])'));
     assert.ok(document.querySelector('a[download][href="press-kit.zip"]'));
+    assert.ok(document.querySelector('a[download][href="press-kit-curioso.zip"]'));
+    assert.equal(document.querySelector('.portal-hero + section').id, 'capturas');
+    const order = [...document.querySelectorAll('#capturas figure a')].map(link => link.getAttribute('href'));
+    assert.deepEqual(order, [2, 1, 4, 3, 5].map(i => `assets/captura-curioso-${i}.webp`));
     assert.equal(document.querySelectorAll('#capturas figure img[loading="lazy"]').length, 5);
     assert.ok(document.querySelector('#versoes time[datetime="2026-11-05"]'));
     dom.window.close();
@@ -244,7 +248,7 @@ test('PWA: cache público, fallback offline e exclusão de ficheiros técnicos',
   assert.equal(await intercept(scope + 'academia-sql.html'), scope + 'academia-sql.html');
   assert.equal(await intercept(scope + 'privacidade.html'), scope + 'offline.html');
   assert.equal(await intercept(scope + 'assets/portal.css', 'cors'), scope + 'assets/portal.css');
-  for (const file of ['app-ads.txt', 'CNAME', 'api/v1/me', 'press-kit.zip', 'assets/trailer-curioso.mp4']) {
+  for (const file of ['app-ads.txt', 'CNAME', 'api/v1/me', 'press-kit.zip', 'press-kit-curioso.zip', 'assets/trailer-curioso.mp4']) {
     assert.equal(intercept(scope + file), undefined, file);
   }
   assert.equal(intercept(scope + 'academia.html', 'navigate', 'POST'), undefined);
