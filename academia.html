@@ -16,7 +16,7 @@
 <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
 <nav class="site-nav" aria-label="Navegação principal">
   <a class="studio" href="index.html"><img src="assets/logotipo-192.webp" alt="" width="44" height="44">Humildadever Studio</a>
-  <a href="index.html">Início</a><a href="apps.html">Aplicações</a>
+  <a href="index.html">Início</a><a href="apps.html">Aplicações</a><a href="academia-sql.html">Curso de SQL</a>
 </nav>
 <main id="conteudo" tabindex="-1">
   <header>
@@ -78,18 +78,18 @@ else:
   </section>
   <section id="quiz">
     <h2>Questionário</h2>
-    <form id="avaliacao" hidden>
+    <form id="avaliacao" data-storage-key="hv-academia-python-basico-v1" hidden>
       <fieldset><legend>1. Qual é o valor de <code>moedas</code> depois de <code>moedas = 4</code> e <code>moedas += 3</code>?</legend>
         <label><input type="radio" name="variavel" value="4" required> 4</label>
-        <label><input type="radio" name="variavel" value="7"> 7</label>
+        <label><input type="radio" name="variavel" value="7" data-correct="Somar 3 a 4 dá 7."> 7</label>
       </fieldset>
       <fieldset><legend>2. Qual a condição que inclui o valor 8?</legend>
-        <label><input type="radio" name="condicao" value="inclusive" required> <code>moedas &gt;= 8</code></label>
+        <label><input type="radio" name="condicao" value="inclusive" data-correct="O operador &gt;= inclui o limite." required> <code>moedas &gt;= 8</code></label>
         <label><input type="radio" name="condicao" value="exclusive"> <code>moedas &gt; 8</code></label>
       </fieldset>
       <fieldset><legend>3. Quantas vezes corre o corpo do ciclo <code>for moedas in [2, 4, 3]</code>?</legend>
         <label><input type="radio" name="ciclo" value="9" required> 9</label>
-        <label><input type="radio" name="ciclo" value="3"> 3</label>
+        <label><input type="radio" name="ciclo" value="3" data-correct="O ciclo executa uma vez por elemento da lista."> 3</label>
       </fieldset>
       <button type="submit">Ver resultado</button>
     </form>

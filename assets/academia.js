@@ -3,12 +3,8 @@
 const form = document.getElementById('avaliacao');
 const feedback = document.getElementById('nota');
 const progress = document.getElementById('progresso');
-const key = 'hv-academia-python-basico-v1';
-const answers = [
-  ['variavel', '7', 'Somar 3 a 4 dá 7.'],
-  ['condicao', 'inclusive', 'O operador >= inclui o limite.'],
-  ['ciclo', '3', 'O ciclo executa uma vez por elemento da lista.']
-];
+const key = form.dataset.storageKey;
+const answers = [...form.querySelectorAll('input[data-correct]')];
 let best = 0;
 try {
   const saved = Number(localStorage.getItem(key));
@@ -26,8 +22,8 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   const data = new FormData(form);
   const corrections = [];
-  for (const [name, correct, explanation] of answers) {
-    if (data.get(name) !== correct) corrections.push(explanation);
+  for (const answer of answers) {
+    if (data.get(answer.name) !== answer.value) corrections.push(answer.dataset.correct);
   }
   const score = answers.length - corrections.length;
   feedback.textContent = `${score}/${answers.length} respostas certas. ${corrections.join(' ')}`.trim();

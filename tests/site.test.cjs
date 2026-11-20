@@ -168,21 +168,31 @@ test('Catálogo: pesquisa sem acentos, filtros combinados e favoritos locais', (
   window.close();
 });
 
-test('Academia: validação nativa, correção e melhor resultado local', () => {
-  const { window } = loadInteractive('academia.html', 'assets/academia.js');
-  const { document } = window;
-  const form = document.getElementById('avaliacao');
-  assert.equal(form.checkValidity(), false);
-  for (const value of ['7', 'inclusive', '3']) form.querySelector(`[value="${value}"]`).checked = true;
-  assert.equal(form.checkValidity(), true);
-  form.requestSubmit();
-  assert.match(document.getElementById('nota').textContent, /^3\/3/);
-  assert.equal(window.localStorage.getItem('hv-academia-python-basico-v1'), '3');
-  form.querySelector('[value="exclusive"]').checked = true;
-  form.requestSubmit();
-  assert.match(document.getElementById('nota').textContent, /^2\/3/);
-  assert.equal(window.localStorage.getItem('hv-academia-python-basico-v1'), '3');
-  window.close();
+test('Academia: correção dos dois questionários e progresso independente', () => {
+  const pythonKey = 'hv-academia-python-basico-v1';
+  const sqlKey = 'hv-academia-sql-basico-v1';
+  for (const [file, key, correct, incorrect] of [
+    ['academia.html', pythonKey, ['7', 'inclusive', '3'], 'exclusive'],
+    ['academia-sql.html', sqlKey, ['where', 'desc', 'having'], 'asc']
+  ]) {
+    const otherKey = key === pythonKey ? sqlKey : pythonKey;
+    const { window } = loadInteractive(file, 'assets/academia.js', { storage: { [otherKey]: '2' } });
+    const { document } = window;
+    const form = document.getElementById('avaliacao');
+    assert.equal(form.checkValidity(), false);
+    assert.match(document.getElementById('progresso').textContent, /^Melhor resultado 0\/3/);
+    for (const value of correct) form.querySelector(`[value="${value}"]`).checked = true;
+    assert.equal(form.checkValidity(), true);
+    form.requestSubmit();
+    assert.match(document.getElementById('nota').textContent, /^3\/3/);
+    assert.equal(window.localStorage.getItem(key), '3');
+    form.querySelector(`[value="${incorrect}"]`).checked = true;
+    form.requestSubmit();
+    assert.match(document.getElementById('nota').textContent, /^2\/3/);
+    assert.equal(window.localStorage.getItem(key), '3');
+    assert.equal(window.localStorage.getItem(otherKey), '2');
+    window.close();
+  }
 });
 
 test('PWA: cache público, fallback offline e exclusão de ficheiros técnicos', async () => {
@@ -220,6 +230,7 @@ test('PWA: cache público, fallback offline e exclusão de ficheiros técnicos',
     return response;
   }
   assert.equal(await intercept(scope + 'academia.html?ref=offline'), scope + 'academia.html');
+  assert.equal(await intercept(scope + 'academia-sql.html'), scope + 'academia-sql.html');
   assert.equal(await intercept(scope + 'privacidade.html'), scope + 'offline.html');
   assert.equal(await intercept(scope + 'assets/portal.css', 'cors'), scope + 'assets/portal.css');
   for (const file of ['app-ads.txt', 'CNAME', 'api/v1/me', 'press-kit.zip', 'assets/trailer-curioso.mp4']) {
