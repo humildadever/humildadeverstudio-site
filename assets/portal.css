@@ -61,3 +61,14 @@ button { cursor: pointer; }
 pre { overflow: auto; padding: 14px; border-radius: 10px; background: #020b19; }
 fieldset { border: 1px solid #6398bb; border-radius: 10px; padding: 12px; margin-block: 10px; }
 fieldset label { display: block; min-height: 32px; }
+
+/* V31: alvos táteis e preferências de movimento nos portais públicos. */
+summary { min-height: 44px; display: list-item; padding-block: 9px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
