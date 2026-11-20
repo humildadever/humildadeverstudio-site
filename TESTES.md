@@ -59,8 +59,12 @@ As medições de peso são de laboratório. Continuam por verificar os tempos em
 Revisão funcional `3aabb06`. [GitHub Actions 44723170777](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44723170777).
 
 - Node passou 10/10 verificações. O ZIP passou no teste de integridade e a cópia servida pelo GitHub correspondeu byte a byte ao ficheiro verificado.
-- WebKit passou 9/9 verificações, incluindo o percurso HTTPS móvel e a oficina. O estado do Chromium está na execução indicada acima.
+- O Chromium passou 10/10 e o WebKit passou 9/9, incluindo o percurso HTTPS móvel e a oficina.
 - A ficha oficial da Google Play respondeu com HTTP 200. O MP4 promocional passou a descodificação integral com FFmpeg.
 - O conjunto de testes Playwright usa uma origem HTTPS efémera para abrir a página inicial, tocar na ligação do jogo, carregar a galeria, ler o kit ZIP e confirmar o URL de destino da Google Play. A resposta da loja é simulada neste percurso para manter o teste independente da rede.
 - A Oficina Web foi testada com o exemplo, alteração da pontuação, persistência após recarregar e exportação do HTML.
 - Continuam pendentes a reprodução do vídeo, a instalação nativa da PWA e a revisão com leitores de ecrã em Android e iPhone físicos.
+
+Na revisão `07e13f5`, o Node passou 11/11 verificações, incluindo a verificação do hash CSP. A revisão manual em Chrome encontrou o quadro vazio na pré-visualização e confirmou que a correção apresenta o minijogo e incrementa o contador.
+
+A [execução 44724379855](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44724379855) confirmou Node 11/11, Chromium 10/10 e WebKit 9/9 para essa revisão. Num ecrã de 390 × 844, a página inicial transferiu 189 481 bytes e o portal 166 479 bytes em recursos locais.

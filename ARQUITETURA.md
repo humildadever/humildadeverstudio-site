@@ -9,4 +9,4 @@ O website é estático. A página inicial usa `assets/home.css`, a camada de apr
 - O service worker regista-se após o carregamento inicial. A cache versionada inclui páginas públicas e imagens responsivas selecionadas. As capturas da ficha Google Play, o vídeo, o kit, APIs e ficheiros técnicos são pedidos à rede.
 - O pipeline testa a branch em Chromium e WebKit com um servidor HTTP efémero para cada execução. A proposta de serviços de identidade, dados e administração encontra-se no [contrato de API](COMUNIDADE-API.md).
 
-A Oficina Web guarda o rascunho no navegador e usa uma página interna num iframe com `sandbox="allow-scripts"` para executar a pré-visualização. A página de execução aceita mensagens do seu documento pai na origem do site e adota uma política de recursos sem ligações externas para os exemplos.
+A Oficina Web guarda o rascunho no navegador e usa uma página interna num iframe com `sandbox="allow-scripts"` para executar a pré-visualização. A página de execução inclui um script inicial autorizado pelo hash CSP. O quadro aceita mensagens do seu documento pai na origem do site e limita os recursos de rede disponíveis para os exemplos.

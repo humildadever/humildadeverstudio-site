@@ -37,3 +37,4 @@
 - Novo kit de imprensa com ficha bilingue, logótipo e imagens da ficha da Google Play.
 - Oficina Web com três desafios, editor, pré-visualização, rascunho local e exportação de HTML.
 - Teste em pré-produção HTTPS temporária para o percurso até à Google Play, com perfis móveis dos dois motores de navegador.
+- A inicialização da oficina foi corrigida na revisão manual de Chrome. O quadro carrega o script inicial a partir do HTML, com hash CSP verificado no Node.
