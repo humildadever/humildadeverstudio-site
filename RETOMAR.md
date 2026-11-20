@@ -12,3 +12,8 @@ Base de sessão: `731f142`
 5. Atualizar a documentação e a branch no fim da sessão. Preservar `app-ads.txt`, `CNAME`, os ficheiros legais e a separação entre os projetos. Publicar ou fundir em `main` só com autorização.
 
 A automação Evolução Site Humildadever tem cadência horária e foi atualizada para retomar com o Prompt Mestre Global V41.0.
+
+## Checkpoint de 20 de novembro de 2026
+- Commit de implementação: `19de6a5` — alvos táteis e redução de movimento nos portais.
+- CI anterior verificado: execução 44639887589, sucesso para `75fced5`. O novo commit necessita de confirmação da respetiva execução CI antes de considerar os testes concluídos.
+- Prioridade mantida: testes em dispositivos físicos, auditoria WCAG manual e desempenho em pré-produção; não avançar para V41 antes de fechar V31–V40.
