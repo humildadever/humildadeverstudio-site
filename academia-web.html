@@ -19,6 +19,7 @@
 <nav class="site-nav" aria-label="Navegação principal">
   <a class="studio" href="index.html"><img src="assets/logotipo-192.webp" alt="" width="44" height="44">Humildadever Studio</a>
   <a href="academia.html">Python</a><a href="academia-sql.html">SQL</a>
+  <a href="academia-cursos.html">Todos os percursos</a>
 </nav>
 <main id="conteudo" tabindex="-1">
   <header>
@@ -27,11 +28,13 @@
   </header>
   <section aria-labelledby="desafios">
     <h2 id="desafios">Três desafios para começar</h2>
+    <p id="progresso-oficina" hidden></p>
     <ol>
-      <li><strong>HTML.</strong> Altera o título e o texto do botão. Conserva os identificadores <code>placar</code> e <code>jogar</code>, que ligam os elementos ao JavaScript.</li>
-      <li><strong>CSS.</strong> Muda a cor do fundo e do botão. Verifica se o texto continua legível.</li>
-      <li><strong>JavaScript.</strong> Altera <code>pontos += 1</code> para <code>pontos += 5</code>, executa e confirma que dois cliques resultam em dez pontos.</li>
+      <li><strong>HTML.</strong> Altera o título e o texto do botão. Conserva os identificadores <code>placar</code> e <code>jogar</code>, que ligam os elementos ao JavaScript. <button type="button" data-verificar="html" hidden>Validar HTML</button></li>
+      <li><strong>CSS.</strong> Muda a cor do fundo e do botão. Verifica se o texto continua legível. <button type="button" data-verificar="css" hidden>Validar CSS</button></li>
+      <li><strong>JavaScript.</strong> Altera <code>pontos += 1</code> para <code>pontos += 5</code>, executa e confirma que dois cliques resultam em dez pontos. <button type="button" data-verificar="js" hidden>Validar JavaScript</button></li>
     </ol>
+    <p id="feedback-oficina" role="status"></p>
   </section>
   <section id="oficina" aria-labelledby="editar" hidden>
     <h2 id="editar">Editor do minijogo</h2>
@@ -49,6 +52,11 @@
     <div id="resultado-oficina" aria-labelledby="titulo-resultado"></div>
   </section>
   <noscript><p>Ativa JavaScript para utilizar o editor e executar o exemplo.</p></noscript>
+  <section aria-labelledby="projeto-final">
+    <h2 id="projeto-final">Projeto final · Caça às estrelas contra o relógio</h2>
+    <p>Parte de uma versão jogável. Escolhe a duração da ronda e o valor de cada estrela. Confirma que a pontuação para quando o tempo chega a zero e que «Recomeçar» volta a colocar o contador a zero.</p>
+    <button type="button" id="carregar-projeto" hidden>Carregar projeto no editor</button>
+  </section>
 </main>
 <footer class="site-footer"><span>© Humildadever Studio</span><a href="privacidade.html">Privacidade</a></footer>
 </body>

@@ -13,7 +13,7 @@ assert.ok(Object.hasOwn(engines, engine), 'Motor de navegador inválido');
 const { AxeBuilder } = require('@axe-core/playwright');
 
 const pages = ['', 'o-curioso.html', 'o-curioso-en.html', 'apps.html', 'academia.html',
-  'academia-sql.html', 'academia-web.html', 'novidades.html', 'novidades-en.html', 'universe.html'];
+  'academia-cursos.html', 'academia-sql.html', 'academia-web.html', 'novidades.html', 'novidades-en.html', 'universe.html'];
 
 const site = path.resolve(__dirname, '..');
 const types = {
@@ -56,7 +56,9 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       await page.goto(origin);
       await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller), null, { timeout: 10000 });
       await context.setOffline(true);
-      await page.goto(origin + '/academia.html');
+      await page.goto(origin + '/academia-cursos.html');
+      assert.equal(await page.locator('#percursos article').count(), 3);
+      await page.getByRole('link', { name: 'Iniciar o curso de Python' }).click();
       assert.equal(await page.getByRole('heading', { name: 'Academia Humildadever' }).isVisible(), true);
       await page.getByRole('link', { name: 'Curso de SQL' }).click();
       assert.equal(await page.getByRole('heading', { name: 'SQL para jogos' }).isVisible(), true);
@@ -109,6 +111,9 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       const firstImage = page.locator('#capturas img').first();
       await firstImage.scrollIntoViewIfNeeded();
       await page.waitForFunction(() => document.querySelector('#capturas img').naturalWidth > 0);
+      await firstImage.tap();
+      await page.waitForURL(secureOrigin + '/assets/captura-curioso-2.webp');
+      await page.goBack();
       const archive = await context.request.get(secureOrigin + '/press-kit-curioso.zip');
       assert.ok(archive.ok());
       assert.equal((await archive.body()).subarray(0, 2).toString(), 'PK');
@@ -132,14 +137,28 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       await botao.click();
       assert.equal(await preview.locator('#placar').textContent(), '1');
 
+      await page.getByRole('button', { name: 'Validar HTML', exact: true }).click();
+      await page.getByText(/Altera o título e o texto do botão, mantém/).waitFor();
+      const html = page.getByLabel('Código HTML');
+      await html.fill((await html.inputValue()).replace('Caça às estrelas', 'Apanha cometas')
+        .replace('Apanhar estrela', 'Apanhar cometa'));
+      await page.getByRole('button', { name: 'Validar HTML', exact: true }).click();
+      await page.waitForFunction(() => document.querySelector('#progresso-oficina').textContent.startsWith('1/3'));
+
+      await page.locator('summary').filter({ hasText: /^CSS$/ }).click();
+      const css = page.getByLabel('Código CSS');
+      await css.fill((await css.inputValue()).replace('#10253c', '#083824').replace('#ffdc68', '#d7ff7b'));
+      await page.getByRole('button', { name: 'Validar CSS', exact: true }).click();
+      await page.waitForFunction(() => document.querySelector('#progresso-oficina').textContent.startsWith('2/3'));
+
       await page.locator('summary').filter({ hasText: /^JavaScript$/ }).click();
       const source = page.getByLabel('Código JavaScript');
       await source.fill((await source.inputValue()).replace('pontos += 1', 'pontos += 5'));
-      await page.getByRole('button', { name: 'Executar pré-visualização' }).click();
-      await botao.click();
-      await botao.click();
+      await page.getByRole('button', { name: 'Validar JavaScript', exact: true }).click();
+      await page.waitForFunction(() => document.querySelector('#progresso-oficina').textContent.startsWith('3/3'));
       assert.equal(await preview.locator('#placar').textContent(), '10');
       await page.reload();
+      await page.waitForFunction(() => document.querySelector('#progresso-oficina').textContent.startsWith('3/3'));
       await page.locator('summary').filter({ hasText: /^JavaScript$/ }).click();
       assert.match(await page.getByLabel('Código JavaScript').inputValue(), /pontos \+= 5/);
       const download = page.waitForEvent('download');
@@ -147,6 +166,17 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       const file = await download;
       assert.equal(file.suggestedFilename(), 'o-meu-minijogo.html');
       assert.match(await readFile(await file.path(), 'utf8'), /pontos \+= 5/);
+      page.once('dialog', dialog => dialog.accept());
+      await page.getByRole('button', { name: 'Carregar projeto no editor' }).click();
+      await source.fill((await source.inputValue()).replace('duracao = 15', 'duracao = 2'));
+      await page.getByRole('button', { name: 'Executar pré-visualização' }).click();
+      await botao.click();
+      assert.equal(await preview.locator('#placar').textContent(), '2');
+      await preview.getByText('Tempo esgotado!', { exact: true }).waitFor();
+      assert.equal(await botao.isDisabled(), true);
+      await preview.getByRole('button', { name: 'Recomeçar' }).click();
+      assert.equal(await preview.locator('#placar').textContent(), '0');
+      assert.equal(await botao.isEnabled(), true);
     } finally {
       await context.close();
     }

@@ -26,3 +26,8 @@
   border: 1px solid #83a3c2;
   border-radius: .5rem;
 }
+
+[aria-labelledby="desafios"] li { margin-block: .8rem; }
+[data-verificar] { margin: .35rem .3rem; }
+[data-verificar][data-concluido] { border-color: #9ed7b0; }
+#feedback-oficina { color: #d0e4f7; }
