@@ -16,3 +16,6 @@
 - V37 — três lições de Python, exercícios, projeto prático e questionário com melhor resultado local.
 - V40 — sitemap expandido, testes em Node e Chromium, CI sem deploy e suporte offline parcial por manifesto e service worker.
 - CI — corrigidos excesso de largura em ecrãs estreitos, controlo do primeiro separador offline e contraste dos links sociais no modo claro. Chromium e axe passaram na revisão funcional.
+
+## 20 de novembro de 2026
+- V31 — aumentada a área mínima de interação dos elementos `summary` dos portais para 44 px e adicionada preferência CSS `prefers-reduced-motion` para animações, transições e deslocação suave. Alteração isolada em `assets/portal.css`, sem deploy.
