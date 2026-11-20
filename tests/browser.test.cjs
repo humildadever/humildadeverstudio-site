@@ -83,13 +83,14 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
           ? route.continue() : route.abort());
         for (const [pagePath, budget] of [['/', 300_000], ['/o-curioso.html', 250_000]]) {
           await page.goto(origin + pagePath);
+          await page.waitForLoadState('networkidle');
           const resources = await page.evaluate(() => [
             ...performance.getEntriesByType('navigation'),
             ...performance.getEntriesByType('resource')
           ].filter(entry => new URL(entry.name).origin === location.origin)
             .map(entry => [new URL(entry.name).pathname, entry.encodedBodySize]));
           const bytes = resources.reduce((total, [, size]) => total + size, 0);
-          t.diagnostic(`${pagePath}: ${bytes} bytes de recursos locais concluídos ao medir após load`);
+          t.diagnostic(`${pagePath}: ${bytes} bytes de recursos locais após estabilizar os pedidos iniciais`);
           assert.ok(bytes > 0 && bytes <= budget, `${pagePath}: ${bytes} / ${budget} bytes`);
           assert.ok(!resources.some(([url]) => /\.(mp4|zip)$/.test(url)), pagePath);
 
