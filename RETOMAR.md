@@ -26,3 +26,8 @@ A entrada da Academia fica em `academia-cursos.html`. O percurso Web inclui feed
 A entrada da Academia resume a validação dos três percursos com os dados locais existentes. O card Web também permite retomar um rascunho antes de concluir o primeiro desafio.
 
 O catálogo restaura a pesquisa e os filtros a partir do URL. A Academia está disponível na categoria Educação. A galeria funciona com botões, teclado e gestos táteis.
+
+## Checkpoint — 21 de novembro de 2026
+- Correção `a9ea5b5`: o contador de visitas opcional não causa exceção quando ausente.
+- Próxima ação: verificar CI desta revisão, testar regressões em Chromium/WebKit e continuar a validação em dispositivos físicos ou pré-produção.
+- Não alterar `app-ads.txt`, `CNAME` ou `main`.
