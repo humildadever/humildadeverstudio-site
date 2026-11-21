@@ -138,8 +138,8 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
       });
       await page.goto(secureOrigin);
       const protagonist = page.locator('.hero-image');
-      assert.equal(await protagonist.getAttribute('src'), 'assets/curioso-card-premium.webp');
       await page.waitForFunction(() => document.querySelector('.hero-image').naturalWidth > 0);
+      assert.match(await protagonist.evaluate(image => image.currentSrc), /banner-telemovel\.webp$/);
       assert.equal(await page.locator('.hero h1').textContent(), 'O Curioso e o Reino das Gargalhadas');
       await page.getByRole('link', { name: 'Conhecer o jogo', exact: true }).tap();
       await page.waitForURL(secureOrigin + '/o-curioso.html');
@@ -349,6 +349,12 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
             return [document.documentElement.scrollWidth, ...elements];
           });
           assert.deepEqual(overflow, [], file || 'index.html');
+          if (!file) {
+            await page.waitForFunction(() => document.querySelector('.hero-image').naturalWidth > 0);
+            const banner = width <= 900 ? 'banner-telemovel.webp' : 'banner-computador.webp';
+            const current = await page.locator('.hero-image').evaluate(image => image.currentSrc);
+            assert.equal(new URL(current).pathname, '/assets/curioso-arte/' + banner);
+          }
           assert.deepEqual(await page.evaluate(() => window.sitePolicyViolations), [], file || 'index.html');
         }
         await page.goto(origin + '/o-curioso.html');

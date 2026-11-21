@@ -32,7 +32,7 @@ main section { margin-block: 44px; }
 details + details { margin-top: 10px; }
 .grid details { margin-top: 0; align-self: start; }
 summary { cursor: pointer; font-weight: 750; min-height: 32px; }
-.world img { margin-top: 10px; aspect-ratio: 16 / 9; object-fit: cover; }
+.world img { margin-top: 10px; }
 .small { color: #c4dbeb; }
 video { max-width: 720px; margin-block: 14px; background: #020a16; }
 [hidden] { display: none !important; }
