@@ -85,9 +85,11 @@ addPreference('Reduzir movimento', 'hv-motion', 'reduce', 'normal', 'v31-reduced
   matchMedia('(prefers-reduced-motion: reduce)'));
 
 const counter = document.querySelector('.contador-visitas img');
-function showCounterFailure() {
-  counter.hidden = true;
-  counter.closest('.contador-visitas').classList.add('is-unavailable');
+if (counter) {
+  function showCounterFailure() {
+    counter.hidden = true;
+    counter.closest('.contador-visitas')?.classList.add('is-unavailable');
+  }
+  counter.addEventListener('error', showCounterFailure);
+  if (counter.complete && counter.naturalWidth === 0) showCounterFailure();
 }
-counter.addEventListener('error', showCounterFailure);
-if (counter.complete && counter.naturalWidth === 0) showCounterFailure();
