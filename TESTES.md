@@ -86,3 +86,8 @@ Na revisão `4067139`, [Chromium e WebKit](https://github.com/humildadever/humil
 ## Catálogo partilhável e galeria tátil
 
 A revisão `9dedbc0` passou 13/13 nos testes locais. Estes verificam a pesquisa por vários termos, o restauro de filtros, a rejeição de valores desconhecidos e a limpeza da pesquisa. O teste de navegação abre offline uma ligação filtrada para a Academia, confirma o endereço no campo de partilha e segue para os percursos. Em pré-produção HTTPS, o teste simula gestos horizontais, verifica a posição da captura e abre o original. Consulta os resultados de Chromium e WebKit no [GitHub Actions](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44783849610).
+
+## Destaque de O Curioso — 21 de novembro de 2026
+
+- As 13 verificações locais passaram com `npm test`.
+- Chromium e WebKit passaram no [GitHub Actions](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44902090099), incluindo a verificação móvel do título e do carregamento da imagem do protagonista.
