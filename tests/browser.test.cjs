@@ -137,6 +137,10 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
         return route.abort();
       });
       await page.goto(secureOrigin);
+      const protagonist = page.locator('.hero-image');
+      assert.equal(await protagonist.getAttribute('src'), 'assets/curioso-card-premium.webp');
+      await page.waitForFunction(() => document.querySelector('.hero-image').naturalWidth > 0);
+      assert.equal(await page.locator('.hero h1').textContent(), 'O Curioso e o Reino das Gargalhadas');
       await page.getByRole('link', { name: 'Conhecer o jogo', exact: true }).tap();
       await page.waitForURL(secureOrigin + '/o-curioso.html');
       const firstImage = page.locator('#capturas img').first();

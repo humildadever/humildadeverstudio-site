@@ -2,7 +2,7 @@
 
 const base = self.registration.scope;
 const prefix = 'humildadever-site:';
-const version = prefix + '17';
+const version = prefix + '18';
 const pages = [
   'index.html', 'apps.html', 'universe.html', 'academia.html', 'academia-sql.html',
   'academia-cursos.html', 'academia-web.html', 'academia-web-preview.html', 'o-curioso.html',
@@ -12,7 +12,7 @@ const assets = [
   'manifest.webmanifest', 'assets/pwa.js', 'assets/v31-premium.js',
   'assets/home.css', 'assets/v31-premium.css', 'assets/v17-premium.css',
   'assets/portal.css', 'assets/oficina-web.css', 'assets/academia-cursos.css', 'assets/academia-cursos.js', 'assets/oficina-web.js', 'assets/catalogo.js', 'assets/academia.js',
-  'assets/logotipo-192.webp', 'assets/hero-castle-premium.webp', 'assets/hero-castle-premium-480.webp',
+  'assets/logotipo-192.webp',
   'assets/curioso-card-premium.webp', 'assets/curioso-galeria.js',
   ...Array.from({ length: 5 }, (_, index) => `assets/captura-curioso-${index + 1}-320.webp`),
   ...Array.from({ length: 6 }, (_, index) => index + 1)

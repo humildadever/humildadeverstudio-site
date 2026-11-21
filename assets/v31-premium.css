@@ -25,11 +25,24 @@ body.v31-reduced *,body.v31-reduced *::before,body.v31-reduced *::after{animatio
 .v31-tools button{min-height:44px}
 .v31-tools button[aria-disabled=true]{cursor:default}
 
-.hero{display:grid;position:relative;isolation:isolate;align-items:center;min-height:clamp(430px,55vw,610px);background:#061326;color:#f2f8ff;overflow:hidden}
-.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#061326 3%,#061326ee 29%,#06132688 64%,#06132622);z-index:-1}
-.hero-copy{width:min(1180px,100%);margin:auto;padding:clamp(24px,6vw,72px) 24px}
-.hero h1{max-width:15ch;margin:0 0 18px;color:#ffdb67;font-size:clamp(2.35rem,6vw,5rem);line-height:1.04;letter-spacing:-.045em}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  padding: clamp(28px, 5vw, 64px) max(24px, calc((100% - 1132px) / 2));
+  background: radial-gradient(ellipse at 92% 25%, #20365b, #0c213b 48%, #061326 82%);
+  color: #f2f8ff;
+}
+.hero-image {
+  display: block;
+  width: min(100%, 465px);
+  height: auto;
+  justify-self: center;
+  border-radius: 22px;
+  box-shadow: 0 18px 46px #020916a0;
+}
+.hero h1{max-width:15ch;margin:0 0 18px;color:#ffdb67;font-size:clamp(2.15rem,5.4vw,4.6rem);line-height:1.04;letter-spacing:-.045em}
 .hero p{max-width:47ch;font-size:clamp(1.1rem,2vw,1.3rem);line-height:1.55}
 .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}
 .hero .playstore-btn{margin:0;background:#ffdb67!important;color:#10213d!important}
@@ -56,9 +69,8 @@ body.v31-light .btn.alt{background:#a4141b;color:#fff}
   .v17-nav .v31-menu:not([hidden]) + .v17-links:not([hidden]){position:absolute;top:100%;left:0;background:#041329;display:grid;gap:0;padding:8px 16px;overflow:auto;max-height:min(65vh,25rem);border-bottom:1px solid #43baff}
   .v17-nav .v17-links a{padding:12px 8px;line-height:1.35}
   .v17-nav .v31-menu[hidden] + .v17-links{display:flex;flex-wrap:wrap;justify-content:center}
-  .hero::before{background:linear-gradient(0deg,#061326 10%,#061326d9 60%,#06132660)}
-  .hero-copy{padding:clamp(72px,18vw,132px) 18px 32px}
-  .hero-image{object-position:60% 30%}
+  .hero{grid-template-columns:minmax(0,1fr);gap:20px;padding:22px 18px 32px}
+  .hero-image{grid-row:1;width:min(100%,360px);border-radius:16px}
   .hero-actions .btn{font-size:1rem;padding:12px 16px}
   .layout-original .hit{border-radius:3px}
 }
@@ -71,6 +83,5 @@ body.v31-light .btn.alt{background:#a4141b;color:#fff}
 /* Links longos devem caber em ecrãs estreitos e com zoom. */
 .contact .btn{max-width:100%;overflow-wrap:anywhere}
 .foot a{overflow-wrap:anywhere}
-.hero{grid-template-columns:minmax(0,1fr)}
 #estudio .brand img{width:clamp(50px,12vw,90px);height:auto;flex-shrink:0}
 #estudio .brand h2{min-width:0;overflow-wrap:anywhere}
