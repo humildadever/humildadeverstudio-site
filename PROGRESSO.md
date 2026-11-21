@@ -16,3 +16,5 @@
 - A galeria de O Curioso tem miniaturas disponíveis offline e um visualizador PT/EN com navegação por teclado, confirmação da imagem reduzida e atalho para o original quando disponível.
 
 - Catálogo com ligações partilháveis e com a Academia. O visualizador de O Curioso aceita gestos horizontais e indica a posição da captura.
+
+- Arte de O Curioso integrada na revisão funcional `3e14bfc` da branch de desenvolvimento. A página inicial usa banners distintos, os portais PT/EN mostram os seis mundos e a imagem de partilha está configurada.

@@ -31,3 +31,7 @@ O catálogo restaura a pesquisa e os filtros a partir do URL. A Academia está d
 - Correção `a9ea5b5`: o contador de visitas opcional não causa exceção quando ausente.
 - Próxima ação: verificar CI desta revisão, testar regressões em Chromium/WebKit e continuar a validação em dispositivos físicos ou pré-produção.
 - Não alterar `app-ads.txt`, `CNAME` ou `main`.
+
+## Arte de O Curioso
+
+A revisão funcional `3e14bfc` integra os recursos em `assets/curioso-arte/`. A página inicial escolhe o banner através de `picture`. O cartão e as miniaturas usam `srcset`. A cache offline está na versão 20. Os resultados desta revisão estão em [TESTES.md](TESTES.md). A branch de desenvolvimento é a base para eventual revisão de publicação.

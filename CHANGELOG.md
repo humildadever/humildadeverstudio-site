@@ -59,3 +59,6 @@
 ## Continuação — 21 de novembro de 2026
 - O contador de visitas opcional já não provoca erro JavaScript se o elemento estiver ausente (`a9ea5b5`).
 - Preservados `app-ads.txt`, `CNAME` e a branch de produção.
+
+- Integradas as dez ilustrações de O Curioso, com banners responsivos, cartão de catálogo, seis mundos com arte conceptual e uma imagem de partilha social.
+- Adicionadas versões leves para telemóveis e atualizada a cache offline. As capturas de jogabilidade continuam na galeria.

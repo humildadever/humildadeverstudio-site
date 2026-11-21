@@ -95,3 +95,9 @@ A revisão `9dedbc0` passou 13/13 nos testes locais. Estes verificam a pesquisa 
 ## Continuação — 21 de novembro de 2026
 - Corrigida defensivamente a ausência do contador de visitas no JavaScript V31.
 - Testes de navegador e CI para este commit: **pendentes de confirmação**; não confundir com execuções anteriores.
+
+## Integração das ilustrações de O Curioso
+
+- Os 13 testes locais passaram, incluindo caminhos dos recursos, cache offline, `CNAME` e `app-ads.txt`.
+- A revisão final `3e14bfc` passou em Chromium e WebKit no [GitHub Actions](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44934474570), incluindo a seleção do banner por largura.
+- Em Chromium a 390 px, a página inicial carregou 278 398 bytes de recursos locais e a página do jogo 219 967 bytes. Os limites são 300 000 e 250 000 bytes, respetivamente.
