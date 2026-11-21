@@ -55,3 +55,7 @@
 ## 21 de novembro de 2026 — O Curioso em destaque
 
 - O Curioso assume o lugar de jogo principal na página inicial e no catálogo. A página inicial mostra o protagonista e o seu companheiro e mantém a Google Play como primeiro botão. A mesma imagem é usada na partilha da página.
+
+## Continuação — 21 de novembro de 2026
+- O contador de visitas opcional já não provoca erro JavaScript se o elemento estiver ausente (`a9ea5b5`).
+- Preservados `app-ads.txt`, `CNAME` e a branch de produção.
