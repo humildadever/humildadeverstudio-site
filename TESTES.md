@@ -91,3 +91,7 @@ A revisão `9dedbc0` passou 13/13 nos testes locais. Estes verificam a pesquisa 
 
 - As 13 verificações locais passaram com `npm test`.
 - Chromium e WebKit passaram no [GitHub Actions](https://github.com/humildadever/humildadeverstudio-site/actions/runs/44902090099), incluindo a verificação móvel do título e do carregamento da imagem do protagonista.
+
+## Continuação — 21 de novembro de 2026
+- Corrigida defensivamente a ausência do contador de visitas no JavaScript V31.
+- Testes de navegador e CI para este commit: **pendentes de confirmação**; não confundir com execuções anteriores.
