@@ -48,3 +48,11 @@
 - Estado: teste acrescentado, execução Node/Chromium/WebKit **não confirmada** nesta execução.
 - Próximo passo: executar a suite no ambiente de CI, corrigir falhas e validar o layout em Android/iPhone.
 - Preservados: `main`, `app-ads.txt`, `CNAME` e produção.
+
+## Autopiloto V5.0 — continuação, 23-11-2026
+- P0: reforçada a asserção do layout móvel de O Curioso em `tests/browser.test.cjs`.
+- Agora verifica `display:grid`, exatamente uma coluna calculada e largura dos botões limitada ao contentor, além das verificações de altura, viewport e sobreposição.
+- Commit funcional confirmado: `c6d3a9f65229576ffd6c8477fbdfcc91cbeb55ad`.
+- Testes Node/Chromium/WebKit: **não executados nesta intervenção**; não há aprovação nova a reportar.
+- Próxima prioridade: confirmar CI da revisão e corrigir falhas antes de avançar para P1.
+- Produção, `main`, `app-ads.txt` e `CNAME` não alterados.
