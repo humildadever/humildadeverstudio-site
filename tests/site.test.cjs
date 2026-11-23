@@ -357,12 +357,12 @@ test('Página inicial: ações do Curioso acessíveis em ecrãs estreitos', () =
       }
     });
     const touch = rules.find(rule => rule.selector === '.hero-actions .btn' &&
-      /min-height:\\s*44px/.test(rule.declarations));
+      /min-height:\s*44px/.test(rule.declarations));
     assert.ok(touch, 'Alvos táteis do destaque devem ter pelo menos 44px');
     const narrow = rules.find(rule => rule.selector === '.hero-actions' &&
-      /grid-template-columns:\\s*minmax\\(0,1fr\\)/.test(rule.declarations));
+      /grid-template-columns:\s*minmax\(0,1fr\)/.test(rule.declarations));
     assert.ok(narrow, 'Ações devem usar uma coluna em ecrãs estreitos');
-    assert.match(stylesheet, /@media\\s*\\(max-width:\\s*480px\\)/);
+    assert.match(stylesheet, /@media\s*\(max-width:\s*480px\)/);
   } finally {
     dom.window.close();
   }
