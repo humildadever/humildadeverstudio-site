@@ -40,3 +40,11 @@
 - Commit: `1f20e8b65ef4d1394ee6c424ba941648154b03f2`.
 - Limitação: este ambiente não conseguiu aceder ao GitHub por rede no terminal, pelo que não foi possível clonar o repositório e executar a suite npm localmente. Não há resultados novos de testes para reportar.
 - Próxima ação: verificar CI do commit, executar testes Node/Chromium/WebKit, corrigir falhas, validar visualmente em dispositivos físicos.
+
+## Autopiloto V5.0 — primeira execução solicitada, 23-11-2026
+- Prioridade P0: reforço da verificação de responsividade do hero O Curioso.
+- Alteração: `tests/browser.test.cjs` agora confirma também que os botões móveis estão empilhados, sem sobreposição vertical, a 320/390/480px.
+- Commit: `d8ce90a19ddd2ebbdab9dea3ed532b5b0ce12ce5`.
+- Estado: teste acrescentado, execução Node/Chromium/WebKit **não confirmada** nesta execução.
+- Próximo passo: executar a suite no ambiente de CI, corrigir falhas e validar o layout em Android/iPhone.
+- Preservados: `main`, `app-ads.txt`, `CNAME` e produção.
