@@ -21,3 +21,9 @@
 - Testes: não executados nesta sessão; executar `npm ci`, `npm test` e `npm run test:browser` e rever o CI.
 - Publicação: não realizada; `main`, `app-ads.txt` e `CNAME` preservados.
 - Próxima prioridade: validar regressões do hero em 320/390/480px, verificar acessibilidade, continuar melhorias de O Curioso.
+
+## Checkpoint V4.0 — continuação, 23-11-2026
+- Novo teste em `tests/site.test.cjs`: confirma hero O Curioso, ligação Google Play, página do jogo e regras de largura/altura dos botões em ecrãs estreitos.
+- Commit confirmado: `44cfe5683fe6fb38e4005aa25b9df1db23298341`.
+- Resultado: teste **adicionado, ainda não executado** nesta sessão. Não afirmar CI aprovado sem confirmação.
+- Próxima prioridade: executar `npm test` e `npm run test:browser` na branch, inspecionar falhas e corrigir.
