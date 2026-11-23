@@ -122,3 +122,12 @@ body.v31-light .btn.alt{background:#a4141b;color:#fff}
 .foot a{overflow-wrap:anywhere}
 #estudio .brand img{width:clamp(50px,12vw,90px);height:auto;flex-shrink:0}
 #estudio .brand h2{min-width:0;overflow-wrap:anywhere}
+
+/* V31 — ações do destaque: alvos táteis e disposição legível em ecrãs estreitos. */
+.hero-actions .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+@media(max-width:480px){
+  .hero-copy{min-width:0}
+  .hero h1{overflow-wrap:break-word}
+  .hero-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+  .hero-actions .btn{width:100%;max-width:100%;box-sizing:border-box;white-space:normal}
+}
