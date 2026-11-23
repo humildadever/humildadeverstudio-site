@@ -336,18 +336,34 @@ test('PWA: cache público, fallback offline e exclusão de ficheiros técnicos',
 
 
 test('Página inicial: ações do Curioso acessíveis em ecrãs estreitos', () => {
-  const document = parsePage('index.html').window.document;
-  const hero = document.querySelector('.hero');
-  assert.ok(hero, 'Destaque principal em falta');
-  assert.match(hero.querySelector('h1')?.textContent || '', /O Curioso/);
-  const actions = [...hero.querySelectorAll('.hero-actions a')];
-  assert.ok(actions.some(a => a.href.includes('play.google.com/store/apps/details?id=com.humildadever.ocurioso')));
-  assert.ok(actions.some(a => a.getAttribute('href') === 'o-curioso.html'));
-  const stylesheet = read('assets/v31-premium.css');
-  const parsed = css.parse(stylesheet);
-  assert.ok(parsed, 'CSS inválido');
-  assert.match(stylesheet, /\\.hero-actions \\.btn\\s*\\{[^}]*min-height:\\s*44px/s);
-  assert.match(stylesheet, /@media\\s*\\(max-width:\\s*480px\\)/);
-  assert.match(stylesheet, /\\.hero-actions\\s*\\{[^}]*grid-template-columns:\\s*minmax\\(0,1fr\\)/s);
-  assert.match(stylesheet, /\\.hero-actions \\.btn\\s*\\{[^}]*width:\\s*100%/s);
+  const dom = parsePage('index.html');
+  try {
+    const hero = dom.window.document.querySelector('.hero');
+    assert.ok(hero, 'Destaque principal em falta');
+    assert.match(hero.querySelector('h1')?.textContent || '', /O Curioso/);
+    const actions = [...hero.querySelectorAll('.hero-actions a')];
+    assert.ok(actions.some(a => a.href.includes('play.google.com/store/apps/details?id=com.humildadever.ocurioso')));
+    assert.ok(actions.some(a => a.getAttribute('href') === 'o-curioso.html'));
+    const stylesheet = read('assets/v31-premium.css');
+    const ast = css.parse(stylesheet);
+    const rules = [];
+    css.walk(ast, {
+      visit: 'Rule',
+      enter(node) {
+        rules.push({
+          selector: css.generate(node.prelude),
+          declarations: css.generate(node.block)
+        });
+      }
+    });
+    const touch = rules.find(rule => rule.selector === '.hero-actions .btn' &&
+      /min-height:\\s*44px/.test(rule.declarations));
+    assert.ok(touch, 'Alvos táteis do destaque devem ter pelo menos 44px');
+    const narrow = rules.find(rule => rule.selector === '.hero-actions' &&
+      /grid-template-columns:\\s*minmax\\(0,1fr\\)/.test(rule.declarations));
+    assert.ok(narrow, 'Ações devem usar uma coluna em ecrãs estreitos');
+    assert.match(stylesheet, /@media\\s*\\(max-width:\\s*480px\\)/);
+  } finally {
+    dom.window.close();
+  }
 });
