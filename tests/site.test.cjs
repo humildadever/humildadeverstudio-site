@@ -333,3 +333,21 @@ test('PWA: cache público, fallback offline e exclusão de ficheiros técnicos',
   const manifest = JSON.parse(read('manifest.webmanifest'));
   for (const icon of manifest.icons) assert.ok(existsSync(path.join(root, icon.src)), icon.src);
 });
+
+
+test('Página inicial: ações do Curioso acessíveis em ecrãs estreitos', () => {
+  const document = parsePage('index.html').window.document;
+  const hero = document.querySelector('.hero');
+  assert.ok(hero, 'Destaque principal em falta');
+  assert.match(hero.querySelector('h1')?.textContent || '', /O Curioso/);
+  const actions = [...hero.querySelectorAll('.hero-actions a')];
+  assert.ok(actions.some(a => a.href.includes('play.google.com/store/apps/details?id=com.humildadever.ocurioso')));
+  assert.ok(actions.some(a => a.getAttribute('href') === 'o-curioso.html'));
+  const stylesheet = read('assets/v31-premium.css');
+  const parsed = css.parse(stylesheet);
+  assert.ok(parsed, 'CSS inválido');
+  assert.match(stylesheet, /\\.hero-actions \\.btn\\s*\\{[^}]*min-height:\\s*44px/s);
+  assert.match(stylesheet, /@media\\s*\\(max-width:\\s*480px\\)/);
+  assert.match(stylesheet, /\\.hero-actions\\s*\\{[^}]*grid-template-columns:\\s*minmax\\(0,1fr\\)/s);
+  assert.match(stylesheet, /\\.hero-actions \\.btn\\s*\\{[^}]*width:\\s*100%/s);
+});
