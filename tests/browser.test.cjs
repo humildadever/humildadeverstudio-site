@@ -294,7 +294,7 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
     }
   });
 
-  for (const width of [320, 390, 768, 1366]) {
+  for (const width of [320, 390, 480, 768, 1366]) {
     await t.test(`${width}px`, async () => {
       const page = await browser.newPage({
         viewport: { width, height: 800 }, reducedMotion: 'reduce'
@@ -350,6 +350,24 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
           });
           assert.deepEqual(overflow, [], file || 'index.html');
           if (!file) {
+            if (width <= 480) {
+              const layout = await page.locator('.hero-actions').evaluate(container => {
+                const buttons = [...container.querySelectorAll('a.btn')];
+                return {
+                  columns: getComputedStyle(container).gridTemplateColumns,
+                  buttons: buttons.map(button => {
+                    const rect = button.getBoundingClientRect();
+                    return { width: rect.width, height: rect.height, left: rect.left, right: rect.right };
+                  })
+                };
+              });
+              assert.equal(layout.buttons.length >= 2, true, 'Ações principais do Curioso em falta');
+              assert.ok(layout.columns !== 'none', 'Ações móveis devem usar grid');
+              for (const button of layout.buttons) {
+                assert.ok(button.height >= 44, 'Botão móvel inferior a 44px');
+                assert.ok(button.left >= 0 && button.right <= width, 'Botão móvel fora do ecrã');
+              }
+            }
             await page.waitForFunction(() => document.querySelector('.hero-image').naturalWidth > 0);
             const banner = width <= 900 ? 'banner-telemovel-640.webp' : 'banner-computador.webp';
             const current = await page.locator('.hero-image').evaluate(image => image.currentSrc);
