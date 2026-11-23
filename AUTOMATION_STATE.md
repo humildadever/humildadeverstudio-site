@@ -33,3 +33,10 @@
 - Commits confirmados: `8f446a53721bfcf56d5a769075e2827b3f1048c7`, `41b205924b2346bdbdb1349ad94d889606caa1c0`.
 - Testes automatizados ainda não executados nesta sessão; **não considerar o teste aprovado**.
 - Próxima ação obrigatória: executar `npm ci && npm test && npm run test:browser`, corrigir eventuais falhas e verificar o CI antes de novas alterações de produção.
+
+## Checkpoint — validação móvel ampliada, 23-11-2026
+- `tests/browser.test.cjs`: matriz de larguras inclui agora 320, 390, 480, 768 e 1366px.
+- Para 320/390/480px, o teste verifica disposição em grelha e botões de O Curioso com altura >=44px e sem ultrapassar os limites horizontais do viewport.
+- Commit: `1f20e8b65ef4d1394ee6c424ba941648154b03f2`.
+- Limitação: este ambiente não conseguiu aceder ao GitHub por rede no terminal, pelo que não foi possível clonar o repositório e executar a suite npm localmente. Não há resultados novos de testes para reportar.
+- Próxima ação: verificar CI do commit, executar testes Node/Chromium/WebKit, corrigir falhas, validar visualmente em dispositivos físicos.
