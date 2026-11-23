@@ -367,6 +367,12 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
                 assert.ok(button.height >= 44, 'Botão móvel inferior a 44px');
                 assert.ok(button.left >= 0 && button.right <= width, 'Botão móvel fora do ecrã');
               }
+              const positions = await page.locator('.hero-actions a.btn').evaluateAll(buttons =>
+                buttons.map(button => ({ top: button.getBoundingClientRect().top, bottom: button.getBoundingClientRect().bottom })));
+              for (let i = 1; i < positions.length; i += 1) {
+                assert.ok(positions[i].top >= positions[i - 1].bottom,
+                  'Os botões móveis devem estar em linhas separadas sem sobreposição');
+              }
             }
             await page.waitForFunction(() => document.querySelector('.hero-image').naturalWidth > 0);
             const banner = width <= 900 ? 'banner-telemovel-640.webp' : 'banner-computador.webp';
