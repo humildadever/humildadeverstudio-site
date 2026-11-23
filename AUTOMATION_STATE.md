@@ -27,3 +27,9 @@
 - Commit confirmado: `44cfe5683fe6fb38e4005aa25b9df1db23298341`.
 - Resultado: teste **adicionado, ainda não executado** nesta sessão. Não afirmar CI aprovado sem confirmação.
 - Próxima prioridade: executar `npm test` e `npm run test:browser` na branch, inspecionar falhas e corrigir.
+
+## Checkpoint — correção de testes, 23-11-2026
+- O teste acrescentado ao final de `tests/site.test.cjs` foi revisto: inspeção das regras CSS por `css-tree`, fecho do DOM de teste e correção de escapes das expressões regulares.
+- Commits confirmados: `8f446a53721bfcf56d5a769075e2827b3f1048c7`, `41b205924b2346bdbdb1349ad94d889606caa1c0`.
+- Testes automatizados ainda não executados nesta sessão; **não considerar o teste aprovado**.
+- Próxima ação obrigatória: executar `npm ci && npm test && npm run test:browser`, corrigir eventuais falhas e verificar o CI antes de novas alterações de produção.
