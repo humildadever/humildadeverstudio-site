@@ -354,7 +354,9 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
               const layout = await page.locator('.hero-actions').evaluate(container => {
                 const buttons = [...container.querySelectorAll('a.btn')];
                 return {
+                  display: getComputedStyle(container).display,
                   columns: getComputedStyle(container).gridTemplateColumns,
+                  containerWidth: container.getBoundingClientRect().width,
                   buttons: buttons.map(button => {
                     const rect = button.getBoundingClientRect();
                     return { width: rect.width, height: rect.height, left: rect.left, right: rect.right };
@@ -362,8 +364,12 @@ test(`${engine}: navegação, acessibilidade e offline`, async t => {
                 };
               });
               assert.equal(layout.buttons.length >= 2, true, 'Ações principais do Curioso em falta');
-              assert.ok(layout.columns !== 'none', 'Ações móveis devem usar grid');
+              assert.equal(layout.display, 'grid', 'Ações móveis devem usar display grid');
+              const tracks = layout.columns.split(' ').filter(Boolean);
+              assert.equal(tracks.length, 1, 'Ações móveis devem ocupar uma única coluna');
               for (const button of layout.buttons) {
+                assert.ok(button.width > 0 && button.width <= layout.containerWidth + 1,
+                  'Botão móvel com largura inválida');
                 assert.ok(button.height >= 44, 'Botão móvel inferior a 44px');
                 assert.ok(button.left >= 0 && button.right <= width, 'Botão móvel fora do ecrã');
               }
