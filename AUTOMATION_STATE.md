@@ -93,3 +93,8 @@
 - GitHub Actions `45694011874` do commit `e757c50aabc61774b652e57852233d58031b5011`: sucesso confirmado; revisão intermédia `43156959` falhou e correção posterior `1131680` passou.
 - `.github/workflows/site-checks.yml`: adicionado passo `npm run audit:seo` nos jobs Chromium e WebKit, guardando relatório JSON temporário e validando a estrutura. Commit `a36e77e29789718b2e8351138fd2601ea5da1af7`.
 - Próximo passo: verificar resultado CI deste commit; avaliar contagem de problemas SEO e corrigir páginas por prioridade. Sem alterar produção, main, CNAME ou app-ads.txt.
+
+## V7.0 — correção CI auditoria SEO, 25-11-2026
+- Inspecionados logs do GitHub Actions `45699010764`: `npm test` passou 17/17, mas o passo SEO falhou porque o comando `npm run audit:seo` redirecionava também o cabeçalho npm para o JSON, causando `SyntaxError: Unexpected token '>'`.
+- Corrigido workflow para `node scripts/seo-audit.cjs > /tmp/humildadever-seo-audit.json`, evitando o cabeçalho npm. Commit `39f0757dc82215afadbe290dd757d8b6323ef7b8`.
+- Pendente confirmar novo CI e execução de testes de navegador; não afirmar sucesso até conclusão. Manter produção/main/CNAME/app-ads.txt intactos.
