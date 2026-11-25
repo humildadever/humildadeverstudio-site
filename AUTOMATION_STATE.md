@@ -71,3 +71,9 @@
 - Tentativa de execução local bloqueada: ambiente sem resolução DNS para github.com, impossível clonar o repositório; testes NÃO executados nem aprovados nesta intervenção.
 - Próxima prioridade: verificar GitHub Actions no HEAD atual, executar `npm ci`, `npm test`, `npm run test:browser` e `npm run audit:seo` em ambiente com acesso ao código; corrigir falhas e inspecionar problemas SEO reportados.
 - `main`, produção, `app-ads.txt` e `CNAME` preservados.
+
+## V7.0 — internacionalização SEO, 25-11-2026
+- GitHub Actions `45691056847` para `4ea7807921767f1675bdf0dd8ba39be5fd7f3369`: **sucesso confirmado** em Chromium e WebKit, incluindo `npm ci`, `npm test` e `npm run test:browser` em ambos.
+- Adicionado `hreflang="x-default"` nas páginas PT/EN de O Curioso e Notícias, com fallback PT: commits `3d0ea128`, `2d99db1a`, `0670beac`, `65da3738`.
+- Os commits novos requerem CI próprio; não afirmar que já passaram. `npm run audit:seo` ainda não foi executado como passo independente.
+- Próximo passo: confirmar CI do HEAD atual, melhorar o sitemap com alternates consistentes e validar em dispositivos físicos. Sem publicação em produção; `main`, `CNAME`, `app-ads.txt` preservados.
