@@ -2,8 +2,9 @@
   "name": "humildadeverstudio-site",
   "private": true,
   "scripts": {
-    "test": "node --test tests/site.test.cjs",
-    "test:browser": "node --test tests/browser.test.cjs"
+    "test": "node --test tests/site.test.cjs tests/seo-audit.test.cjs",
+    "test:browser": "node --test tests/browser.test.cjs",
+    "audit:seo": "node scripts/seo-audit.cjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
