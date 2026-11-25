@@ -98,3 +98,8 @@
 - Inspecionados logs do GitHub Actions `45699010764`: `npm test` passou 17/17, mas o passo SEO falhou porque o comando `npm run audit:seo` redirecionava também o cabeçalho npm para o JSON, causando `SyntaxError: Unexpected token '>'`.
 - Corrigido workflow para `node scripts/seo-audit.cjs > /tmp/humildadever-seo-audit.json`, evitando o cabeçalho npm. Commit `39f0757dc82215afadbe290dd757d8b6323ef7b8`.
 - Pendente confirmar novo CI e execução de testes de navegador; não afirmar sucesso até conclusão. Manter produção/main/CNAME/app-ads.txt intactos.
+
+## V7.1 — dados estruturados na homepage, 25-11-2026
+- GitHub Actions `45719834879` concluiu com sucesso no HEAD anterior `e408aaa2` (incluindo correção do relatório SEO).
+- Homepage `index.html` enriquecida com JSON-LD schema.org `Organization`, `WebSite` e `VideoGame` (O Curioso), com ligações a páginas e perfis já existentes, sem avaliações ou preços inventados. Commit `f7a15be4785a47cbeb373a019f4022a66cea3038`.
+- Confirmar CI do novo commit antes de considerar os testes aprovados. Verificação de propriedade Search Console e DNS fica para intervenção autorizada do proprietário; não modificar main, produção, CNAME, app-ads.txt ou DNS.
