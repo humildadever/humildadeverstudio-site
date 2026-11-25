@@ -56,3 +56,11 @@
 - Testes Node/Chromium/WebKit: **não executados nesta intervenção**; não há aprovação nova a reportar.
 - Próxima prioridade: confirmar CI da revisão e corrigir falhas antes de avançar para P1.
 - Produção, `main`, `app-ads.txt` e `CNAME` não alterados.
+
+
+## V7.0 — auditoria SEO internacional, 25-11-2026
+- Corrigido `scripts/seo-audit.cjs` para ler atributos de metadados independentemente da sua ordem, identificar descrições e verificar a origem das URLs canónicas e `hreflang`.
+- Commit funcional: `6c7fa5bcb8d9e70eaca8d77214c007c3932c561e`.
+- Testes: não executados nesta intervenção; não afirmar CI aprovado.
+- Produção, `main`, `app-ads.txt` e `CNAME` não alterados.
+- Próximo passo: executar auditoria e testes Node/Chromium/WebKit; corrigir problemas identificados e confirmar CI antes de avançar para tradução internacional.
