@@ -77,3 +77,8 @@
 - Adicionado `hreflang="x-default"` nas páginas PT/EN de O Curioso e Notícias, com fallback PT: commits `3d0ea128`, `2d99db1a`, `0670beac`, `65da3738`.
 - Os commits novos requerem CI próprio; não afirmar que já passaram. `npm run audit:seo` ainda não foi executado como passo independente.
 - Próximo passo: confirmar CI do HEAD atual, melhorar o sitemap com alternates consistentes e validar em dispositivos físicos. Sem publicação em produção; `main`, `CNAME`, `app-ads.txt` preservados.
+
+## V7.0 — sitemap multilíngue, 25-11-2026
+- `sitemap.xml` atualizado com namespace XHTML e alternates recíprocos `pt-PT`, `en` e `x-default` para as quatro páginas de O Curioso e Notícias. Commit `99855c4c0d21d034fae91fc956a9491ad4c97c97`.
+- Aguardar CI específico do novo HEAD; resultados de sucesso anteriores não validam este commit.
+- Próxima prioridade: verificar Actions do HEAD e corrigir quaisquer falhas; depois auditar alternates e SEO da homepage.
