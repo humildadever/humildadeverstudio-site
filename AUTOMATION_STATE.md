@@ -82,3 +82,9 @@
 - `sitemap.xml` atualizado com namespace XHTML e alternates recíprocos `pt-PT`, `en` e `x-default` para as quatro páginas de O Curioso e Notícias. Commit `99855c4c0d21d034fae91fc956a9491ad4c97c97`.
 - Aguardar CI específico do novo HEAD; resultados de sucesso anteriores não validam este commit.
 - Próxima prioridade: verificar Actions do HEAD e corrigir quaisquer falhas; depois auditar alternates e SEO da homepage.
+
+## V7.0 — testes de internacionalização, 25-11-2026
+- CI de `40c5e1a362e0679a0b5fa14480fbb263aacfce46` concluído com sucesso no GitHub Actions (`45692027560`).
+- Acrescentados testes para alternates recíprocos PT/EN/x-default nas páginas O Curioso e Notícias e respetivo sitemap. Commits `43156959cc01248ff1d92fbfeb6f8ddee6ea9e60` e correção `1131680e6f2e08e8c25b33ec614ec965d8bc402b`.
+- CI dos novos testes ainda pendente no momento deste registo. Não afirmar aprovação até verificar.
+- Próxima prioridade: verificar o CI do HEAD e corrigir eventuais falhas; executar `npm run audit:seo` para identificar páginas com metadados incompletos. Não publicar em produção.
