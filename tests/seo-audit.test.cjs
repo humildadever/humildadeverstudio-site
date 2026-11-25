@@ -28,7 +28,7 @@ test('páginas internacionais de O Curioso e Notícias mantêm alternates recíp
   for (const [pt, en] of pairs) {
     for (const file of [pt, en]) {
       const html = fs.readFileSync(path.join(root, file), 'utf8');
-      assert.match(html, /<link\\s+rel="canonical"\\s+href="https:\/\/humildadeverstudio\\.com\//);
+      assert.ok(html.includes('<link rel="canonical" href="https://humildadeverstudio.com/'), file + ': canonical missing');
       for (const [lang, target] of [['pt-PT', pt], ['en', en], ['x-default', pt]]) {
         assert.ok(html.includes('hreflang="' + lang + '" href="https://humildadeverstudio.com/' + target + '"'), file + ': missing ' + lang);
       }
