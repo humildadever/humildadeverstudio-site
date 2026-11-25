@@ -28,7 +28,7 @@ jobs:
       - run: npm test
       - name: Audit international SEO metadata
         run: |
-          npm run audit:seo > /tmp/humildadever-seo-audit.json
+          node scripts/seo-audit.cjs > /tmp/humildadever-seo-audit.json
           node -e 'const r=require("/tmp/humildadever-seo-audit.json"); console.log(JSON.stringify(r.summary)); if (!r.summary || !Array.isArray(r.checks)) process.exit(1)'
       - run: npx playwright install --with-deps ${{ matrix.browser }}
       - run: npm run test:browser
