@@ -88,3 +88,8 @@
 - Acrescentados testes para alternates recíprocos PT/EN/x-default nas páginas O Curioso e Notícias e respetivo sitemap. Commits `43156959cc01248ff1d92fbfeb6f8ddee6ea9e60` e correção `1131680e6f2e08e8c25b33ec614ec965d8bc402b`.
 - CI dos novos testes ainda pendente no momento deste registo. Não afirmar aprovação até verificar.
 - Próxima prioridade: verificar o CI do HEAD e corrigir eventuais falhas; executar `npm run audit:seo` para identificar páginas com metadados incompletos. Não publicar em produção.
+
+## V7.0 — CI com auditoria SEO, 25-11-2026
+- GitHub Actions `45694011874` do commit `e757c50aabc61774b652e57852233d58031b5011`: sucesso confirmado; revisão intermédia `43156959` falhou e correção posterior `1131680` passou.
+- `.github/workflows/site-checks.yml`: adicionado passo `npm run audit:seo` nos jobs Chromium e WebKit, guardando relatório JSON temporário e validando a estrutura. Commit `a36e77e29789718b2e8351138fd2601ea5da1af7`.
+- Próximo passo: verificar resultado CI deste commit; avaliar contagem de problemas SEO e corrigir páginas por prioridade. Sem alterar produção, main, CNAME ou app-ads.txt.
