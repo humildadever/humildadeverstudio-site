@@ -64,3 +64,10 @@
 - Testes: não executados nesta intervenção; não afirmar CI aprovado.
 - Produção, `main`, `app-ads.txt` e `CNAME` não alterados.
 - Próximo passo: executar auditoria e testes Node/Chromium/WebKit; corrigir problemas identificados e confirmar CI antes de avançar para tradução internacional.
+
+## V7.0 — testes SEO integrados, 25-11-2026
+- Criado `tests/seo-audit.test.cjs` para validar JSON, contagens e cobertura de páginas do auditor SEO. Commit `52669e44c851bf2ee465ee9f81c9606145140f57`.
+- Adicionados `npm run audit:seo` e inclusão do novo teste em `npm test`. Commit `e3b8364b58f7c5bbab3879a3f21843b1bd07e2b5`.
+- Tentativa de execução local bloqueada: ambiente sem resolução DNS para github.com, impossível clonar o repositório; testes NÃO executados nem aprovados nesta intervenção.
+- Próxima prioridade: verificar GitHub Actions no HEAD atual, executar `npm ci`, `npm test`, `npm run test:browser` e `npm run audit:seo` em ambiente com acesso ao código; corrigir falhas e inspecionar problemas SEO reportados.
+- `main`, produção, `app-ads.txt` e `CNAME` preservados.
