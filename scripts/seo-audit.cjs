@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Auditoria informativa de SEO internacional. Não altera ficheiros nem publica conteúdo.
+// Inventário informativo de SEO internacional: leitura apenas, sem publicação.
 const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
@@ -26,4 +26,4 @@ for (const file of pages) {
 }
 const summary = { pages: checks.length, pagesWithIssues: checks.filter(p => p.issues.length).length, issueCount: checks.reduce((n,p) => n + p.issues.length, 0) };
 process.stdout.write(JSON.stringify({ summary, checks }, null, 2) + '\n');
-// Informative by design: existing legacy pages are not a release blocker.
+// Relatório informativo: páginas legadas não bloqueiam o build.
