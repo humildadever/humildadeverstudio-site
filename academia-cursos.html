@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprende a programar com três projetos da Academia Humildadever. Cria um minijogo em HTML, soma moedas com Python e constrói um ranking com SQL.">
+  <title>Academia Humildadever | Web, Python e SQL</title>
+  <link rel="canonical" href="https://humildadeverstudio.com/academia-cursos.html">
+  <link rel="icon" href="assets/logotipo-192.webp">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/portal.css">
+  <link rel="stylesheet" href="assets/academia-cursos.css">
+  <script src="assets/pwa.js" defer></script>
+  <script src="assets/academia-cursos.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<nav class="site-nav" aria-label="Navegação principal">
+  <a class="studio" href="index.html"><img src="assets/logotipo-192.webp" alt="" width="44" height="44">Humildadever Studio</a>
+  <a href="apps.html">Aplicações</a>
+  <a href="o-curioso.html">O Curioso</a>
+</nav>
+<main id="conteudo" tabindex="-1">
+  <header class="academia-hero">
+    <div>
+      <h1>Academia<br>Humildadever</h1>
+      <p>Aprende a programar com projetos de jogos. Constrói um minijogo, soma moedas em Python ou cria uma tabela classificativa em SQL.</p>
+      <a class="action primary" href="#percursos">Escolher percurso</a>
+    </div>
+    <div class="academia-exemplo" aria-label="Exemplo do projeto Web">
+      <p>Caça às estrelas</p>
+      <code><span>botao</span>.addEventListener(<em>'click'</em>, () =&gt; {<br>
+      &nbsp; pontos += <strong>1</strong>;<br>
+      &nbsp; placar.textContent = pontos;<br>
+      });</code>
+    </div>
+  </header>
+  <section id="percursos">
+    <h2>Escolhe o teu projeto</h2>
+    <p id="progresso-cursos" class="small" hidden></p>
+    <div class="grid academia-percursos">
+      <article class="panel" data-curso="web">
+        <p class="academia-linguagem">HTML / CSS / JavaScript</p>
+        <h3>Oficina Web</h3>
+        <p>Edita o código no navegador, valida três desafios e exporta um minijogo com temporizador.</p>
+        <div class="curso-progresso" hidden>
+          <p id="progresso-web"></p>
+          <progress max="3" value="0" aria-label="Progresso de Oficina Web" aria-describedby="progresso-web"></progress>
+        </div>
+        <a class="action" href="academia-web.html">Abrir a Oficina Web</a>
+      </article>
+      <article class="panel" data-curso="python">
+        <p class="academia-linguagem">Python</p>
+        <h3>Contador de moedas</h3>
+        <p>Pratica variáveis, condições e ciclos com um contador de pontuação para um jogo.</p>
+        <div class="curso-progresso" hidden>
+          <p id="progresso-python"></p>
+          <progress max="3" value="0" aria-label="Progresso de Contador de moedas" aria-describedby="progresso-python"></progress>
+        </div>
+        <a class="action" href="academia.html">Iniciar o curso de Python</a>
+      </article>
+      <article class="panel" data-curso="sql">
+        <p class="academia-linguagem">SQL</p>
+        <h3>Tabela classificativa</h3>
+        <p>Filtra, agrupa e ordena resultados para construir a classificação de um torneio.</p>
+        <div class="curso-progresso" hidden>
+          <p id="progresso-sql"></p>
+          <progress max="3" value="0" aria-label="Progresso de Tabela classificativa" aria-describedby="progresso-sql"></progress>
+        </div>
+        <a class="action" href="academia-sql.html">Iniciar o curso de SQL</a>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><span>© Humildadever Studio</span><a href="privacidade.html">Privacidade</a></footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Academia — Primeiros passos em Python | Humildadever Studio</title>
+  <meta name="description" content="Aprende variáveis, condições e ciclos em Python com exemplos, exercícios e um projeto de pontuação arcade.">
+  <link rel="canonical" href="https://humildadeverstudio.com/academia.html">
+  <link rel="icon" href="assets/logotipo-192.webp">
+  <link rel="stylesheet" href="assets/portal.css">
+  <script src="assets/academia.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <script src="assets/pwa.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<nav class="site-nav" aria-label="Navegação principal">
+  <a class="studio" href="index.html"><img src="assets/logotipo-192.webp" alt="" width="44" height="44">Humildadever Studio</a>
+  <a href="index.html">Início</a><a href="apps.html">Aplicações</a><a href="academia-sql.html">Curso de SQL</a>
+  <a href="academia-web.html">Oficina Web</a>
+  <a href="academia-cursos.html">Todos os percursos</a>
+</nav>
+<main id="conteudo" tabindex="-1">
+  <header>
+    <h1>Academia Humildadever</h1>
+    <h2>Primeiros passos em Python</h2>
+    <p>Aprende três conceitos e combina-os num contador de moedas para um jogo. Para correr os exemplos, guarda-os num ficheiro e executa-o com Python 3.</p>
+    <nav class="actions" aria-label="Conteúdos do curso">
+      <a href="#variaveis">Variáveis</a><a href="#condicoes">Condições</a><a href="#ciclos">Ciclos</a><a href="#projeto">Projeto</a><a href="#quiz">Questionário</a>
+    </nav>
+    <p id="progresso" role="status" hidden></p>
+  </header>
+  <section id="variaveis">
+    <h2>1. Variáveis e cálculo</h2>
+    <p>Uma variável associa um nome a um valor. Usa <code>=</code> para guardar um valor e <code>+=</code> para lhe somar outro.</p>
+    <pre><code>moedas = 4
+moedas += 3
+print(moedas)  # 7</code></pre>
+    <p>Exercício. Começa com 10 moedas, gasta 4 e recolhe mais 2. Imprime o total.</p>
+    <details><summary>Solução comentada</summary><pre><code>moedas = 10
+moedas -= 4
+moedas += 2
+print(moedas)  # 8</code></pre><p><code>-=</code> subtrai o custo antes de somar as moedas recolhidas.</p></details>
+  </section>
+  <section id="condicoes">
+    <h2>2. Decisões com if</h2>
+    <p><code>if</code> executa um bloco quando a condição é verdadeira. <code>else</code> executa o bloco alternativo. Usa quatro espaços de indentação dentro de cada bloco.</p>
+    <pre><code>moedas = 8
+if moedas &gt;= 10:
+    print("Nível desbloqueado")
+else:
+    print("Continua a jogar")</code></pre>
+    <p>Exercício. Muda a condição para desbloquear o nível a partir de 8 moedas. Testa com 7, 8 e 9 moedas.</p>
+    <details><summary>Solução comentada</summary><p>Usa <code>if moedas &gt;= 8:</code>. Com 7, o jogo indica que deves continuar. Com 8 e 9, desbloqueia o nível porque o limite inclui o valor 8.</p></details>
+  </section>
+  <section id="ciclos">
+    <h2>3. Repetição com for</h2>
+    <p>Uma lista guarda vários valores. Um ciclo <code>for</code> percorre cada elemento por ordem e pode atualizar um total.</p>
+    <pre><code>total = 0
+for moedas in [2, 4, 3]:
+    total += moedas
+print(total)  # 9</code></pre>
+    <p>Exercício. Soma as moedas de quatro rondas com a lista <code>[3, 0, 2, 5]</code>.</p>
+    <details><summary>Solução comentada</summary><p>Substitui a lista no exemplo. O total passa por 3, 3, 5 e 10. A segunda ronda acrescenta zero.</p></details>
+  </section>
+  <section id="projeto">
+    <h2>Projeto prático — Contador arcade</h2>
+    <p>Cria um programa que soma as moedas de três rondas, imprime o total e mostra se uma porta abre com pelo menos 10 moedas. Verifica os três casos seguintes.</p>
+    <ul><li><code>[2, 4, 3]</code> soma 9 e mantém a porta fechada.</li><li><code>[3, 2, 5]</code> soma 10 e abre a porta.</li><li><code>[4, 6, 2]</code> soma 12 e abre a porta.</li></ul>
+    <details><summary>Ver implementação de referência</summary><pre><code>rondas = [3, 2, 5]
+total = 0
+for moedas in rondas:
+    total += moedas
+
+print(f"Total: {total}")
+if total &gt;= 10:
+    print("Porta aberta")
+else:
+    print("Porta fechada")</code></pre><p>Substitui <code>rondas</code> pelos outros casos para testar o resultado.</p></details>
+  </section>
+  <section id="quiz">
+    <h2>Questionário</h2>
+    <form id="avaliacao" data-storage-key="hv-academia-python-basico-v1" hidden>
+      <fieldset><legend>1. Qual é o valor de <code>moedas</code> depois de <code>moedas = 4</code> e <code>moedas += 3</code>?</legend>
+        <label><input type="radio" name="variavel" value="4" required> 4</label>
+        <label><input type="radio" name="variavel" value="7" data-correct="Somar 3 a 4 dá 7."> 7</label>
+      </fieldset>
+      <fieldset><legend>2. Qual a condição que inclui o valor 8?</legend>
+        <label><input type="radio" name="condicao" value="inclusive" data-correct="O operador &gt;= inclui o limite." required> <code>moedas &gt;= 8</code></label>
+        <label><input type="radio" name="condicao" value="exclusive"> <code>moedas &gt; 8</code></label>
+      </fieldset>
+      <fieldset><legend>3. Quantas vezes corre o corpo do ciclo <code>for moedas in [2, 4, 3]</code>?</legend>
+        <label><input type="radio" name="ciclo" value="9" required> 9</label>
+        <label><input type="radio" name="ciclo" value="3" data-correct="O ciclo executa uma vez por elemento da lista."> 3</label>
+      </fieldset>
+      <button type="submit">Ver resultado</button>
+    </form>
+    <p id="nota" role="status"></p>
+    <noscript><p>Ativa JavaScript para corrigir o questionário. As lições, os exercícios e as soluções continuam disponíveis nesta página.</p></noscript>
+    <p>Referência para aprofundar os exemplos na <a href="https://docs.python.org/3/tutorial/">documentação oficial de Python</a>.</p>
+  </section>
+</main>
+<footer class="site-footer"><span>© Humildadever Studio</span><a href="privacidade.html">Privacidade</a></footer>
+</body>
+</html>

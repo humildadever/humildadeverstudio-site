@@ -1,0 +1,133 @@
+/* V31 — camada visual progressiva; não substitui recursos existentes */
+:root{--v31-bg:#061326;--v31-ink:#f2f8ff;--v31-accent:#53dcff;--v31-gold:#ffdb67}
+html{scroll-padding-top:88px}body{background:var(--v31-bg);color:var(--v31-ink)}
+.v17-nav{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--v31-gold)!important;outline-offset:4px}
+.card,.shop-item{transition:transform .25s ease,box-shadow .25s ease}
+.card:hover,.shop-item:hover{transform:translateY(-5px);box-shadow:0 18px 35px #0008}
+.v31-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 18px;background:#09213d;color:#fff;justify-content:center}
+.v31-tools button{border:1px solid #6ecff3;background:#123c61;color:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font:inherit}
+.v31-tools button[aria-pressed=true]{background:#ffdb67;color:#10213d}
+.v31-skip{position:absolute;left:8px;top:-100px;z-index:10000;background:#fff;color:#061326;padding:12px;border-radius:8px}
+.v31-skip:focus{top:8px}
+body.v31-light{--v31-bg:#eef6ff;--v31-ink:#12253f;background:var(--v31-bg);color:var(--v31-ink)}
+body.v31-light .content p{color:#244360}
+body.v31-light .card,body.v31-light .shop-item{background:#fff;color:#12253f}
+body.v31-reduced *,body.v31-reduced *::before,body.v31-reduced *::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(max-width:760px){.v31-tools{padding:8px 12px}.v31-tools button{min-height:44px}}
+
+/* V31 — cabeçalho com texto real e navegação por teclado e toque. */
+.v17-nav,.foot{color:#f2f8ff}
+.v17-nav [hidden]{display:none}
+.v31-menu{background:#123c61;color:#fff;border:1px solid #6ecff3;border-radius:12px;padding:8px 12px;font:inherit;font-weight:700;min-height:44px;cursor:pointer}
+.v31-skip{position:fixed}
+.v31-tools button{min-height:44px}
+.v31-tools button[aria-disabled=true]{cursor:default}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-height: clamp(460px, 52vw, 760px);
+  padding: clamp(28px, 5vw, 64px) max(24px, calc((100% - 1320px) / 2));
+  background: #071b33;
+  color: #f2f8ff;
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 46%;
+}
+.hero-art {
+  position: absolute;
+  inset: 0;
+}
+.hero-art::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #041326a6, #04132659 34%, transparent 57%);
+  content: "";
+}
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+#mundos .card img {
+  display: block;
+  height: auto;
+  aspect-ratio: 3 / 2;
+}
+@media (max-width: 900px) {
+  .hero {
+    min-height: 0;
+    gap: 22px;
+    padding: 20px 18px 32px;
+    background: radial-gradient(ellipse at top, #20365b, #061326 75%);
+  }
+  .hero-copy { max-width: none; }
+  .hero-art {
+    position: static;
+    grid-row: 1;
+    justify-self: center;
+    width: min(100%, 340px);
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  .hero-art::after { content: none; }
+  .hero-image { height: auto; }
+}
+.hero h1{max-width:15ch;margin:0 0 18px;color:#ffdb67;font-size:clamp(2.15rem,5.4vw,4.6rem);line-height:1.04;letter-spacing:-.045em}
+.hero p{max-width:47ch;font-size:clamp(1.1rem,2vw,1.3rem);line-height:1.55}
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero .playstore-btn{margin:0;background:#ffdb67!important;color:#10213d!important}
+.hero .hero-secondary{background:#123c61;color:#fff;border:1px solid #6ecff3}
+.layout-original{max-width:1180px;margin:auto;padding:0 24px}
+.layout-original summary{width:fit-content;min-height:44px;padding:12px 0;cursor:pointer;font-weight:700}
+.layout-original .art{display:block}
+body.v31-light :is(.content,.layout-original) :focus-visible{outline-color:#17548a!important}
+body.v31-light .content h2{color:#12253f;text-shadow:none}
+body.v31-light .content .notice{color:#244360!important}
+body.v31-light .contact{background:#fff;border:1px solid #9cc3e3}
+.social-real a{color:#f2f8ff}
+body.v31-light .btn.alt{background:#a4141b;color:#fff}
+.contador-visitas{position:static;width:fit-content;margin:14px auto}
+
+@media (761px <= width <= 1050px){html{scroll-padding-top:110px}}
+
+@media(max-width:760px){
+  html{scroll-padding-top:78px}
+  .v17-nav{gap:8px;padding:8px 10px}
+  .v17-brand{font-size:clamp(.7rem,2.7vw,.86rem);white-space:normal}
+  .v17-brand img{width:36px;height:36px}
+  .v17-nav .v17-download{font-size:.72rem;padding:10px}
+  .v17-nav .v31-menu:not([hidden]) + .v17-links:not([hidden]){position:absolute;top:100%;left:0;background:#041329;display:grid;gap:0;padding:8px 16px;overflow:auto;max-height:min(65vh,25rem);border-bottom:1px solid #43baff}
+  .v17-nav .v17-links a{padding:12px 8px;line-height:1.35}
+  .v17-nav .v31-menu[hidden] + .v17-links{display:flex;flex-wrap:wrap;justify-content:center}
+  .hero-actions .btn{font-size:1rem;padding:12px 16px}
+  .layout-original .hit{border-radius:3px}
+}
+
+@media(forced-colors:active){
+  .v31-menu,.hero .btn,.v31-tools button{border:1px solid ButtonText}
+  .v31-tools button[aria-pressed=true]{border:3px double Highlight}
+}
+
+/* Links longos devem caber em ecrãs estreitos e com zoom. */
+.contact .btn{max-width:100%;overflow-wrap:anywhere}
+.foot a{overflow-wrap:anywhere}
+#estudio .brand img{width:clamp(50px,12vw,90px);height:auto;flex-shrink:0}
+#estudio .brand h2{min-width:0;overflow-wrap:anywhere}
+
+/* V31 — ações do destaque: alvos táteis e disposição legível em ecrãs estreitos. */
+.hero-actions .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+@media(max-width:480px){
+  .hero-copy{min-width:0}
+  .hero h1{overflow-wrap:break-word}
+  .hero-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+  .hero-actions .btn{width:100%;max-width:100%;box-sizing:border-box;white-space:normal}
+}

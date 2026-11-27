@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-U8OqKz2c+CKggix4vxWKnIHIotFOGFQJRHkF6CzcNWE=' blob:; style-src 'unsafe-inline'; img-src data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Resultado da Oficina Web</title>
+</head>
+<body>
+<script>
+'use strict';
+
+window.addEventListener('message', event => {
+  if (window.origin !== 'null' || event.source !== window.parent ||
+      event.origin !== window.location.origin) return;
+  const { html, css, js, desafio } = event.data ?? {};
+  if (![html, css, js].every(value => typeof value === 'string')) return;
+
+  const estilo = document.createElement('style');
+  estilo.textContent = css;
+  document.head.append(estilo);
+  const layout = document.createElement('template');
+  layout.innerHTML = html;
+  document.body.replaceChildren(layout.content);
+
+  const jogar = document.querySelector('#jogar');
+  const placar = document.querySelector('#placar');
+  const responder = passou => window.parent.postMessage({ tipo: 'resultado-oficina', passou }, event.origin);
+
+  if (desafio === 'html') {
+    const titulo = document.querySelector('h1')?.textContent.trim();
+    const botao = jogar?.textContent.trim();
+    responder(Boolean(titulo && botao && placar && jogar.tagName === 'BUTTON' &&
+      titulo !== 'Caça às estrelas' && botao !== 'Apanhar estrela'));
+  }
+  if (desafio === 'css') {
+    const fundo = getComputedStyle(document.body).backgroundColor;
+    const fundoBotao = jogar && getComputedStyle(jogar).backgroundColor;
+    responder(Boolean(fundoBotao && fundo !== 'rgb(16, 37, 60)' && fundoBotao !== 'rgb(255, 220, 104)' &&
+      fundo !== 'rgba(0, 0, 0, 0)' && fundoBotao !== 'rgba(0, 0, 0, 0)'));
+  }
+
+  const programa = document.createElement('script');
+  const url = URL.createObjectURL(new Blob([js], { type: 'text/javascript' }));
+  programa.src = url;
+  programa.addEventListener('load', () => {
+    URL.revokeObjectURL(url);
+    if (desafio !== 'js') return;
+    if (!jogar || placar?.textContent.trim() !== '0') {
+      responder(false);
+      return;
+    }
+    jogar.click();
+    const primeiro = placar.textContent.trim() === '5';
+    jogar.click();
+    responder(primeiro && placar.textContent.trim() === '10');
+  }, { once: true });
+  programa.addEventListener('error', () => {
+    URL.revokeObjectURL(url);
+    if (desafio === 'js') responder(false);
+  }, { once: true });
+  document.body.append(programa);
+});
+</script>
+</body>
+</html>

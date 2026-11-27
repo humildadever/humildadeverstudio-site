@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://humildadeverstudio.com/</loc></url><url><loc>https://humildadeverstudio.com/privacidade.html</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://humildadeverstudio.com/</loc></url>
+  <url><loc>https://humildadeverstudio.com/o-curioso.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/o-curioso.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/o-curioso-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/o-curioso.html"/>
+  </url>
+  <url><loc>https://humildadeverstudio.com/o-curioso-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/o-curioso.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/o-curioso-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/o-curioso.html"/>
+  </url>
+  <url><loc>https://humildadeverstudio.com/apps.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/novidades.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/novidades.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/novidades-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/novidades.html"/>
+  </url>
+  <url><loc>https://humildadeverstudio.com/novidades-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/novidades.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/novidades-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/novidades.html"/>
+  </url>
+  <url><loc>https://humildadeverstudio.com/privacidade.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/jogo-privacidade.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/jogo-termos.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/academia.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/academia-sql.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/universe.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/academia-web.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/academia-cursos.html</loc></url>
+</urlset>

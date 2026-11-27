@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQL para jogos | Academia Humildadever</title>
+  <meta name="description" content="Aprende a filtrar, ordenar e agrupar pontuações com SQLite. Cria uma tabela classificativa e testa os teus conhecimentos.">
+  <link rel="canonical" href="https://humildadeverstudio.com/academia-sql.html">
+  <link rel="icon" href="assets/logotipo-192.webp">
+  <link rel="stylesheet" href="assets/portal.css">
+  <script src="assets/academia.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <script src="assets/pwa.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<nav class="site-nav" aria-label="Navegação principal">
+  <a class="studio" href="index.html"><img src="assets/logotipo-192.webp" alt="" width="44" height="44">Humildadever Studio</a>
+  <a href="academia.html">Curso de Python</a><a href="apps.html">Aplicações</a>
+  <a href="academia-web.html">Oficina Web</a>
+  <a href="academia-cursos.html">Todos os percursos</a>
+</nav>
+<main id="conteudo" tabindex="-1">
+  <header>
+    <h1>SQL para jogos</h1>
+    <p>Constrói uma tabela classificativa a partir dos resultados de várias rondas. Os dados do exercício são fictícios.</p>
+    <nav class="actions" aria-label="Conteúdos do curso">
+      <a href="#dados">Dados</a><a href="#filtros">Filtrar</a><a href="#ordenacao">Ordenar</a><a href="#grupos">Agrupar</a><a href="#projeto">Projeto</a><a href="#quiz">Questionário</a>
+    </nav>
+    <p id="progresso" role="status" hidden></p>
+  </header>
+
+  <section id="dados">
+    <h2>Preparar os dados</h2>
+    <p>Abre uma sessão SQLite nova com <code>sqlite3 :memory:</code> e cola este bloco uma só vez. Os dados duram até saíres da sessão. Executa depois uma consulta de cada vez.</p>
+    <pre><code data-sql="setup">CREATE TABLE rondas (
+  jogador TEXT NOT NULL,
+  nivel INTEGER NOT NULL,
+  pontos INTEGER NOT NULL
+);
+INSERT INTO rondas (jogador, nivel, pontos) VALUES
+  ('Lia', 1, 120), ('Lia', 2, 80),
+  ('Noa', 1, 95), ('Noa', 2, 120),
+  ('Teo', 1, 120), ('Teo', 2, 70);</code></pre>
+  </section>
+
+  <section id="filtros">
+    <h2>1. Selecionar e filtrar linhas</h2>
+    <p><code>SELECT</code> escolhe as colunas. <code>FROM</code> indica a tabela a consultar. <code>WHERE</code> mantém as linhas que cumprem a condição.</p>
+    <pre><code data-sql="filtros">SELECT jogador, pontos
+FROM rondas
+WHERE nivel = 2 AND pontos &gt;= 80;</code></pre>
+    <p>Exercício. Mostra as rondas do nível 2 com pelo menos 100 pontos.</p>
+    <details><summary>Solução comentada</summary><p>Troca <code>80</code> por <code>100</code>. Só Noa satisfaz as duas condições, com 120 pontos.</p></details>
+  </section>
+
+  <section id="ordenacao">
+    <h2>2. Ordenar e desempatar</h2>
+    <p><code>ORDER BY pontos DESC</code> põe as pontuações mais altas primeiro. Acrescenta uma coluna como segundo critério para desempatar. Aplica <code>LIMIT</code> para obter só as primeiras linhas.</p>
+    <pre><code data-sql="ordenacao">SELECT jogador, pontos
+FROM rondas
+WHERE nivel = 1
+ORDER BY pontos DESC, jogador ASC
+LIMIT 2;</code></pre>
+    <p>Exercício. Prevê a ordem das duas primeiras linhas e confirma-a na sessão SQLite.</p>
+    <details><summary>Solução comentada</summary><p>Lia aparece primeiro e Teo em segundo. As duas rondas têm 120 pontos e o segundo critério ordena os nomes por ordem ascendente.</p></details>
+  </section>
+
+  <section id="grupos">
+    <h2>3. Agrupar resultados por jogador</h2>
+    <p><code>GROUP BY jogador</code> reúne as rondas de cada jogador. <code>SUM(pontos)</code> calcula o total de cada grupo. Usa <code>HAVING</code> para filtrar pelo total calculado.</p>
+    <pre><code data-sql="grupos">SELECT jogador, SUM(pontos) AS total
+FROM rondas
+GROUP BY jogador
+HAVING SUM(pontos) &gt;= 200
+ORDER BY total DESC, jogador ASC;</code></pre>
+    <p>Exercício. Que jogador passa a aparecer quando baixas o mínimo para 190?</p>
+    <details><summary>Solução comentada</summary><p>Teo passa a aparecer com 190 pontos. Lia e Noa continuam na tabela, com 200 e 215.</p></details>
+  </section>
+
+  <section id="projeto">
+    <h2>Projeto prático — Classificação do torneio</h2>
+    <p>Mostra os dois jogadores com maior total. Exige pelo menos duas rondas por jogador. Em caso de empate, ordena o nome alfabeticamente.</p>
+    <details>
+      <summary>Consulta de referência</summary>
+      <pre><code data-sql="projeto">SELECT jogador, SUM(pontos) AS total, COUNT(*) AS partidas
+FROM rondas
+GROUP BY jogador
+HAVING COUNT(*) &gt;= 2
+ORDER BY total DESC, jogador ASC
+LIMIT 2;</code></pre>
+      <p>Com os dados iniciais, Noa fica em primeiro com 215 pontos e Lia segue com 200. Ambos têm duas rondas. Se acrescentares uma ronda de 500 pontos a um jogador novo, verifica que a classificação fica igual.</p>
+    </details>
+  </section>
+
+  <section id="quiz">
+    <h2>Questionário</h2>
+    <form id="avaliacao" data-storage-key="hv-academia-sql-basico-v1" hidden>
+      <fieldset><legend>1. Como filtras as rondas do nível 2?</legend>
+        <label><input type="radio" name="filtro" value="where" data-correct="WHERE filtra linhas antes do agrupamento." required> <code>WHERE nivel = 2</code></label>
+        <label><input type="radio" name="filtro" value="order"> <code>ORDER BY nivel</code></label>
+      </fieldset>
+      <fieldset><legend>2. Qual a opção que põe primeiro a pontuação mais alta?</legend>
+        <label><input type="radio" name="ordem" value="asc" required> <code>ORDER BY pontos ASC</code></label>
+        <label><input type="radio" name="ordem" value="desc" data-correct="DESC ordena do maior para o menor."> <code>ORDER BY pontos DESC</code></label>
+      </fieldset>
+      <fieldset><legend>3. Como selecionas jogadores com um total mínimo de 200 pontos?</legend>
+        <label><input type="radio" name="grupos" value="having" data-correct="HAVING filtra o resultado de cada grupo." required> <code>HAVING SUM(pontos) &gt;= 200</code></label>
+        <label><input type="radio" name="grupos" value="where-total"> <code>WHERE pontos &gt;= 200</code></label>
+      </fieldset>
+      <button type="submit">Ver resultado</button>
+    </form>
+    <p id="nota" role="status"></p>
+    <noscript><p>Ativa JavaScript para corrigir o questionário. Os exemplos e soluções continuam disponíveis.</p></noscript>
+    <p>Referência para aprofundar a sintaxe de <a href="https://www.sqlite.org/lang_select.html">SELECT na documentação SQLite</a>.</p>
+  </section>
+</main>
+<footer class="site-footer"><span>© Humildadever Studio</span><a href="privacidade.html">Privacidade</a></footer>
+</body>
+</html>
