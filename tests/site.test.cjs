@@ -367,3 +367,24 @@ test('Página inicial: ações do Curioso acessíveis em ecrãs estreitos', () =
     dom.window.close();
   }
 });
+
+
+test('Homepage: metadados sociais e instalação de O Curioso', () => {
+  const dom = parsePage('index.html');
+  try {
+    const document = dom.window.document;
+    for (const name of ['twitter:card', 'twitter:title', 'twitter:description', 'twitter:image']) {
+      const meta = document.querySelector(`meta[name="${name}"]`);
+      assert.ok(meta?.getAttribute('content')?.trim(), `Falta ${name}`);
+    }
+    for (const property of ['og:title', 'og:description', 'og:image', 'og:url']) {
+      const meta = document.querySelector(`meta[property="${property}"]`);
+      assert.ok(meta?.getAttribute('content')?.trim(), `Falta ${property}`);
+    }
+    assert.ok([...document.querySelectorAll('a[href]')].some(link =>
+      link.href.startsWith('https://play.google.com/store/apps/details?id=com.humildadever.ocurioso')),
+      'Falta ligação para instalar O Curioso na Google Play');
+  } finally {
+    dom.window.close();
+  }
+});
