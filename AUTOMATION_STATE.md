@@ -103,3 +103,8 @@
 - GitHub Actions `45719834879` concluiu com sucesso no HEAD anterior `e408aaa2` (incluindo correção do relatório SEO).
 - Homepage `index.html` enriquecida com JSON-LD schema.org `Organization`, `WebSite` e `VideoGame` (O Curioso), com ligações a páginas e perfis já existentes, sem avaliações ou preços inventados. Commit `f7a15be4785a47cbeb373a019f4022a66cea3038`.
 - Confirmar CI do novo commit antes de considerar os testes aprovados. Verificação de propriedade Search Console e DNS fica para intervenção autorizada do proprietário; não modificar main, produção, CNAME, app-ads.txt ou DNS.
+
+## V36 — execução inicial do prompt, 27-11-2026
+- Atualizados os metadados de partilha da homepage para incluir `twitter:title` e `twitter:description`, alinhados com O Curioso. Commit `26610289d1548b754b624091aca7637241f3549d`.
+- Cadência de 30 minutos não suportada pelo agendador de automações ChatGPT (máximo: 1/hora). Foi encontrada uma automação anterior `Autopiloto Humildadever V7 — expansão mundial` desativada; não reativar sem confirmação, nem criar duplicado automaticamente.
+- Próxima prioridade: verificar CI do commit, auditar cobertura de metadados sociais e implementar correções seguras na branch. Produção/main/DNS/CNAME/app-ads.txt intocados.
