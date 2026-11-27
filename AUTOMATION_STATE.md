@@ -108,3 +108,8 @@
 - Atualizados os metadados de partilha da homepage para incluir `twitter:title` e `twitter:description`, alinhados com O Curioso. Commit `26610289d1548b754b624091aca7637241f3549d`.
 - Cadência de 30 minutos não suportada pelo agendador de automações ChatGPT (máximo: 1/hora). Foi encontrada uma automação anterior `Autopiloto Humildadever V7 — expansão mundial` desativada; não reativar sem confirmação, nem criar duplicado automaticamente.
 - Próxima prioridade: verificar CI do commit, auditar cobertura de metadados sociais e implementar correções seguras na branch. Produção/main/DNS/CNAME/app-ads.txt intocados.
+
+## V36 — execução imediata, 27-11-2026
+- Pedido de execução imediata acionado. Criado teste automatizado de metadados sociais `twitter:*` e `og:*` da homepage e da ligação Google Play de O Curioso. Commit `f7096de33619d57a58ee269554d50c5c1cdf6967`.
+- Teste criado mas ainda sem execução/CI confirmado neste checkpoint. Próxima prioridade: verificar CI do HEAD, corrigir falhas e medir progresso por critérios objetivos; `PROGRESSO.md` indica 0/10 versões totalmente encerradas, não 0% do produto.
+- `main`, produção, DNS, CNAME e app-ads.txt preservados.
