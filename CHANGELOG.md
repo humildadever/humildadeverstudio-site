@@ -1,5 +1,24 @@
 # Changelog
 
+## 28 de novembro de 2026 — Site internacional (v40)
+
+- Site refeito de raiz, com uma página por língua em 16 línguas e ligações hreflang entre todas.
+- Textos de cada língua em `i18n/*.json` e gerador `scripts/build.py`.
+- Design novo, com fontes no próprio site, suporte a escrita da direita para a esquerda (árabe) e tema escuro automático.
+- Vídeo promocional comprimido de 20 MB para 5 MB.
+- Páginas legais com o novo aspeto, no mesmo endereço e com o mesmo conteúdo.
+- `app-ads.txt`, `robots.txt`, `CNAME` e todos os `.txt` mantidos.
+- Páginas antigas passam a encaminhar para as novas. O service worker antigo desliga-se sozinho.
+- Testes sem dependências: `npm test`.
+
+## 27 de novembro de 2026 — Internacional
+
+- Nova página inicial em inglês (`index-en.html`) com hreflang PT/EN, sitemap atualizado e dados estruturados do jogo em inglês.
+- Página inicial com capturas reais do jogo e o vídeo promocional.
+- Removidos da página inicial a loja conceptual, o cartaz com redes sociais por email e o contador externo de visitas.
+- Políticas de privacidade e termos atualizados para o jogo publicado (versão 14: anúncios só por escolha da criança, sem compras), nos mesmos endereços.
+- Botões de tema e movimento na língua da página. Cache do service worker na versão 21.
+
 ## V31 — em desenvolvimento
 - Adicionada camada CSS progressiva, sem substituir os estilos anteriores.
 - Adicionados botões de tema claro/escuro e redução de movimento, com preferência local.

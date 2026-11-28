@@ -1,0 +1,154 @@
+{
+ "meta_title": "O Curioso e o Reino das Gargalhadas | Humildadever Studio",
+ "meta_desc": "Jogo de plataformas 2D para toda a família, para Android. Seis mundos, 200 níveis, mini jogos e um cão que nunca morre. Da Humildadever Studio, Portugal.",
+ "skip": "Saltar para o conteúdo",
+ "nav_game": "O jogo",
+ "nav_media": "Imagens",
+ "nav_worlds": "Mundos",
+ "nav_faq": "Perguntas",
+ "nav_studio": "Estúdio",
+ "nav_contact": "Contacto",
+ "lang_label": "Língua",
+ "play_short": "Google Play",
+ "hero_eyebrow": "Jogo de plataformas para Android",
+ "game_title": "O Curioso e o Reino das Gargalhadas",
+ "hero_lead": "O Rei Rabugento roubou a Grande Gargalhada. Corre e salta com O Curioso e o seu cão por seis mundos para devolver a alegria ao reino.",
+ "btn_play": "Descarregar na Google Play",
+ "btn_trailer": "Ver o vídeo",
+ "hero_note": "Grátis · Android 7.0 ou superior · Jogo em português e inglês",
+ "f_levels": "níveis",
+ "f_worlds": "mundos",
+ "f_minigames": "mini jogos",
+ "f_achievements": "conquistas",
+ "story_h": "Uma aventura feita para rir",
+ "story_p1": "O Curioso é um rapaz que nunca deixa de perguntar «porquê?». Quando o Rei Rabugento rouba a Grande Gargalhada e o reino fica cinzento, é ele, com o seu cão fiel, que parte à aventura.",
+ "story_p2": "Salta, faz duplo salto, sobe escadas, ressalta em molas e anda em plataformas que se mexem. Encontra as gargalhadas perdidas, ganha até três estrelas por nível e enfrenta chefes com ataques próprios.",
+ "fam_h": "Pensado para toda a família",
+ "fam": [
+  [
+   "O cão nunca morre",
+   "O companheiro do Curioso está sempre a salvo. Sem violência e sem sustos."
+  ],
+  [
+   "Controlos para todos",
+   "Botões ou joystick, modo canhoto e botões grandes para mãos pequenas."
+  ],
+  [
+   "Joga sem internet",
+   "A aventura funciona offline, em casa, no carro ou em viagem."
+  ],
+  [
+   "Anúncios só por escolha",
+   "A partir da versão 14, só aparece um anúncio quando o jogador escolhe ver um para ganhar um prémio."
+  ],
+  [
+   "Sem compras",
+   "A partir da versão 14, o jogo não tem compras com dinheiro real."
+  ],
+  [
+   "Sempre algo novo",
+   "Desafio do dia, modo Survivor, eventos de temporada e uma loja de trajes."
+  ]
+ ],
+ "media_h": "Imagens do jogo",
+ "media_p": "Capturas reais do jogo e o vídeo promocional.",
+ "shots": [
+  "Nível 1 · Floresta",
+  "Chefe Tronco Zangado",
+  "Nível 105 · Vulcão",
+  "Nível 140 · Nuvens"
+ ],
+ "shots_alt": [
+  "O Curioso no primeiro nível, numa floresta com plataformas.",
+  "O Curioso enfrenta o chefe Tronco Zangado.",
+  "O Curioso sobre plataformas suspensas por cima da lava.",
+  "O Curioso entre nuvens, em plataformas de neve."
+ ],
+ "video_label": "Vídeo promocional de O Curioso",
+ "video_fallback": "Abrir o vídeo",
+ "worlds_h": "Seis mundos para explorar",
+ "worlds_p": "Cada mundo tem o seu cenário, a sua música e o seu desafio: rajadas de vento, lava que sobe e gelo escorregadio.",
+ "worlds": [
+  "Floresta dos Tropeções",
+  "Deserto das Cócegas",
+  "Castelo do Rei Rabugento",
+  "Vulcão Maluco",
+  "Nuvens do Absurdo",
+  "Fortaleza da Gargalhada"
+ ],
+ "faq_h": "Perguntas frequentes",
+ "faq": [
+  [
+   "O jogo é grátis?",
+   "Sim. Descarrega-se gratuitamente na Google Play. As moedas ganham-se a jogar ou, se o jogador quiser, a ver um anúncio."
+  ],
+  [
+   "Em que aparelhos funciona?",
+   "Em telemóveis e tablets Android com Android 7.0 ou superior."
+  ],
+  [
+   "Em que línguas está o jogo?",
+   "O jogo está em português e em inglês. Este site está disponível em várias línguas."
+  ],
+  [
+   "Precisa de internet?",
+   "Não. Podes jogar sem ligação. A internet só é usada para os anúncios opcionais e para as classificações do Google Play Games."
+  ],
+  [
+   "É seguro para crianças?",
+   "Sim. O jogo não pede dados pessoais, não tem contas e os anúncios são adequados a crianças e não personalizados. Lê a política de privacidade para mais detalhes."
+  ],
+  [
+   "Onde peço ajuda?",
+   "Escreve para humildadeverstudio@gmail.com. Respondemos em português ou inglês."
+  ]
+ ],
+ "studio_h": "Humildadever Studio",
+ "studio_p": "Um estúdio independente de Portugal que cria jogos e aplicações com imaginação, humor e cuidado com as famílias.",
+ "projects_h": "Projetos",
+ "projects": [
+  [
+   "O Curioso e o Reino das Gargalhadas",
+   "Jogo · Android · Disponível",
+   "O jogo de plataformas principal do estúdio.",
+   "Ver na Google Play"
+  ],
+  [
+   "Academia Humildadever",
+   "Educação · Web · Disponível",
+   "Percursos para aprender programação para a web, Python e SQL.",
+   "Abrir a Academia"
+  ],
+  [
+   "Humildadever 1000 Apps Universe",
+   "Plataforma · Web · Em desenvolvimento",
+   "Um catálogo de aplicações web para aprender e explorar.",
+   "Saber mais"
+  ]
+ ],
+ "pt_only": "",
+ "news_h": "Novidades",
+ "news": [
+  [
+   "O Curioso chegou à Google Play",
+   "A aventura de plataformas 2D da Humildadever Studio já está disponível para Android."
+  ],
+  [
+   "Natal no Reino das Gargalhadas",
+   "De 1 a 25 de dezembro, o jogo tem níveis especiais de Natal e um chefe próprio."
+  ]
+ ],
+ "press_h": "Imprensa e criadores",
+ "press_p": "Jornalistas, bloguers e criadores de vídeo: o kit de imprensa tem o logótipo, capturas e a ficha do jogo em português e inglês.",
+ "press_btn": "Descarregar o kit de imprensa (ZIP)",
+ "contact_h": "Contacto",
+ "contact_p": "Perguntas, parcerias ou imprensa:",
+ "copy_btn": "Copiar email",
+ "copied": "Email copiado",
+ "legal_game_privacy": "Privacidade do jogo",
+ "legal_terms": "Termos de utilização",
+ "legal_site_privacy": "Privacidade do site",
+ "legal_anchor": "",
+ "footer_langs": "Este site noutras línguas",
+ "footer_tagline": "Jogos e aplicações de Portugal para o mundo."
+}

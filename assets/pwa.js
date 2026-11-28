@@ -1,12 +1,7 @@
 'use strict';
-
+// Remove registos antigos do service worker (o site já não funciona offline).
 if ('serviceWorker' in navigator) {
-  const worker = new URL('../sw.js', document.currentScript.src);
-  const register = () => {
-    navigator.serviceWorker.register(worker).catch(error => {
-      console.warn('Modo offline indisponível.', error.message);
-    });
-  };
-  if (document.readyState === 'complete') register();
-  else window.addEventListener('load', register, { once: true });
+  navigator.serviceWorker.getRegistrations()
+    .then(registrations => registrations.forEach(registration => registration.unregister()))
+    .catch(() => {});
 }

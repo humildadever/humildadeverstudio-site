@@ -1,15 +1,14 @@
 {
-  "id": "./",
+  "id": "/",
   "name": "Humildadever Studio",
   "short_name": "Humildadever",
-  "lang": "pt-PT",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#061326",
-  "theme_color": "#061326",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#08142b",
+  "theme_color": "#08142b",
   "icons": [
-    { "src": "assets/logotipo-192.webp", "sizes": "192x192", "type": "image/webp" },
+    { "src": "assets/site/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
     { "src": "assets/logotipo-oficial.png", "sizes": "1254x1254", "type": "image/png" }
   ]
 }

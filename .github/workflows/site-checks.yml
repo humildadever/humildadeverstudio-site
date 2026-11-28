@@ -2,10 +2,7 @@ name: Site checks
 
 on:
   push:
-    branches: [dev/v31-evolucao-total]
   pull_request:
-    branches: [main]
-    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
@@ -13,24 +10,17 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chromium, webkit]
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm test
-      - name: Audit international SEO metadata
+      - name: Regenerar páginas e confirmar que estão atualizadas
         run: |
-          node scripts/seo-audit.cjs > /tmp/humildadever-seo-audit.json
-          node -e 'const r=require("/tmp/humildadever-seo-audit.json"); console.log(JSON.stringify(r.summary)); if (!r.summary || !Array.isArray(r.checks)) process.exit(1)'
-      - run: npx playwright install --with-deps ${{ matrix.browser }}
-      - run: npm run test:browser
-        env:
-          SITE_TEST_BROWSER: ${{ matrix.browser }}
+          python3 scripts/build.py
+          git diff --exit-code
+      - run: npm test
