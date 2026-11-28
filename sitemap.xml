@@ -1,33 +1,331 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://humildadeverstudio.com/</loc></url>
-  <url><loc>https://humildadeverstudio.com/o-curioso.html</loc>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/o-curioso.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/o-curioso-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/o-curioso.html"/>
+  <url>
+    <loc>https://humildadeverstudio.com/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
   </url>
-  <url><loc>https://humildadeverstudio.com/o-curioso-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/o-curioso.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/o-curioso-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/o-curioso.html"/>
+  <url>
+    <loc>https://humildadeverstudio.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
   </url>
-  <url><loc>https://humildadeverstudio.com/apps.html</loc></url>
-  <url><loc>https://humildadeverstudio.com/novidades.html</loc>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/novidades.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/novidades-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/novidades.html"/>
+  <url>
+    <loc>https://humildadeverstudio.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
   </url>
-  <url><loc>https://humildadeverstudio.com/novidades-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/novidades.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/novidades-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/novidades.html"/>
+  <url>
+    <loc>https://humildadeverstudio.com/pt-br/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
   </url>
-  <url><loc>https://humildadeverstudio.com/privacidade.html</loc></url>
+  <url>
+    <loc>https://humildadeverstudio.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/it/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/nl/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/id/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/zh-tw/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/hi/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://humildadeverstudio.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://humildadeverstudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://humildadeverstudio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://humildadeverstudio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://humildadeverstudio.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://humildadeverstudio.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://humildadeverstudio.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://humildadeverstudio.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://humildadeverstudio.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://humildadeverstudio.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://humildadeverstudio.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://humildadeverstudio.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://humildadeverstudio.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://humildadeverstudio.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://humildadeverstudio.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://humildadeverstudio.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://humildadeverstudio.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://humildadeverstudio.com/en/"/>
+  </url>
   <url><loc>https://humildadeverstudio.com/jogo-privacidade.html</loc></url>
   <url><loc>https://humildadeverstudio.com/jogo-termos.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/privacidade.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/academia-cursos.html</loc></url>
   <url><loc>https://humildadeverstudio.com/academia.html</loc></url>
   <url><loc>https://humildadeverstudio.com/academia-sql.html</loc></url>
-  <url><loc>https://humildadeverstudio.com/universe.html</loc></url>
   <url><loc>https://humildadeverstudio.com/academia-web.html</loc></url>
-  <url><loc>https://humildadeverstudio.com/academia-cursos.html</loc></url>
+  <url><loc>https://humildadeverstudio.com/universe.html</loc></url>
 </urlset>
